@@ -123,7 +123,7 @@
             overflow: hidden;
         }
 
-        /* Grow Easy Icon */
+        /* Grow Easy Icon (保留但未使用) */
         .grow-easy-icon {
             background: #2874E6;
         }
@@ -141,6 +141,27 @@
         .crypto-ledger-icon svg {
             width: 70px;
             height: 70px;
+        }
+
+        /* Smart Tip Calculator Icon */
+        .stc-icon {
+            background: #BF7A45; /* 与logo主色一致 */
+        }
+        .stc-icon img {
+            width: 76%;
+            height: 76%;
+            display: block;
+            object-fit: contain;   /* 防止拉伸、完整显示 */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+        /* 图片加载失败时的兜底视觉 */
+        .stc-icon[data-fallback]::after {
+            content: "$%";
+            color: #F8F1E6;
+            font-weight: 800;
+            font-size: 38px;
+            line-height: 1;
         }
 
         .app-card h3 {
@@ -278,6 +299,12 @@
                 height: 56px !important;
             }
 
+            /* 让位图在移动端也保持良好留白 */
+            .app-icon img {
+                width: 70% !important;
+                height: 70% !important;
+            }
+
             .footer-links {
                 flex-direction: column;
                 gap: 20px;
@@ -329,37 +356,25 @@
             <p class="section-subtitle">Carefully crafted tools to help you manage your finances with confidence</p>
             
             <div class="apps-grid">
-                <!-- Grow Easy Card -->
-                <div class="app-card">
-                    <div class="app-icon grow-easy-icon">
-                        <!-- Grow Easy Icon SVG -->
-                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g fill="white">
-                                <!-- Growth Arrow -->
-                                <path d="M65 20 L80 20 L80 35 L75 35 L75 28 L55 48 L45 38 L30 53 L25 48 L45 28 L55 38 L70 23 L63 23 L63 18 Z" fill="white"/>
-                                
-                                <!-- Bar Chart -->
-                                <rect x="20" y="55" width="12" height="25" rx="2" fill="white"/>
-                                <rect x="38" y="45" width="12" height="35" rx="2" fill="white"/>
-                                <rect x="56" y="50" width="12" height="30" rx="2" fill="white"/>
-                                
-                                <!-- Plant/Leaf -->
-                                <path d="M75 55 C75 55 72 60 72 65 C72 70 75 72 78 72 C81 72 84 70 84 65 C84 60 81 55 81 55 L78 65 Z" fill="white"/>
-                                <path d="M78 72 L78 80" stroke="white" stroke-width="3"/>
-                            </g>
-                        </svg>
+                <!-- Smart Tip Calculator Card -->
+                <div class="app-card smart-tip-card">
+                    <div class="app-icon stc-icon">
+                        <!-- 放置与 index.html 同级的 logo.png；失败时隐藏破图并显示兜底符号 -->
+                        <img src="logo.png" alt="" loading="lazy" decoding="async"
+                             onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
                     </div>
-                    <h3>Grow Easy</h3>
-                    <p class="app-tagline">Savings Goals & Expense Tracker</p>
+                    <h3>Smart Tip Calculator</h3>
+                    <p class="app-tagline">Your Trusted Tipping Companion</p>
                     <p class="app-description">
-                        Turn daily spending into real progress. The all-in-one personal finance app that combines goal-based budgeting with an ultra-fast income & expense tracker.
+                        Calculate tips perfectly in seconds—whether you're dining out, ordering delivery, taking a rideshare, or visiting the salon. Split bills with friends, set your own tip rates, and see totals instantly. Built for US tipping culture and designed to be fast, flexible, and completely private.
                     </p>
                     <ul class="features-list">
-                        <li>Unlimited savings & expense goals</li>
-                        <li>Lightning-fast transaction logging</li>
-                        <li>Smart money analytics with charts</li>
-                        <li>Flexible goal management</li>
-                        <li>100% free with no ads</li>
+                        <li>Custom tip percentages with quick access to favorite rates</li>
+                        <li>Smart bill splitting evenly or by custom amounts</li>
+                        <li>Supports dining, delivery, rideshare, salons, and more</li>
+                        <li>Instant tip and total calculations with a clean interface</li>
+                        <li>100% private: no account, no tracking, works fully offline</li>
+                        <li>Tailored for common US tipping ranges (15%–25%+)</li>
                     </ul>
                     <a href="#" class="download-btn">Download on App Store</a>
                 </div>
