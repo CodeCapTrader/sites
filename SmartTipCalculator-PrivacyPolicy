@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>Privacy Policy - Smart Tip Calculator</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    :root {
+      --bg: #0b0c0f;
+      --card: #111319;
+      --text: #e6e7eb;
+      --muted: #a8adbd;
+      --border: #232633;
+      --link: #7aa2ff;
+      --accent: #7aa2ff;
+      --maxw: 820px;
+      color-scheme: dark;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff;
+        --card: #ffffff;
+        --text: #0b0c0f;
+        --muted: #4b5565;
+        --border: #e5e7ef;
+        --link: #1e40af;
+        --accent: #2349d6;
+        color-scheme: light;
+      }
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(122,162,255,0.08), transparent 60%),
+                  radial-gradient(1000px 500px at 120% 0%, rgba(127, 86, 217, 0.08), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow:
+        0 1px 2px rgba(0,0,0,0.05),
+        0 8px 24px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+    .inner {
+      padding: 28px;
+    }
+    header {
+      padding: 28px;
+      border-bottom: 1px solid var(--border);
+      background:
+        linear-gradient(180deg, rgba(122,162,255,0.08), transparent 45%),
+        linear-gradient(0deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02));
+    }
+    h1 {
+      font-size: 28px;
+      line-height: 1.25;
+      margin: 0 0 6px;
+      letter-spacing: -0.02em;
+    }
+    .app-name {
+      font-size: 18px;
+      margin: 0;
+      color: var(--muted);
+    }
+    .updated {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    hr {
+      height: 1px;
+      border: 0;
+      background: var(--border);
+      margin: 24px 0;
+    }
+    h2 {
+      font-size: 18px;
+      line-height: 1.35;
+      margin: 28px 0 10px;
+      letter-spacing: -0.01em;
+    }
+    p {
+      margin: 10px 0 0;
+    }
+    a {
+      color: var(--link);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .section + .section {
+      margin-top: 18px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border);
+    }
+
+    @media (max-width: 520px) {
+      .inner, header { padding: 20px; }
+      h1 { font-size: 24px; }
+      .app-name { font-size: 16px; }
+      h2 { font-size: 17px; }
+    }
+
+    @media print {
+      body { background: #fff; color: #000; }
+      .card { box-shadow: none; border-color: #bbb; }
+      a { color: #000; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <article class="card" role="article" aria-labelledby="pp-title">
+      <header>
+        <h1 id="pp-title">Privacy Policy</h1>
+        <p class="app-name">Smart Tip Calculator</p>
+        <p class="updated">Last updated: Oct 20, 2025 (U.S.)</p>
+      </header>
+      <div class="inner">
+        <div class="section" aria-labelledby="overview">
+          <h2 id="overview">Overview</h2>
+          <p>This Privacy Policy describes how the Smart Tip Calculator app ("App") handles information in the United States. The App is designed to work on‑device. We do not collect, store, or transmit your personal data to our servers.</p>
+        </div>
+
+        <div class="section" aria-labelledby="no-collect">
+          <h2 id="no-collect">Data We Do Not Collect</h2>
+          <p>We do not collect names, email addresses, phone numbers, payment information, precise location, contacts, advertising identifiers, or other information that directly identifies you.</p>
+        </div>
+
+        <div class="section" aria-labelledby="on-device">
+          <h2 id="on-device">On‑Device Processing</h2>
+          <p>Information you enter—such as bill amounts, tax/tip settings, scenarios, transactions, and notes—is processed and stored locally on your device using system storage (e.g., UserDefaults). This information stays on your device unless you choose to share it.</p>
+        </div>
+
+        <div class="section" aria-labelledby="sharing">
+          <h2 id="sharing">Sharing &amp; Exports</h2>
+          <p>If you export or share content (e.g., via the iOS Share Sheet or screenshots), that content is handled by Apple and any third‑party apps or services you select. Their terms and privacy policies apply.</p>
+        </div>
+
+        <div class="section" aria-labelledby="analytics">
+          <h2 id="analytics">Analytics, Tracking, and Ads</h2>
+          <p>The App does not include third‑party analytics SDKs or advertising SDKs and does not track you across apps or websites.</p>
+        </div>
+
+        <div class="section" aria-labelledby="external-links">
+          <h2 id="external-links">App Store &amp; External Links</h2>
+          <p>When you open external links (e.g., to rate the App on the App Store), Apple or the destination website may collect information under their policies. We are not responsible for third‑party practices.</p>
+        </div>
+
+        <div class="section" aria-labelledby="ccpa">
+          <h2 id="ccpa">U.S. Privacy Rights (CCPA/CPRA)</h2>
+          <p>Because we do not collect personal information, the rights provided under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA)—including access, deletion, correction, and opt‑out of sale/share—generally do not apply. If you believe this has changed, contact us via the support link on our App Store listing.</p>
+        </div>
+
+        <div class="section" aria-labelledby="retention">
+          <h2 id="retention">Data Retention &amp; Deletion</h2>
+          <p>Your data remains on your device until you delete it from within the App (e.g., clear history) or uninstall the App. Using Settings &gt; Clear All Data removes locally stored scenarios and transactions.</p>
+        </div>
+
+        <div class="section" aria-labelledby="children">
+          <h2 id="children">Children’s Privacy</h2>
+          <p>The App is not directed to children under 13 and does not knowingly collect personal information from children. If you believe a child provided information, delete the App and associated data from the device.</p>
+        </div>
+
+        <div class="section" aria-labelledby="changes">
+          <h2 id="changes">Changes to This Policy</h2>
+          <p>We may update this Policy. We will update the "Last updated" date. Changes become effective when published in the App. Your continued use indicates acceptance of the updated Policy.</p>
+        </div>
+
+        <div class="section" aria-labelledby="contact">
+          <h2 id="contact">Contact</h2>
+          <p><a href="mailto:ByteDanceDev@outlook.com">Privacy questions? Contact us via Email:ByteDanceDev@outlook.com</a></p>
+        </div>
+      </div>
+    </article>
+  </div>
+</body>
+</html>
