@@ -106,6 +106,13 @@
       text-decoration: underline;
       text-underline-offset: 3px;
     }
+    ul {
+      margin: 10px 0 0;
+      padding-left: 24px;
+    }
+    li {
+      margin: 6px 0;
+    }
     .section + .section {
       margin-top: 18px;
       padding-top: 8px;
@@ -132,62 +139,68 @@
       <header>
         <h1 id="pp-title">Privacy Policy</h1>
         <p class="app-name">Smart Tip Calculator</p>
-        <p class="updated">Last updated: Oct 20, 2025 (U.S.)</p>
+        <p class="updated">Last updated: Oct 27, 2025</p>
       </header>
       <div class="inner">
         <div class="section" aria-labelledby="overview">
           <h2 id="overview">Overview</h2>
-          <p>This Privacy Policy describes how the Smart Tip Calculator app ("App") handles information in the United States. The App is designed to work on‑device. We do not collect, store, or transmit your personal data to our servers.</p>
+          <p>This Privacy Policy applies globally to Smart Tip Calculator (the "App"). The App runs primarily on-device. We do not upload your entered data (e.g., bills, scenarios, transactions) to our servers. The App integrates Google AdMob and shows only Non‑Personalized Ads (NPA).</p>
+          <ul>
+            <li><strong>What NPA means:</strong> Ads are not targeted based on your interest profile or cross‑site/app activity. Delivery is based on content, context, or coarse location.</li>
+          </ul>
         </div>
 
         <div class="section" aria-labelledby="no-collect">
           <h2 id="no-collect">Data We Do Not Collect</h2>
-          <p>We do not collect names, email addresses, phone numbers, payment information, precise location, contacts, advertising identifiers, or other information that directly identifies you.</p>
+          <p>We do not collect directly identifying information (such as name, email, phone number, payment information, contacts, precise location), and we do not upload your input data (e.g., bill details, tax/tip settings, scenarios, transactions, notes) from the App to our servers.</p>
         </div>
 
         <div class="section" aria-labelledby="on-device">
-          <h2 id="on-device">On‑Device Processing</h2>
-          <p>Information you enter—such as bill amounts, tax/tip settings, scenarios, transactions, and notes—is processed and stored locally on your device using system storage (e.g., UserDefaults). This information stays on your device unless you choose to share it.</p>
+          <h2 id="on-device">On‑Device Processing and Sharing</h2>
+          <p>Your App data is stored locally on your device (e.g., iOS UserDefaults). Content is only shared when you actively use the system share sheet (e.g., sharing an image/screenshot). In those cases, Apple's or the receiving third party's terms and privacy policies apply.</p>
         </div>
 
-        <div class="section" aria-labelledby="sharing">
-          <h2 id="sharing">Sharing &amp; Exports</h2>
-          <p>If you export or share content (e.g., via the iOS Share Sheet or screenshots), that content is handled by Apple and any third‑party apps or services you select. Their terms and privacy policies apply.</p>
+        <div class="section" aria-labelledby="advertising">
+          <h2 id="advertising">Advertising and Measurement (NPA Only)</h2>
+          <p>We integrate the Google Mobile Ads (AdMob) SDK for banner ads. We technically attach 'npa=1' to all ad requests to ensure only non‑personalized ads are requested.</p>
+          <ul>
+            <li>We do not enable personalized targeting and do not use IDFA for cross‑app tracking; therefore, Apple's App Tracking Transparency (ATT) prompt is generally not shown.</li>
+            <li>In certain regions (e.g., EEA/UK/CH), a one‑time consent dialog may be required by local law and Google policy via a certified CMP such as Google UMP, primarily to confirm necessary advertising purposes and legality. A "Manage Privacy Consent" entry is provided in Settings so you can review or update choices later.</li>
+          </ul>
         </div>
 
-        <div class="section" aria-labelledby="analytics">
-          <h2 id="analytics">Analytics, Tracking, and Ads</h2>
-          <p>The App does not include third‑party analytics SDKs or advertising SDKs and does not track you across apps or websites.</p>
+        <div class="section" aria-labelledby="third-party">
+          <h2 id="third-party">Third‑Party Policies and Responsibility</h2>
+          <p>When you open external links (e.g., App Store rating) or use third‑party services (e.g., ads, share targets), those third parties may collect or process information under their policies. Please review and comply with the respective terms and privacy policies of Apple, Google, and any chosen third‑party apps/websites.</p>
         </div>
 
-        <div class="section" aria-labelledby="external-links">
-          <h2 id="external-links">App Store &amp; External Links</h2>
-          <p>When you open external links (e.g., to rate the App on the App Store), Apple or the destination website may collect information under their policies. We are not responsible for third‑party practices.</p>
-        </div>
-
-        <div class="section" aria-labelledby="ccpa">
-          <h2 id="ccpa">U.S. Privacy Rights (CCPA/CPRA)</h2>
-          <p>Because we do not collect personal information, the rights provided under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA)—including access, deletion, correction, and opt‑out of sale/share—generally do not apply. If you believe this has changed, contact us via the support link on our App Store listing.</p>
+        <div class="section" aria-labelledby="privacy-rights">
+          <h2 id="privacy-rights">Your Privacy Rights (Global Summary)</h2>
+          <ul>
+            <li><strong>EU/UK/Switzerland (GDPR/UK GDPR/Swiss FADP):</strong> Where applicable, you may have rights to access, rectify, erase, restrict processing, object, and data portability. If the consent dialog is shown, you can revisit it anytime via Settings &gt; Privacy &amp; Ads.</li>
+            <li><strong>US State Laws (CCPA/CPRA/CPA/UCPA/VCDPA, etc.):</strong> We do not "sell" or "share" personal information for cross‑context behavioral advertising. We only show NPA; generally, no "Do Not Sell/Share" link is required.</li>
+            <li><strong>Brazil (LGPD), Canada (PIPEDA), Japan (APPI), Korea (PIPA), Singapore (PDPA), China (PIPL), India (DPDP), etc.:</strong> We follow core principles such as minimization, transparency, purpose limitation, security safeguards, and retention limits. To exercise rights, contact us below as applicable.</li>
+          </ul>
         </div>
 
         <div class="section" aria-labelledby="retention">
-          <h2 id="retention">Data Retention &amp; Deletion</h2>
-          <p>Your data remains on your device until you delete it from within the App (e.g., clear history) or uninstall the App. Using Settings &gt; Clear All Data removes locally stored scenarios and transactions.</p>
+          <h2 id="retention">Data Retention and Deletion</h2>
+          <p>Your data remains on your device until you delete it in the App (e.g., Clear All Data) or uninstall the App. Clearing data removes locally stored scenarios and transaction history.</p>
         </div>
 
         <div class="section" aria-labelledby="children">
-          <h2 id="children">Children’s Privacy</h2>
-          <p>The App is not directed to children under 13 and does not knowingly collect personal information from children. If you believe a child provided information, delete the App and associated data from the device.</p>
+          <h2 id="children">Children's Privacy</h2>
+          <p>The App is for a general audience and is not directed to children. We do not use child‑directed personalized ads. If you believe we inadvertently collected a child's information, please contact us below and delete the data on the device.</p>
         </div>
 
         <div class="section" aria-labelledby="changes">
           <h2 id="changes">Changes to This Policy</h2>
-          <p>We may update this Policy. We will update the "Last updated" date. Changes become effective when published in the App. Your continued use indicates acceptance of the updated Policy.</p>
+          <p>We may update this Policy and display the "Last updated" date in the App. Updates take effect upon publication. Continued use constitutes acceptance of the changes.</p>
         </div>
 
         <div class="section" aria-labelledby="contact">
-          <h2 id="contact">Contact</h2>
-          <p><a href="mailto:ByteDanceDev@outlook.com">Privacy questions? Contact us via Email:ByteDanceDev@outlook.com</a></p>
+          <h2 id="contact">Contact Us</h2>
+          <p>For privacy questions or to exercise your rights, email: <a href="mailto:ByteDanceDev@outlook.com">ByteDanceDev@outlook.com</a>. We will respond within applicable legal or reasonable timeframes.</p>
         </div>
       </div>
     </article>
