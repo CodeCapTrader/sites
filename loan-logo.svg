@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Smart Loan Payoff Calculator logo">
+  <!-- Background -->
+  <rect width="1024" height="1024" rx="180" fill="#2D9CDB"/>
+  
+  <!-- Baseline -->
+  <line x1="120" y1="780" x2="904" y2="780" stroke="white" stroke-opacity="0.35" stroke-width="20" stroke-linecap="round"/>
+
+  <!-- Compare bars (Plan A / Plan B) -->
+  <rect x="180" y="220" width="160" height="520" rx="32" fill="#FEF7EC"/>
+  <rect x="420" y="340" width="160" height="400" rx="32" fill="#FEF7EC" opacity="0.9"/>
+
+  <!-- Down arrow (faster payoff) -->
+  <path d="M760 260 L760 650" stroke="#FEF7EC" stroke-width="56" stroke-linecap="round"/>
+  <path d="M760 720 l-80 -80 h160 l-80 80z" fill="#FEF7EC"/>
+
+  <!-- Calculator -->
+  <rect x="610" y="220" width="240" height="270" rx="36" fill="none" stroke="#FEF7EC" stroke-width="28"/>
+  <rect x="650" y="260" width="160" height="44" rx="14" fill="#FEF7EC"/>
+  <!-- buttons -->
+  <g fill="#FEF7EC">
+    <rect x="650" y="324" width="48" height="48" rx="10"/>
+    <rect x="710" y="324" width="48" height="48" rx="10"/>
+    <rect x="770" y="324" width="48" height="48" rx="10"/>
+    <rect x="650" y="384" width="48" height="48" rx="10"/>
+    <rect x="710" y="384" width="48" height="48" rx="10"/>
+    <rect x="770" y="384" width="48" height="48" rx="10"/>
+    <rect x="650" y="444" width="48" height="48" rx="10"/>
+    <rect x="710" y="444" width="48" height="48" rx="10"/>
+    <rect x="770" y="444" width="48" height="48" rx="10"/>
+  </g>
+
+  <!-- Done/check badge -->
+  <circle cx="760" cy="780" r="96" fill="#FEF7EC"/>
+  <path d="M712 780 l36 36 60-72" stroke="#2D9CDB" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
