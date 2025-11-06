@@ -154,6 +154,27 @@
             line-height: 1;
         }
 
+        /* Smart Loan Payoff Calculator Icon */
+        .slpc-icon {
+            background: #2D9CDB;
+        }
+        .slpc-icon img {
+            width: 76%;
+            height: 76%;
+            display: block;
+            object-fit: contain;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+        .slpc-icon[data-fallback]::after {
+            content: "APR";
+            color: #EAF6FF;
+            font-weight: 800;
+            font-size: 34px;
+            line-height: 1;
+            letter-spacing: 1px;
+        }
+
         .app-card h3 {
             font-size: 28px;
             margin-bottom: 10px;
@@ -242,7 +263,7 @@
             background: #333;
             color: white;
             padding: 40px 0;
-            text-align: center;
+            text-align: center.
         }
 
         .footer-links {
@@ -260,6 +281,132 @@
 
         .footer-links a:hover {
             opacity: 0.8;
+        }
+
+        /* Privacy Policy Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            z-index: 2000;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal {
+            width: 100%;
+            max-width: 520px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transform: translateY(10px);
+            animation: modal-in 0.18s ease-out forwards;
+        }
+        @keyframes modal-in {
+            to { transform: translateY(0); }
+        }
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border-bottom: 1px solid #eef0f2;
+        }
+        .modal-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+        }
+        .modal-close {
+            appearance: none;
+            border: 0;
+            background: transparent;
+            color: #666;
+            font-size: 20px;
+            line-height: 1;
+            padding: 6px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .modal-close:hover {
+            background: #f3f4f6;
+            color: #111;
+        }
+        .modal-body {
+            padding: 16px 20px 8px 20px;
+        }
+        .app-option {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #e6e8eb;
+            border-radius: 14px;
+            padding: 12px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.08s;
+            background: #fff;
+        }
+        .app-option:hover {
+            border-color: #1a73e8;
+            box-shadow: 0 6px 18px rgba(26,115,232,0.10);
+            transform: translateY(-1px);
+        }
+        .app-option:active {
+            transform: translateY(0);
+        }
+        .app-option-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex: 0 0 auto;
+        }
+        .app-option-icon img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            display: block;
+        }
+        .app-option-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #222;
+        }
+        .app-option-desc {
+            font-size: 13px;
+            color: #666;
+        }
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            padding: 12px 20px 18px 20px;
+        }
+        .btn {
+            appearance: none;
+            border: 1px solid #e5e7eb;
+            background: #fff;
+            color: #111827;
+            padding: 10px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.08s;
+        }
+        .btn:hover {
+            background: #f9fafb;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            transform: translateY(-1px);
         }
 
         /* Mobile Responsive */
@@ -357,8 +504,8 @@
                 <!-- Smart Tip Calculator Card -->
                 <div class="app-card smart-tip-card">
                     <div class="app-icon stc-icon">
-                        <!-- 放置与 index.html 同级的 logo.png；失败时隐藏破图并显示兜底符号 -->
-                        <img src="logo.png" alt="" loading="lazy" decoding="async"
+                        <!-- 与 index.html 同级的 logo.png；失败时隐藏破图并显示兜底符号 -->
+                        <img src="logo.png" alt="Smart Tip Calculator logo" loading="lazy" decoding="async"
                              onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
                     </div>
                     <h3>Smart Tip Calculator</h3>
@@ -388,6 +535,40 @@
 
                     <a href="https://apps.apple.com/app/smart-tip-calculator/id6754275969" class="download-btn" target="_blank" rel="noopener">Download on App Store</a>
                 </div>
+
+                <!-- Smart Loan Payoff Calculator Card -->
+                <div class="app-card smart-loan-card">
+                    <div class="app-icon slpc-icon">
+                        <!-- 使用新的 SVG logo；失败时隐藏破图并显示兜底符号 -->
+                        <img src="loan-logo.svg" alt="Smart Loan Payoff Calculator logo" loading="lazy" decoding="async"
+                             onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
+                    </div>
+                    <h3>Smart Loan Payoff Calculator</h3>
+                    <p class="app-tagline">Your Smart Way to Master Loan Payments</p>
+
+                    <p class="app-description">
+                        Understand your loans clearly and plan smarter—whether it’s a home loan, auto loan, or personal loan.
+                        Compare two payoff strategies side by side and see which fits your goals best.
+                    </p>
+
+                    <div class="new-badge">NEW: Dual-plan comparison at a glance</div>
+
+                    <ul class="features-list">
+                        <li>Compare two repayment plans at once — see time and interest differences instantly</li>
+                        <li>Supports mortgage, car loan, and personal loan types</li>
+                        <li>Explore flexible extra payment and biweekly options</li>
+                        <li>Visual charts that show progress, balance, and payoff date</li>
+                        <li>Export results to PDF or CSV for easy sharing and record keeping</li>
+                        <li>Simple, accurate, and designed to help you take control of your debt</li>
+                    </ul>
+
+                    <p class="app-description" style="margin-bottom:18px;">
+                        Make every payment plan smarter, faster, and clearer.
+                    </p>
+
+                    <!-- 若有商店链接，可在此添加 -->
+                    <!-- <a href="https://apps.apple.com/app/your-loan-app-id" class="download-btn" target="_blank" rel="noopener">Download on App Store</a> -->
+                </div>
             </div>
         </div>
     </section>
@@ -407,11 +588,45 @@
         <div class="container">
             <div class="footer-links">
                 <a href="mailto:ByteDanceDev@outlook.com">Support</a>
-                <a href="https://bytedancedev.xyz/SmartTipCalculator-PrivacyPolicy.html" target="_blank" rel="noopener">Privacy Policy</a>
+                <!-- 改为弹窗选择隐私政策 -->
+                <a href="javascript:void(0)" id="privacy-link" aria-haspopup="dialog" aria-controls="privacy-modal">Privacy Policy</a>
             </div>
             <p>&copy; @2025 Miao Yu All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal-overlay" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title" aria-hidden="true">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title" id="privacy-modal-title">Choose a Privacy Policy</div>
+                <button class="modal-close" type="button" id="privacy-close" aria-label="Close">×</button>
+            </div>
+            <div class="modal-body">
+                <a class="app-option" href="https://bytedancedev.xyz/SmartTipCalculator-PrivacyPolicy.html" target="_blank" rel="noopener" id="privacy-stc">
+                    <div class="app-option-icon stc-icon">
+                        <img src="logo.png" alt="" onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
+                    </div>
+                    <div>
+                        <div class="app-option-title">Smart Tip Calculator</div>
+                        <div class="app-option-desc">View privacy policy in a new tab</div>
+                    </div>
+                </a>
+                <a class="app-option" href="https://bytedancedev.xyz/SmartLoanPayoffCalculator-PrivacyPolicy.html" target="_blank" rel="noopener" id="privacy-slpc">
+                    <div class="app-option-icon slpc-icon">
+                        <img src="loan-logo.svg" alt="" onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
+                    </div>
+                    <div>
+                        <div class="app-option-title">Smart Loan Payoff Calculator</div>
+                        <div class="app-option-desc">View privacy policy in a new tab</div>
+                    </div>
+                </a>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" type="button" id="privacy-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Smooth scrolling
@@ -437,6 +652,57 @@
                 header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
             }
         });
+
+        // Privacy Policy Modal logic
+        (function () {
+            const openBtn = document.getElementById('privacy-link');
+            const overlay = document.getElementById('privacy-modal');
+            const closeBtn = document.getElementById('privacy-close');
+            const cancelBtn = document.getElementById('privacy-cancel');
+            const firstFocusable = document.getElementById('privacy-stc');
+
+            let lastFocused = null;
+
+            function openModal() {
+                lastFocused = document.activeElement;
+                overlay.classList.add('active');
+                overlay.setAttribute('aria-hidden', 'false');
+                setTimeout(() => {
+                    try { firstFocusable && firstFocusable.focus(); } catch (e) {}
+                }, 0);
+                document.addEventListener('keydown', onKeydown);
+            }
+
+            function closeModal() {
+                overlay.classList.remove('active');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.removeEventListener('keydown', onKeydown);
+                if (lastFocused && typeof lastFocused.focus === 'function') {
+                    lastFocused.focus();
+                }
+            }
+
+            function onKeydown(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            }
+
+            // Click outside to close
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) {
+                    closeModal();
+                }
+            });
+
+            openBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            cancelBtn.addEventListener('click', closeModal);
+        })();
     </script>
 </body>
 </html>
