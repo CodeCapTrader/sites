@@ -107,6 +107,13 @@
             margin: 20px 0;
         }
 
+        .important-box {
+            background-color: #e8f4f8;
+            border: 2px solid #0066cc;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
         .contact-box {
             background-color: #f5f5f5;
             border: 1px solid #ddd;
@@ -125,6 +132,17 @@
         }
 
         .email-link:hover {
+            color: #004499;
+            border-bottom-color: #004499;
+        }
+
+        .external-link {
+            color: #0066cc;
+            text-decoration: none;
+            border-bottom: 1px dotted #0066cc;
+        }
+
+        .external-link:hover {
             color: #004499;
             border-bottom-color: #004499;
         }
@@ -197,7 +215,7 @@
                 border-bottom: 2px solid #000;
             }
 
-            .info-box, .warning-box, .contact-box {
+            .info-box, .warning-box, .important-box, .contact-box {
                 border: 1px solid #000;
             }
         }
@@ -208,7 +226,7 @@
         <div class="container">
             <h1>Smart Loan Payoff Calculator</h1>
             <p class="subtitle">Privacy Policy</p>
-            <p class="last-updated">Last updated: November 4, 2025</p>
+            <p class="last-updated">Last updated: November 11, 2025</p>
         </div>
     </header>
 
@@ -218,6 +236,7 @@
                 <h2>Overview</h2>
                 <p>This Privacy Policy applies globally to Smart Loan Payoff Calculator (the "App"). The App runs entirely on-device. We do not upload your entered data (e.g., loan amounts, payment scenarios, calculations) to our servers.</p>
                 <p>Your privacy is important to us. This policy explains what information we collect, how we use it, and your rights regarding your data.</p>
+                <p>The App displays advertisements provided by Google AdMob. We only serve non-personalized ads that do not use your personal data for ad targeting. Please see the "Advertising" section below for detailed information.</p>
             </section>
 
             <section id="data-not-collected">
@@ -250,30 +269,177 @@
                     <li>All calculations are performed locally</li>
                     <li>No cloud synchronization or backup to our servers</li>
                     <li>Data is only accessible on your device</li>
+                    <li>We do NOT use your data for AI training, machine learning, or algorithm development</li>
+                    <li>We do NOT share your data with any third parties for research or analytics purposes</li>
                 </ul>
                 <p>Your data remains private and under your control at all times.</p>
             </section>
 
+            <section id="advertising">
+                <h2>Advertising and Non-Personalized Ads</h2>
+                <p>The App displays advertisements to support free access to all features. We partner with Google AdMob to serve ads.</p>
+                
+                <div class="important-box">
+                    <h3>IMPORTANT: We Only Use Non-Personalized Ads</h3>
+                    <ul>
+                        <li>We do NOT serve personalized (targeted) ads</li>
+                        <li>Ads are NOT based on your personal information, interests, or behavior</li>
+                        <li>We do NOT track your activity across apps or websites for advertising</li>
+                        <li>We do NOT create advertising profiles about you</li>
+                    </ul>
+                </div>
+
+                <h3>Non-personalized ads are based on:</h3>
+                <ul>
+                    <li>Contextual information (the content you're currently viewing)</li>
+                    <li>General location (country/region level, derived from IP address)</li>
+                    <li>Time of day and language settings</li>
+                </ul>
+
+                <h3>Information Collected by Google AdMob:</h3>
+                <p>Google AdMob may automatically collect certain technical information to serve and measure ads:</p>
+                <ul>
+                    <li><strong>Device information:</strong> Device model, operating system version, screen size</li>
+                    <li><strong>Ad interaction data:</strong> Whether an ad was viewed or clicked</li>
+                    <li><strong>General location:</strong> Approximate location based on IP address (country/city level only)</li>
+                    <li><strong>Technical identifiers:</strong> IP address, advertising identifier (IDFA on iOS)</li>
+                    <li><strong>App usage:</strong> App name, App Store ID, session information</li>
+                </ul>
+
+                <h3>This information is used solely for:</h3>
+                <ul>
+                    <li>Serving non-personalized ads appropriate to your region</li>
+                    <li>Measuring ad performance and detecting fraud</li>
+                    <li>Complying with legal requirements</li>
+                </ul>
+
+                <h3>Your Advertising Identifier (IDFA):</h3>
+                <p>iOS provides an advertising identifier (IDFA) that can be used for advertising purposes. Even though we only serve non-personalized ads, AdMob may collect this identifier for fraud prevention and measurement.</p>
+                <p><strong>You can control IDFA usage:</strong></p>
+                <ul>
+                    <li>Go to iPhone Settings &gt; Privacy &amp; Security &gt; Tracking</li>
+                    <li>Toggle off "Allow Apps to Request to Track"</li>
+                    <li>Or, go to Settings &gt; Privacy &amp; Security &gt; Apple Advertising</li>
+                    <li>Toggle off "Personalized Ads"</li>
+                </ul>
+
+                <h3>For more information about Google's advertising practices, please review:</h3>
+                <ul>
+                    <li>Google's Privacy Policy: <a href="https://policies.google.com/privacy" class="external-link" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></li>
+                    <li>AdMob's Privacy Information: <a href="https://support.google.com/admob/answer/6128543" class="external-link" target="_blank" rel="noopener noreferrer">https://support.google.com/admob/answer/6128543</a></li>
+                    <li>How Google uses data: <a href="https://policies.google.com/technologies/partner-sites" class="external-link" target="_blank" rel="noopener noreferrer">https://policies.google.com/technologies/partner-sites</a></li>
+                </ul>
+
+                <h3>Do Not Track (DNT) and Tracking Prevention:</h3>
+                <p>We respect your privacy choices:</p>
+                <ul>
+                    <li>We do NOT track users across apps or websites</li>
+                    <li>We do NOT respond to browser "Do Not Track" signals (as this is a native mobile app, not a website)</li>
+                    <li>iOS provides tracking controls through Settings &gt; Privacy &amp; Security &gt; Tracking</li>
+                    <li>You can limit ad tracking through iOS system settings</li>
+                    <li>We only serve non-personalized ads that do not track your behavior</li>
+                </ul>
+                <p>If you disable tracking in iOS settings, AdMob may still collect limited technical information for ad serving, but it will not be used for cross-app tracking or building advertising profiles.</p>
+            </section>
+
+            <section id="eu-uk-users">
+                <h2>European Union (EU/EEA) and UK Users - Additional Privacy Information</h2>
+                <p>For users in the European Union, European Economic Area, and United Kingdom, we comply with GDPR and ePrivacy Directive requirements.</p>
+
+                <h3>Consent Management Platform (Google User Messaging Platform):</h3>
+                <p>When you first launch the App in an EU/EEA/UK region, you will see a consent dialog powered by Google's User Messaging Platform (UMP SDK). This dialog:</p>
+                <ul>
+                    <li>Informs you about data collection and advertising practices</li>
+                    <li>Allows you to provide or deny consent for data processing</li>
+                    <li>Lets you access detailed privacy information from Google and advertising partners</li>
+                    <li>Enables you to manage your privacy choices at any time</li>
+                </ul>
+
+                <h3>Your Consent Choices:</h3>
+                <p>You can choose to:</p>
+                <ul>
+                    <li><strong>Accept:</strong> Allow non-personalized ads with the data collection described above</li>
+                    <li><strong>Manage Preferences:</strong> View and configure specific data processing purposes</li>
+                    <li><strong>Decline:</strong> Ads will still be shown, but with minimal data collection</li>
+                </ul>
+                <p><strong>To update your consent choices later:</strong></p>
+                <ul>
+                    <li>Open App Settings &gt; Privacy &amp; Consent</li>
+                    <li>Select "Manage Ad Consent" to review and change your preferences</li>
+                </ul>
+
+                <h3>Legal Basis for Processing:</h3>
+                <ul>
+                    <li><strong>Consent:</strong> We process advertising-related data based on your consent (GDPR Art. 6(1)(a))</li>
+                    <li><strong>Legitimate Interest:</strong> Technical data for fraud prevention and service delivery (GDPR Art. 6(1)(f))</li>
+                </ul>
+
+                <h3>Your GDPR Rights:</h3>
+                <p>Under GDPR, you have the right to:</p>
+                <ul>
+                    <li>Access your data</li>
+                    <li>Rectify inaccurate data</li>
+                    <li>Erase your data ("right to be forgotten")</li>
+                    <li>Restrict or object to processing</li>
+                    <li>Data portability</li>
+                    <li>Withdraw consent at any time</li>
+                    <li>Lodge a complaint with your supervisory authority</li>
+                </ul>
+                <p><strong>To exercise these rights regarding advertising data collected by Google, visit:</strong></p>
+                <ul>
+                    <li>Google's My Activity: <a href="https://myactivity.google.com" class="external-link" target="_blank" rel="noopener noreferrer">https://myactivity.google.com</a></li>
+                    <li>Google's Ad Settings: <a href="https://adssettings.google.com" class="external-link" target="_blank" rel="noopener noreferrer">https://adssettings.google.com</a></li>
+                </ul>
+
+                <h3>Data Processing Agreements:</h3>
+                <p>Google acts as a data processor on our behalf. Google has committed to GDPR compliance and has appropriate data processing agreements in place.</p>
+
+                <h3>Automated Decision-Making and Profiling:</h3>
+                <p>We do NOT engage in automated decision-making or profiling that produces legal effects or similarly significantly affects you. The App:</p>
+                <ul>
+                    <li>Does NOT make automated decisions about your creditworthiness</li>
+                    <li>Does NOT create user profiles for any purpose</li>
+                    <li>Does NOT use algorithms to make decisions affecting your rights</li>
+                    <li>Only performs mathematical calculations based on data you manually enter</li>
+                </ul>
+                <p>All calculations are simple mathematical formulas for informational purposes only.</p>
+            </section>
+
             <section id="data-sharing">
                 <h2>Data Sharing</h2>
-                <p>Content is only shared when you actively use the system share functionality:</p>
+                <p>Your loan calculation data is never shared with third parties. Content is only shared when you actively use the system share functionality:</p>
                 <ul>
                     <li>Using iOS share sheet to export calculations or screenshots</li>
                     <li>Exporting payment schedules as PDF or CSV files</li>
                 </ul>
                 <p>In these cases, Apple's and the receiving third party's terms and privacy policies apply. We have no control over how third-party apps or services handle shared data.</p>
-                <p><strong>We do not automatically share, sell, or transfer your data to any third parties.</strong></p>
+
+                <h3>Advertising Partners:</h3>
+                <p>We share limited technical information with Google AdMob for the sole purpose of serving non-personalized ads and measuring ad performance. This includes:</p>
+                <ul>
+                    <li>Device information and technical identifiers</li>
+                    <li>Ad interaction data</li>
+                    <li>General location (IP-based)</li>
+                </ul>
+                <p><strong>We do NOT share your financial data, loan information, or any personal calculation details with advertising partners.</strong></p>
+                <p>Google processes this information in accordance with their privacy policy. Google may store and process this data in countries outside your region, including the United States, subject to appropriate safeguards under applicable data protection laws.</p>
             </section>
 
             <section id="third-party">
                 <h2>Third-Party Policies and Responsibility</h2>
                 <p>When you:</p>
                 <ul>
+                    <li>View advertisements served by Google AdMob</li>
                     <li>Open external links (e.g., App Store for ratings/reviews)</li>
                     <li>Use third-party services or apps to receive shared data</li>
                     <li>Access external websites from the App</li>
                 </ul>
-                <p>Those third parties may collect or process information under their own policies. Please review and comply with the respective terms and privacy policies of Apple, and any third-party apps or websites you interact with.</p>
+                <p>Those third parties may collect or process information under their own policies. Please review and comply with the respective terms and privacy policies of:</p>
+                <ul>
+                    <li>Google/AdMob: <a href="https://policies.google.com/privacy" class="external-link" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></li>
+                    <li>Apple: <a href="https://www.apple.com/legal/privacy" class="external-link" target="_blank" rel="noopener noreferrer">https://www.apple.com/legal/privacy</a></li>
+                    <li>Any third-party apps or websites you interact with</li>
+                </ul>
                 <p><strong>We are not responsible for the privacy practices of third parties.</strong></p>
             </section>
 
@@ -290,19 +456,41 @@
                     <li>Restrict processing</li>
                     <li>Object to processing</li>
                     <li>Data portability</li>
+                    <li>Withdraw consent at any time (for advertising data)</li>
                 </ul>
-                <p>Since all data is stored locally on your device, you can exercise these rights directly through the App by managing or deleting your data in Settings.</p>
+                <p>Since all calculation data is stored locally on your device, you can exercise these rights directly through the App by managing or deleting your data in Settings.</p>
+                <p>For advertising-related data collected by Google AdMob, you can exercise your rights through:</p>
+                <ul>
+                    <li>The consent management dialog (available in App Settings)</li>
+                    <li>Google's privacy controls: <a href="https://myaccount.google.com/privacy" class="external-link" target="_blank" rel="noopener noreferrer">https://myaccount.google.com/privacy</a></li>
+                    <li>Contacting us at the email address provided below</li>
+                </ul>
 
                 <h3>United States (CCPA/CPRA/CPA/UCPA/VCDPA, etc.)</h3>
-                <p>We do not "sell" or "share" personal information for cross-context behavioral advertising.</p>
+                <p>We do not "sell" or "share" personal information for cross-context behavioral advertising. We only serve non-personalized ads.</p>
                 <p>California residents and residents of other states with privacy laws may have rights to:</p>
                 <ul>
                     <li>Know what personal information is collected</li>
                     <li>Access and delete personal information</li>
                     <li>Opt-out of sales/sharing (not applicable as we don't sell data)</li>
+                    <li>Limit the use of sensitive personal information</li>
                     <li>Non-discrimination for exercising privacy rights</li>
                 </ul>
-                <p>Contact us using the information below to exercise these rights.</p>
+                <p><strong>Categories of information collected by our advertising partner (Google AdMob):</strong></p>
+                <ul>
+                    <li>Identifiers (IDFA, IP address)</li>
+                    <li>Device information (model, OS version)</li>
+                    <li>Internet/network activity (ad interactions)</li>
+                    <li>Geolocation data (general, city-level)</li>
+                </ul>
+                <p>This information is used only for serving non-personalized ads and fraud prevention.</p>
+                <p>To exercise your California privacy rights or limit data use, contact us using the information below.</p>
+
+                <h3>California "Shine the Light" Law:</h3>
+                <p>Under California Civil Code Section 1798.83, California residents have the right to request information about the disclosure of personal information to third parties for direct marketing purposes. Since we do not share personal information with third parties for their direct marketing purposes, this law does not apply to our App.</p>
+
+                <h3>Nevada Privacy Rights:</h3>
+                <p>Nevada residents: We do not sell covered information as defined under Nevada law. If you have questions, contact us at the email address provided below.</p>
 
                 <h3>Other Regions (Brazil LGPD, Canada PIPEDA, Japan APPI, Korea PIPA, Singapore PDPA, China PIPL, India DPDP, etc.)</h3>
                 <p>We follow core privacy principles including:</p>
@@ -319,7 +507,9 @@
 
             <section id="data-retention">
                 <h2>Data Retention and Deletion</h2>
-                <p>Your data remains on your device until you choose to delete it:</p>
+                
+                <h3>Your Financial Data:</h3>
+                <p>Your loan calculation data remains on your device until you choose to delete it:</p>
                 <ul>
                     <li>Delete individual scenarios or comparisons within the App</li>
                     <li>Use "Delete All Data" in Settings to clear all saved data</li>
@@ -329,16 +519,30 @@
                     <p><strong>Important:</strong> When you delete data or uninstall the App, all locally stored information is permanently removed from your device. This action cannot be undone.</p>
                 </div>
                 <p>We do not retain copies of your data on any servers.</p>
+
+                <h3>Advertising Data Retention:</h3>
+                <p>Technical information collected by Google AdMob is retained according to Google's data retention policies:</p>
+                <ul>
+                    <li>Ad interaction data: Retained for up to 2 years for fraud prevention and analytics</li>
+                    <li>Device identifiers: Retained for the duration of ad serving and measurement purposes</li>
+                    <li>Log data: Retained for up to 90 days for operational purposes</li>
+                </ul>
+                <p>Google's data retention practices comply with applicable privacy laws, including GDPR requirements for data minimization. You can manage or delete advertising data through:</p>
+                <ul>
+                    <li>Google's privacy controls: <a href="https://myaccount.google.com/data-and-privacy" class="external-link" target="_blank" rel="noopener noreferrer">https://myaccount.google.com/data-and-privacy</a></li>
+                    <li>Google's Ad Settings: <a href="https://adssettings.google.com" class="external-link" target="_blank" rel="noopener noreferrer">https://adssettings.google.com</a></li>
+                    <li>Request deletion by contacting us at the email address below</li>
+                </ul>
             </section>
 
             <section id="children">
                 <h2>Children's Privacy</h2>
                 <p>The App is designed for a general audience and is not directed to children under the age of 13 (or the applicable age of digital consent in your jurisdiction).</p>
                 <p>We do not knowingly collect personal information from children. If you believe we have inadvertently collected information from a child, please:</p>
-                <ul>
+                <ol>
                     <li>Contact us immediately at the email address below</li>
                     <li>Delete the App and all associated data from the device</li>
-                </ul>
+                </ol>
                 <p>Parents and guardians should monitor their children's use of mobile applications.</p>
             </section>
 
@@ -358,11 +562,36 @@
                     <li>Keeping your device's operating system updated</li>
                     <li>Not sharing your device with untrusted individuals</li>
                 </ul>
+
+                <h3>Data Breach Notification:</h3>
+                <p>Since all your financial data is stored locally on your device and never transmitted to our servers, the risk of a data breach from our side is minimal. However:</p>
+                <ul>
+                    <li>If we become aware of any security incident affecting the App itself, we will notify users through in-app notifications or email</li>
+                    <li>For EU/EEA users, we will comply with GDPR Article 33 and 34 requirements for breach notification within 72 hours</li>
+                    <li>You are responsible for protecting your device from unauthorized access</li>
+                    <li>If you lose your device or believe it has been compromised, secure or wipe it immediately using iOS security features</li>
+                </ul>
+                <p>For advertising-related data security concerns, please refer to Google's Security Policy: <a href="https://safety.google/security-privacy/" class="external-link" target="_blank" rel="noopener noreferrer">https://safety.google/security-privacy/</a></p>
             </section>
 
             <section id="international">
                 <h2>International Data Transfers</h2>
-                <p>Since all data processing occurs locally on your device, there are no international data transfers to our servers.</p>
+                <p>Since all calculation data processing occurs locally on your device, there are no international data transfers of your financial information to our servers.</p>
+
+                <h3>Advertising Data Transfers:</h3>
+                <p>Technical information collected by Google AdMob may be transferred to and processed in:</p>
+                <ul>
+                    <li>The United States</li>
+                    <li>Other countries where Google operates data centers</li>
+                </ul>
+                <p>Google complies with applicable data protection frameworks, including:</p>
+                <ul>
+                    <li>EU-U.S. Data Privacy Framework</li>
+                    <li>UK Extension to the EU-U.S. DPF</li>
+                    <li>Swiss-U.S. Data Privacy Framework</li>
+                    <li>Standard Contractual Clauses (SCCs) for GDPR compliance</li>
+                </ul>
+                <p>These frameworks ensure that your data receives adequate protection when transferred outside your region.</p>
                 <p>If you use the system share feature to send data to third-party services, those services may process data in different countries under their own privacy policies.</p>
             </section>
 
