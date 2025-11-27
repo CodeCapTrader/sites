@@ -63,42 +63,6 @@
             display: inline-block;
         }
 
-        /* Navigation */
-        . nav-container {
-            position: sticky;
-            top: 0;
-            background: var(--bg-page);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 100;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .nav {
-            display: flex;
-            padding: 0 0.5rem;
-            white-space: nowrap;
-        }
-
-        .nav::-webkit-scrollbar {
-            display: none;
-        }
-
-        .nav a {
-            flex-shrink: 0;
-            padding: 0.85rem 0.9rem;
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s;
-        }
-
-        . nav a. active {
-            color: var(--accent-color);
-            border-bottom-color: var(--accent-color);
-        }
-
         /* Container */
         .container {
             max-width: 100%;
@@ -151,7 +115,7 @@
         }
 
         .section ul li {
-            padding: 0.4rem 0 0.4rem 1. 5rem;
+            padding: 0.4rem 0 0.4rem 1. 8rem;
             position: relative;
             color: var(--text-secondary);
             line-height: 1.6;
@@ -160,9 +124,11 @@
         .section ul li::before {
             content: '•';
             position: absolute;
-            left: 0. 5rem;
+            left: 0. 6rem;
             color: var(--text-primary);
             font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1. 6;
         }
 
         /* Info Box */
@@ -189,11 +155,19 @@
             margin-bottom: 0;
         }
 
-        . info-box ul {
+        .info-box ul {
             margin-top: 0.5rem;
         }
 
-        .info-box. highlight {
+        .info-box ul li {
+            padding: 0.4rem 0 0.4rem 1.8rem;
+        }
+
+        .info-box ul li::before {
+            left: 0.6rem;
+        }
+
+        . info-box.highlight {
             border-left-color: var(--accent-color);
         }
 
@@ -215,14 +189,14 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 1rem;
-            padding: 0. 75rem 1. 5rem;
+            padding: 0.75rem 1. 5rem;
             border: 2px solid var(--accent-color);
             border-radius: 4px;
             margin: 1rem 0;
         }
 
         .contact-info {
-            margin-top: 1.5rem;
+            margin-top: 1. 5rem;
             text-align: left;
         }
 
@@ -274,7 +248,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
-        .back-to-top. visible {
+        .back-to-top.visible {
             opacity: 1;
             visibility: visible;
         }
@@ -293,9 +267,20 @@
                 font-size: 1.2rem;
             }
 
-            . nav a {
-                padding: 0. 85rem 0.75rem;
-                font-size: 0.8rem;
+            . section ul li {
+                padding-left: 1. 6rem;
+            }
+
+            . section ul li::before {
+                left: 0.4rem;
+            }
+
+            . info-box ul li {
+                padding-left: 1.6rem;
+            }
+
+            .info-box ul li::before {
+                left: 0.4rem;
             }
         }
 
@@ -306,16 +291,27 @@
             }
 
             .section {
-                padding: 2rem 1. 5rem;
+                padding: 2rem 1.5rem;
             }
 
             .header {
                 padding: 2. 5rem 1.5rem 2rem;
             }
 
-            .nav {
-                justify-content: center;
-                padding: 0 1rem;
+            . section ul li {
+                padding-left: 2rem;
+            }
+
+            .section ul li::before {
+                left: 0.7rem;
+            }
+
+            . info-box ul li {
+                padding-left: 2rem;
+            }
+
+            .info-box ul li::before {
+                left: 0.7rem;
             }
         }
 
@@ -334,29 +330,13 @@
         <div class="last-updated">Last Updated: November 27, 2025</div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="nav-container">
-        <div class="nav">
-            <a href="#overview">Overview</a>
-            <a href="#collection">What We Collect</a>
-            <a href="#usage">How We Use Data</a>
-            <a href="#storage">Storage</a>
-            <a href="#sharing">Sharing</a>
-            <a href="#rights">Your Rights</a>
-            <a href="#children">Children</a>
-            <a href="#advertising">Advertising</a>
-            <a href="#legal">Legal Basis</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-
     <!-- Main Content -->
     <main class="container">
         <!-- Overview -->
         <section id="overview" class="section">
             <h2>Overview</h2>
             
-            <p>LoanPrep ("the App", "we", "us") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our iOS application. </p>
+            <p>LoanPrep ("the App", "we", "us") is committed to protecting your privacy.  This Privacy Policy explains how we handle information when you use our iOS application. </p>
 
             <div class="info-box highlight">
                 <div class="info-box-title">Important Notice</div>
@@ -493,7 +473,7 @@
             </div>
 
             <h3>Apple In-App Purchases</h3>
-            <p>When you purchase reports through the App Store, Apple processes the payment and provides us with limited transaction information (transaction ID, product ID) necessary to verify your purchase.  Apple's Privacy Policy governs their handling of payment information.</p>
+            <p>When you purchase reports through the App Store, Apple processes the payment and provides us with limited transaction information (transaction ID, product ID) necessary to verify your purchase. Apple's Privacy Policy governs their handling of payment information.</p>
 
             <h3>No Third-Party Services</h3>
             <ul>
@@ -771,34 +751,13 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Active Navigation Highlighting
-        const sections = document.querySelectorAll('. section');
-        const navLinks = document.querySelectorAll('. nav a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks. forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href'). slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
         // Smooth Scroll for Navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor. addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this. getAttribute('href'));
                 if (target) {
-                    const offsetTop = target.offsetTop - 60;
+                    const offsetTop = target.offsetTop - 20;
                     window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                 }
             });
