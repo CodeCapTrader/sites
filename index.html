@@ -98,6 +98,13 @@
             margin-top: 60px;
         }
 
+        @media (min-width: 1200px) {
+            /* 在更宽的屏幕上自适应第三列 */
+            .apps-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         .app-card {
             background: white;
             border-radius: 20px;
@@ -135,17 +142,16 @@
 
         /* Smart Tip Calculator Icon */
         .stc-icon {
-            background: #BF7A45; /* 与logo主色一致 */
+            background: #BF7A45;
         }
         .stc-icon img {
             width: 76%;
             height: 76%;
             display: block;
-            object-fit: contain;   /* 防止拉伸、完整显示 */
+            object-fit: contain;
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
         }
-        /* 图片加载失败时的兜底视觉 */
         .stc-icon[data-fallback]::after {
             content: "$%";
             color: #F8F1E6;
@@ -171,6 +177,27 @@
             color: #EAF6FF;
             font-weight: 800;
             font-size: 34px;
+            line-height: 1;
+            letter-spacing: 1px;
+        }
+
+        /* LoanPrep Icon */
+        .loanprep-icon {
+            background: #6C5CE7; /* 柔和科技紫 */
+        }
+        .loanprep-icon img {
+            width: 76%;
+            height: 76%;
+            display: block;
+            object-fit: contain;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+        .loanprep-icon[data-fallback]::after {
+            content: "LP";
+            color: #F2EEFF;
+            font-weight: 800;
+            font-size: 38px;
             line-height: 1;
             letter-spacing: 1px;
         }
@@ -263,7 +290,7 @@
             background: #333;
             color: white;
             padding: 40px 0;
-            text-align: center.
+            text-align: center;
         }
 
         .footer-links {
@@ -442,7 +469,6 @@
                 height: 56px !important;
             }
 
-            /* 让位图在移动端也保持良好留白 */
             .app-icon img {
                 width: 70% !important;
                 height: 70% !important;
@@ -504,7 +530,6 @@
                 <!-- Smart Tip Calculator Card -->
                 <div class="app-card smart-tip-card">
                     <div class="app-icon stc-icon">
-                        <!-- 与 index.html 同级的 logo.png；失败时隐藏破图并显示兜底符号 -->
                         <img src="logo.png" alt="Smart Tip Calculator logo" loading="lazy" decoding="async"
                              onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
                     </div>
@@ -539,7 +564,6 @@
                 <!-- Smart Loan Payoff Calculator Card -->
                 <div class="app-card smart-loan-card">
                     <div class="app-icon slpc-icon">
-                        <!-- 使用新的 SVG logo；失败时隐藏破图并显示兜底符号 -->
                         <img src="loan-logo.svg" alt="Smart Loan Payoff Calculator logo" loading="lazy" decoding="async"
                              onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
                     </div>
@@ -566,8 +590,38 @@
                         Make every payment plan smarter, faster, and clearer.
                     </p>
 
+                    <a href="https://apps.apple.com/app/smart-loan-payoff-calculator/id6754951165" class="download-btn" target="_blank" rel="noopener">Download on App Store</a>
+                </div>
+
+                <!-- LoanPrep Card -->
+                <div class="app-card loanprep-card">
+                    <div class="app-icon loanprep-icon">
+                        <img src="loanprep-logo.svg" alt="LoanPrep logo" loading="lazy" decoding="async"
+                             onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
+                    </div>
+                    <h3>LoanPrep – Eligibility Check Tool</h3>
+                    <p class="app-tagline">Your Smart Way to Prepare for Loan Applications</p>
+
+                    <p class="app-description">
+                        Get ready for your loan application with confidence—whether it's a personal loan, salary loan, or online loan. Assess your readiness and organize your documents step by step.
+                    </p>
+
+                    <div class="new-badge">NEW: Three-factor readiness assessment</div>
+
+                    <ul class="features-list">
+                        <li>Evaluate repayment capacity, amount appropriateness, and preparation factors at once</li>
+                        <li>Supports personal loan, salary loan, cooperative loan, and online loan types</li>
+                        <li>Create customizable preparation checklists for each loan type</li>
+                        <li>Visual progress tracking shows your preparation status clearly</li>
+                        <li>Export detailed PDF reports for your records</li>
+                        <li>Simple, educational, and designed to help you prepare with confidence</li>
+                    </ul>
+
+                    <p class="app-description" style="margin-bottom:18px;">
+                        Make every loan application more prepared, organized, and informed.
+                    </p>
                     <!-- 若有商店链接，可在此添加 -->
-                    <!-- <a href="https://apps.apple.com/app/your-loan-app-id" class="download-btn" target="_blank" rel="noopener">Download on App Store</a> -->
+                    <!-- <a href="https://apps.apple.com/app/loanprep-app-id" class="download-btn" target="_blank" rel="noopener">Download on App Store</a> -->
                 </div>
             </div>
         </div>
@@ -588,10 +642,9 @@
         <div class="container">
             <div class="footer-links">
                 <a href="mailto:ByteDanceDev@outlook.com">Support</a>
-                <!-- 改为弹窗选择隐私政策 -->
                 <a href="javascript:void(0)" id="privacy-link" aria-haspopup="dialog" aria-controls="privacy-modal">Privacy Policy</a>
             </div>
-            <p>&copy; @2025 Miao Yu All rights reserved.</p>
+            <p>&copy; 2025 Miao Yu All rights reserved.</p>
         </div>
     </footer>
 
@@ -618,6 +671,15 @@
                     </div>
                     <div>
                         <div class="app-option-title">Smart Loan Payoff Calculator</div>
+                        <div class="app-option-desc">View privacy policy in a new tab</div>
+                    </div>
+                </a>
+                <a class="app-option" href="https://bytedancedev.xyz/LoanPrep-PrivacyPolicy.html" target="_blank" rel="noopener" id="privacy-loanprep">
+                    <div class="app-option-icon loanprep-icon">
+                        <img src="loanprep-logo.svg" alt="" onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
+                    </div>
+                    <div>
+                        <div class="app-option-title">LoanPrep</div>
                         <div class="app-option-desc">View privacy policy in a new tab</div>
                     </div>
                 </a>
@@ -659,6 +721,7 @@
             const overlay = document.getElementById('privacy-modal');
             const closeBtn = document.getElementById('privacy-close');
             const cancelBtn = document.getElementById('privacy-cancel');
+            // 将第一个 focusable 元素设为第一个隐私链接
             const firstFocusable = document.getElementById('privacy-stc');
 
             let lastFocused = null;
