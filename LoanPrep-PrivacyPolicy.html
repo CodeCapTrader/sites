@@ -6,26 +6,19 @@
     <meta name="description" content="LoanPrep Privacy Policy - Your privacy matters.  Learn how we protect your data.">
     <title>LoanPrep Privacy Policy</title>
     <style>
-        :root {
-            --primary-color: #2563eb;
-            --primary-dark: #1e40af;
-            --secondary-color: #10b981;
-            --accent-color: #f59e0b;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --bg-light: #f9fafb;
-            --bg-white: #ffffff;
-            --border-color: #e5e7eb;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0. 1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        :root {
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --bg-page: #ffffff;
+            --bg-section: #fafafa;
+            --accent-color: #2563eb;
         }
 
         html {
@@ -34,388 +27,251 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.7;
+            line-height: 1.6;
             color: var(--text-primary);
-            background-color: var(--bg-light);
-            font-size: 16px;
+            background-color: var(--bg-page);
+            font-size: 15px;
         }
 
         /* Header */
         . header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 3rem 1. 5rem;
             text-align: center;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
-        }
-
-        . header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3. org/2000/svg"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
+            padding: 2rem 1rem 1. 5rem;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-page);
         }
 
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: var(--text-primary);
         }
 
         .header . subtitle {
-            font-size: 1.1rem;
-            opacity: 0.95;
-            margin-bottom: 1rem;
-        }
-
-        .last-updated {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0. 5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            backdrop-filter: blur(10px);
-        }
-
-        /* Key Highlights */
-        .key-highlights {
-            background: var(--bg-white);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: -2rem auto 2rem;
-            max-width: 1200px;
-            box-shadow: var(--shadow-xl);
-            position: relative;
-            z-index: 2;
-        }
-
-        .highlights-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .highlight-card {
-            text-align: center;
-            padding: 1.5rem;
-            border-radius: 12px;
-            background: var(--bg-light);
-            border: 2px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .highlight-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--primary-color);
-        }
-
-        .highlight-icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .highlight-card h3 {
-            font-size: 1.1rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .highlight-card p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        . last-updated {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            padding: 0.4rem 0. 8rem;
+            background: var(--bg-section);
+            border-radius: 4px;
+            display: inline-block;
         }
 
         /* Navigation */
-        .nav-container {
-            background: var(--bg-white);
+        . nav-container {
             position: sticky;
             top: 0;
+            background: var(--bg-page);
+            border-bottom: 1px solid var(--border-color);
             z-index: 100;
-            box-shadow: var(--shadow-md);
-            margin-bottom: 2rem;
-        }
-
-        .nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
             overflow-x: auto;
-            white-space: nowrap;
             -webkit-overflow-scrolling: touch;
         }
 
-        . nav::-webkit-scrollbar {
-            height: 6px;
+        .nav {
+            display: flex;
+            padding: 0 0.5rem;
+            white-space: nowrap;
         }
 
-        . nav::-webkit-scrollbar-track {
-            background: var(--bg-light);
-        }
-
-        .nav::-webkit-scrollbar-thumb {
-            background: var(--primary-color);
-            border-radius: 3px;
+        .nav::-webkit-scrollbar {
+            display: none;
         }
 
         .nav a {
-            display: inline-block;
-            color: var(--text-secondary);
+            flex-shrink: 0;
+            padding: 0.85rem 0.9rem;
             text-decoration: none;
-            padding: 0. 5rem 1rem;
-            margin-right: 0.5rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
         }
 
-        .nav a:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
+        . nav a. active {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
         }
 
-        /* Main Container */
+        /* Container */
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem 3rem;
+            max-width: 100%;
+            padding: 0;
         }
 
         /* Section */
         .section {
-            background: var(--bg-white);
-            border-radius: 16px;
-            padding: 2. 5rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
+            padding: 1.5rem 1rem;
+            border-bottom: 8px solid var(--bg-section);
         }
 
-        . section:hover {
-            box-shadow: var(--shadow-lg);
+        .section:last-of-type {
+            border-bottom: none;
         }
 
-        .section-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 3px solid var(--primary-color);
-        }
-
-        .section-icon {
-            font-size: 2rem;
-            margin-right: 1rem;
-            color: var(--primary-color);
-        }
-
-        .section h2 {
-            font-size: 1.8rem;
-            color: var(--text-primary);
+        . section h2 {
+            font-size: 1.3rem;
             font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--text-primary);
         }
 
         .section h3 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-top: 1. 5rem;
-            margin-bottom: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
+            margin: 1. 5rem 0 0.75rem;
+            color: var(--text-primary);
         }
 
         .section h4 {
-            font-size: 1.1rem;
-            color: var(--text-primary);
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
+            font-size: 1rem;
             font-weight: 600;
+            margin: 1rem 0 0.5rem;
+            color: var(--text-primary);
         }
 
         .section p {
             margin-bottom: 1rem;
             color: var(--text-secondary);
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
         .section ul {
+            margin: 0.75rem 0;
+            padding-left: 0;
             list-style: none;
-            margin: 1rem 0;
-            padding: 0;
         }
 
         .section ul li {
-            padding: 0.5rem 0 0.5rem 2rem;
+            padding: 0.4rem 0 0.4rem 1. 5rem;
             position: relative;
             color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         .section ul li::before {
-            content: '✓';
+            content: '•';
             position: absolute;
-            left: 0;
-            color: var(--secondary-color);
+            left: 0. 5rem;
+            color: var(--text-primary);
             font-weight: bold;
-            font-size: 1.2rem;
         }
 
-        /* Info Boxes */
+        /* Info Box */
         .info-box {
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            border-left: 4px solid var(--primary-color);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-        }
-
-        .info-box. warning {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            border-left-color: var(--accent-color);
-        }
-
-        .info-box.success {
-            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
-            border-left-color: var(--secondary-color);
-        }
-
-        .info-box.important {
-            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-            border-left-color: #ef4444;
+            background: var(--bg-section);
+            border-left: 3px solid var(--text-primary);
+            padding: 1rem;
+            margin: 1rem 0;
         }
 
         .info-box-title {
             font-weight: 700;
             margin-bottom: 0.5rem;
+            font-size: 0.95rem;
             color: var(--text-primary);
-            font-size: 1.1rem;
         }
 
-        . info-box p {
+        .info-box p {
             margin-bottom: 0.5rem;
+            font-size: 0.9rem;
         }
 
         .info-box p:last-child {
             margin-bottom: 0;
         }
 
-        /* Contact Section */
-        .contact-card {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 2. 5rem;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: var(--shadow-xl);
+        . info-box ul {
+            margin-top: 0.5rem;
         }
 
-        .contact-card h2 {
-            color: white;
-            margin-bottom: 1rem;
+        .info-box. highlight {
+            border-left-color: var(--accent-color);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--bg-section);
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            border-bottom: none;
+            text-align: center;
         }
 
         .contact-email {
             display: inline-block;
-            background: white;
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border-radius: 8px;
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            padding: 0. 75rem 1. 5rem;
+            border: 2px solid var(--accent-color);
+            border-radius: 4px;
             margin: 1rem 0;
-            transition: all 0.3s ease;
         }
 
-        . contact-email:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+        .contact-info {
+            margin-top: 1.5rem;
             text-align: left;
         }
 
         .contact-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
+            margin-bottom: 1. 25rem;
         }
 
-        .contact-item h4 {
-            color: white;
-            margin-bottom: 0.5rem;
+        . contact-item h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
         }
 
         .contact-item p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            line-height: 1.5;
         }
 
         /* Footer */
         .footer {
             background: var(--text-primary);
-            color: white;
+            color: #ffffff;
             text-align: center;
-            padding: 2rem 1.5rem;
-            margin-top: 3rem;
+            padding: 1.5rem 1rem;
         }
 
         .footer p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0. 5rem;
+            font-size: 0.85rem;
+            opacity: 0.9;
         }
 
-        .footer-divider {
-            width: 60px;
-            height: 3px;
-            background: var(--primary-color);
-            margin: 1rem auto;
-            border-radius: 2px;
-        }
-
-        /* Back to Top Button */
+        /* Back to Top */
         .back-to-top {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--primary-color);
+            bottom: 1. 5rem;
+            right: 1. 5rem;
+            width: 44px;
+            height: 44px;
+            background: var(--text-primary);
             color: white;
-            width: 50px;
-            height: 50px;
+            border: none;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 1.2rem;
             cursor: pointer;
-            box-shadow: var(--shadow-lg);
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
+            transition: opacity 0.3s, visibility 0.3s;
             z-index: 1000;
-            border: none;
-            font-size: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
         .back-to-top. visible {
@@ -423,134 +279,60 @@
             visibility: visible;
         }
 
-        .back-to-top:hover {
-            background: var(--primary-dark);
-            transform: translateY(-5px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.8rem;
-            }
-
-            .header .subtitle {
-                font-size: 1rem;
-            }
-
-            .key-highlights {
-                margin: -1rem 1rem 1rem;
-                padding: 1.5rem;
-            }
-
-            .highlights-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .section {
-                padding: 1.5rem;
-            }
-
-            .section h2 {
-                font-size: 1.5rem;
-            }
-
-            .nav a {
-                font-size: 0.85rem;
-                padding: 0.4rem 0.8rem;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .back-to-top {
-                width: 45px;
-                height: 45px;
-                bottom: 1rem;
-                right: 1rem;
-            }
-        }
-
-        /* Print Styles */
-        @media print {
-            . nav-container,
-            .back-to-top {
-                display: none;
-            }
-
-            .section {
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
-
+        /* Responsive adjustments */
+        @media (max-width: 375px) {
             body {
-                background: white;
+                font-size: 14px;
+            }
+
+            .header h1 {
+                font-size: 1.3rem;
+            }
+
+            . section h2 {
+                font-size: 1.2rem;
+            }
+
+            . nav a {
+                padding: 0. 85rem 0.75rem;
+                font-size: 0.8rem;
             }
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px;
+                margin: 0 auto;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+
+            .section {
+                padding: 2rem 1. 5rem;
+            }
+
+            .header {
+                padding: 2. 5rem 1.5rem 2rem;
+            }
+
+            .nav {
+                justify-content: center;
+                padding: 0 1rem;
             }
         }
 
-        . section {
-            animation: fadeInUp 0.6s ease-out;
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 900px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="header-content">
-            <h1>🛡️ LOANPREP PRIVACY POLICY</h1>
-            <p class="subtitle">Your Privacy Matters to Us</p>
-            <div class="last-updated">Last Updated: November 27, 2025</div>
-        </div>
+        <h1>LOANPREP PRIVACY POLICY</h1>
+        <p class="subtitle">Your Privacy Matters</p>
+        <div class="last-updated">Last Updated: November 27, 2025</div>
     </header>
-
-    <!-- Key Highlights -->
-    <div class="container">
-        <div class="key-highlights">
-            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 0.5rem;">🔐 Your Privacy, Protected</h2>
-            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 1rem;">LoanPrep is designed with privacy at its core. Here's what makes us different:</p>
-            <div class="highlights-grid">
-                <div class="highlight-card">
-                    <div class="highlight-icon">📱</div>
-                    <h3>Local Storage</h3>
-                    <p>Your data stays on your device</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon">☁️</div>
-                    <h3>No Cloud Sync</h3>
-                    <p>No external servers storing your info</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon">🚫</div>
-                    <h3>No Tracking</h3>
-                    <p>We don't track or profile you</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon">🎮</div>
-                    <h3>Full Control</h3>
-                    <p>Delete your data anytime</p>
-                </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon">🔍</div>
-                    <h3>Transparent</h3>
-                    <p>Clear about what we collect</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Navigation -->
     <nav class="nav-container">
@@ -558,30 +340,27 @@
             <a href="#overview">Overview</a>
             <a href="#collection">What We Collect</a>
             <a href="#usage">How We Use Data</a>
-            <a href="#storage">Data Storage</a>
-            <a href="#sharing">Data Sharing</a>
+            <a href="#storage">Storage</a>
+            <a href="#sharing">Sharing</a>
             <a href="#rights">Your Rights</a>
-            <a href="#children">Children's Privacy</a>
+            <a href="#children">Children</a>
             <a href="#advertising">Advertising</a>
             <a href="#legal">Legal Basis</a>
-            <a href="#contact">Contact Us</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="container">
-        <!-- Overview Section -->
+        <!-- Overview -->
         <section id="overview" class="section">
-            <div class="section-header">
-                <span class="section-icon">📋</span>
-                <h2>Overview</h2>
-            </div>
+            <h2>Overview</h2>
             
             <p>LoanPrep ("the App", "we", "us") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our iOS application. </p>
 
-            <div class="info-box important">
-                <div class="info-box-title">⚠️ Important Notice</div>
-                <p><strong>LoanPrep is a local tool application that operates entirely on your device. </strong> We do not collect, transmit, or store your personal information on external servers. </p>
+            <div class="info-box highlight">
+                <div class="info-box-title">Important Notice</div>
+                <p>LoanPrep is a local tool application that operates entirely on your device. We do not collect, transmit, or store your personal information on external servers. </p>
             </div>
 
             <h3>Key Principles</h3>
@@ -596,12 +375,9 @@
 
         <!-- Information We Collect -->
         <section id="collection" class="section">
-            <div class="section-header">
-                <span class="section-icon">📊</span>
-                <h2>Information We Collect</h2>
-            </div>
+            <h2>Information We Collect</h2>
 
-            <p>LoanPrep is designed to operate locally on your device. We collect and process only the information necessary to provide our services:</p>
+            <p>LoanPrep operates locally on your device.  We collect only the information necessary to provide our services:</p>
 
             <h3>Assessment Information</h3>
             <ul>
@@ -630,9 +406,9 @@
                 <li>Purchase date</li>
             </ul>
 
-            <div class="info-box success">
-                <div class="info-box-title">✅ What We DON'T Collect</div>
-                <ul style="margin-top: 0.5rem;">
+            <div class="info-box">
+                <div class="info-box-title">What We DON'T Collect</div>
+                <ul>
                     <li>Your name or email address</li>
                     <li>Contact information</li>
                     <li>Precise location data</li>
@@ -645,19 +421,16 @@
 
         <!-- How We Use Your Information -->
         <section id="usage" class="section">
-            <div class="section-header">
-                <span class="section-icon">⚙️</span>
-                <h2>How We Use Your Information</h2>
-            </div>
+            <h2>How We Use Your Information</h2>
 
             <div class="info-box">
-                <div class="info-box-title">💡 All Processing is Local</div>
+                <div class="info-box-title">All Processing is Local</div>
                 <p>All data processing happens locally on your device. No information is sent to external servers. </p>
             </div>
 
             <h3>Provide Core Features</h3>
             <ul>
-                <li>Generate loan preparation assessment reports using automated analysis</li>
+                <li>Generate loan preparation assessment reports</li>
                 <li>Create preparation checklists based on your inputs</li>
                 <li>Track your progress and activities</li>
                 <li>Manage points and daily check-in features</li>
@@ -671,30 +444,25 @@
                 <li>Verify entitlements for paid features</li>
             </ul>
 
-            <div class="info-box important">
-                <div class="info-box-title">🚫 We Do NOT Use Your Information For</div>
-                <ul style="margin-top: 0. 5rem;">
-                    <li>Advertising or marketing profiling</li>
-                    <li>Sharing with third parties</li>
-                    <li>Cross-app tracking</li>
-                    <li>Building user profiles on servers</li>
-                    <li>Any purpose beyond providing the tool's core functionality</li>
-                </ul>
-            </div>
+            <h3>We Do NOT Use Your Information For</h3>
+            <ul>
+                <li>Advertising or marketing profiling</li>
+                <li>Sharing with third parties</li>
+                <li>Cross-app tracking</li>
+                <li>Building user profiles on servers</li>
+                <li>Any purpose beyond core functionality</li>
+            </ul>
         </section>
 
         <!-- Data Storage & Security -->
         <section id="storage" class="section">
-            <div class="section-header">
-                <span class="section-icon">🔒</span>
-                <h2>Data Storage & Security</h2>
-            </div>
+            <h2>Data Storage & Security</h2>
 
             <h3>Local Storage</h3>
             <p>All your data is stored locally on your device using iOS secure storage mechanisms (UserDefaults and local JSON files).  Your data never leaves your device except as described below for purchases.</p>
 
             <h3>iCloud Backup</h3>
-            <p>If you have iCloud Backup enabled, your iOS device may automatically backup LoanPrep data as part of your device backup. You can manage this in your iOS Settings → [Your Name] → iCloud → Manage Storage.</p>
+            <p>If you have iCloud Backup enabled, your iOS device may automatically backup LoanPrep data as part of your device backup.  You can manage this in your iOS Settings → [Your Name] → iCloud → Manage Storage.</p>
 
             <h3>Security Measures</h3>
             <ul>
@@ -704,9 +472,9 @@
                 <li>Regular security reviews and updates</li>
             </ul>
 
-            <div class="info-box warning">
-                <div class="info-box-title">🔐 Your Responsibility</div>
-                <ul style="margin-top: 0.5rem;">
+            <div class="info-box">
+                <div class="info-box-title">Your Responsibility</div>
+                <ul>
                     <li>Keep your device secure with a strong passcode</li>
                     <li>Enable Face ID or Touch ID</li>
                     <li>Keep iOS updated</li>
@@ -717,18 +485,15 @@
 
         <!-- Data Sharing & Transfers -->
         <section id="sharing" class="section">
-            <div class="section-header">
-                <span class="section-icon">🤝</span>
-                <h2>Data Sharing & Transfers</h2>
-            </div>
+            <h2>Data Sharing & Transfers</h2>
 
-            <div class="info-box success">
-                <div class="info-box-title">✅ We Do NOT Share Your Data</div>
+            <div class="info-box highlight">
+                <div class="info-box-title">We Do NOT Share Your Data</div>
                 <p>We do not share your data with third parties, data brokers, or advertising networks. </p>
             </div>
 
             <h3>Apple In-App Purchases</h3>
-            <p>When you purchase reports through the App Store, Apple processes the payment and provides us with limited transaction information (transaction ID, product ID) necessary to verify your purchase and provide the service.  Apple's Privacy Policy governs their handling of payment information.</p>
+            <p>When you purchase reports through the App Store, Apple processes the payment and provides us with limited transaction information (transaction ID, product ID) necessary to verify your purchase.  Apple's Privacy Policy governs their handling of payment information.</p>
 
             <h3>No Third-Party Services</h3>
             <ul>
@@ -745,17 +510,14 @@
 
         <!-- Your Privacy Rights -->
         <section id="rights" class="section">
-            <div class="section-header">
-                <span class="section-icon">⚖️</span>
-                <h2>Your Privacy Rights</h2>
-            </div>
+            <h2>Your Privacy Rights</h2>
 
             <p>You have full control over your data.  Depending on your location, you may have legal rights including:</p>
 
             <h3>Access & Control</h3>
             <ul>
-                <li><strong>Access:</strong> View all your data within the app (Profile, History sections)</li>
-                <li><strong>Delete:</strong> Remove all data instantly via Profile → Data Management → Delete All Data</li>
+                <li><strong>Access:</strong> View all your data within the app</li>
+                <li><strong>Delete:</strong> Remove all data via Profile → Data Management → Delete All Data</li>
                 <li><strong>Export:</strong> Contact us for data export assistance</li>
                 <li><strong>Correct:</strong> Edit your information directly in the app</li>
             </ul>
@@ -780,20 +542,17 @@
             </ul>
 
             <div class="info-box">
-                <div class="info-box-title">📧 How to Exercise Your Rights</div>
-                <p>Use the in-app <strong>Delete All Data</strong> feature or contact us at <strong>ByteDanceDev@outlook.com</strong> for assistance.</p>
+                <div class="info-box-title">How to Exercise Your Rights</div>
+                <p>Use the in-app Delete All Data feature or contact us at ByteDanceDev@outlook.com for assistance.</p>
             </div>
         </section>
 
         <!-- Children's Privacy -->
         <section id="children" class="section">
-            <div class="section-header">
-                <span class="section-icon">👶</span>
-                <h2>Children's Privacy</h2>
-            </div>
+            <h2>Children's Privacy</h2>
 
-            <div class="info-box warning">
-                <div class="info-box-title">⚠️ Age Restriction</div>
+            <div class="info-box">
+                <div class="info-box-title">Age Restriction</div>
                 <p>LoanPrep is not directed to children under 13 years of age (or the minimum age in your jurisdiction, such as 16 in the EEA).</p>
             </div>
 
@@ -805,33 +564,21 @@
             </ul>
 
             <h3>Parental Notice</h3>
-            <p>If you are a parent or guardian and believe your child has provided us with personal information, please use the in-app Delete All Data feature and contact us immediately at ByteDanceDev@outlook.com.</p>
+            <p>If you are a parent or guardian and believe your child has provided us with personal information, please use the in-app Delete All Data feature and contact us immediately at ByteDanceDev@outlook. com.</p>
 
-            <h3>Age Restriction</h3>
             <p>Users under 18 should use this app only with parental or guardian involvement.</p>
         </section>
 
         <!-- Advertising & Tracking -->
         <section id="advertising" class="section">
-            <div class="section-header">
-                <span class="section-icon">📢</span>
-                <h2>Advertising & Tracking</h2>
+            <h2>Advertising & Tracking</h2>
+
+            <div class="info-box highlight">
+                <div class="info-box-title">No Advertising or Tracking</div>
+                <p>LoanPrep does NOT include third-party advertising networks, user tracking, cross-app tracking, behavioral advertising, or ad display functionality.</p>
             </div>
 
             <h3>Current Status</h3>
-            <div class="info-box success">
-                <div class="info-box-title">✅ No Advertising or Tracking</div>
-                <p>LoanPrep does NOT include:</p>
-                <ul style="margin-top: 0. 5rem;">
-                    <li>Third-party advertising networks</li>
-                    <li>User tracking or profiling</li>
-                    <li>Cross-app tracking</li>
-                    <li>Behavioral advertising</li>
-                    <li>Ad display functionality</li>
-                </ul>
-            </div>
-
-            <h3>No Ad Features</h3>
             <p>The current version does not contain advertising features or integrations.  All functionality operates locally without external ad services.</p>
 
             <h3>Future Changes</h3>
@@ -846,12 +593,9 @@
 
         <!-- App Store Privacy Labels -->
         <section id="labels" class="section">
-            <div class="section-header">
-                <span class="section-icon">🏷️</span>
-                <h2>App Store Privacy Labels</h2>
-            </div>
+            <h2>App Store Privacy Labels</h2>
 
-            <p>In compliance with Apple's App Store privacy requirements, here's what we report:</p>
+            <p>In compliance with Apple's App Store privacy requirements:</p>
 
             <h3>Data Types We Collect</h3>
 
@@ -882,9 +626,9 @@
                 <li>Purchase history</li>
             </ul>
 
-            <div class="info-box success">
-                <div class="info-box-title">✅ Data NOT Collected</div>
-                <ul style="margin-top: 0.5rem;">
+            <div class="info-box">
+                <div class="info-box-title">Data NOT Collected</div>
+                <ul>
                     <li>Contact information</li>
                     <li>Location data</li>
                     <li>Contacts</li>
@@ -899,10 +643,7 @@
 
         <!-- Legal Basis (GDPR) -->
         <section id="legal" class="section">
-            <div class="section-header">
-                <span class="section-icon">📜</span>
-                <h2>Legal Basis (GDPR)</h2>
-            </div>
+            <h2>Legal Basis (GDPR)</h2>
 
             <p>For users in the European Economic Area, United Kingdom, and Switzerland, our processing is based on:</p>
 
@@ -928,15 +669,12 @@
                 <li>Providing customer support</li>
             </ul>
 
-            <p><strong>Note:</strong> You have the right to object to processing based on legitimate interests. </p>
+            <p>You have the right to object to processing based on legitimate interests. </p>
         </section>
 
         <!-- Third-Party Links -->
         <section id="links" class="section">
-            <div class="section-header">
-                <span class="section-icon">🔗</span>
-                <h2>Third-Party Links</h2>
-            </div>
+            <h2>Third-Party Links</h2>
 
             <p>LoanPrep may contain links to external websites or resources for:</p>
             <ul>
@@ -945,9 +683,9 @@
                 <li>Financial institution information</li>
             </ul>
 
-            <div class="info-box warning">
-                <div class="info-box-title">⚠️ Important</div>
-                <ul style="margin-top: 0.5rem;">
+            <div class="info-box">
+                <div class="info-box-title">Important</div>
+                <ul>
                     <li>We are not responsible for third-party privacy practices</li>
                     <li>Review their privacy policies before providing information</li>
                     <li>External sites are not controlled by us</li>
@@ -958,10 +696,7 @@
 
         <!-- Changes to This Policy -->
         <section id="changes" class="section">
-            <div class="section-header">
-                <span class="section-icon">🔄</span>
-                <h2>Changes to This Policy</h2>
-            </div>
+            <h2>Changes to This Policy</h2>
 
             <p>We may update this Privacy Policy periodically to reflect:</p>
             <ul>
@@ -981,34 +716,30 @@
             <p>If you disagree with changes, you may stop using the app and delete your data.</p>
 
             <div class="info-box">
-                <div class="info-box-title">📅 Version History</div>
-                <p><strong>Current Version:</strong> November 27, 2025</p>
+                <div class="info-box-title">Version History</div>
+                <p>Current Version: November 27, 2025</p>
             </div>
         </section>
 
         <!-- Contact Us -->
-        <section id="contact" class="section">
-            <div class="contact-card">
-                <h2>📬 Contact Us</h2>
-                <p>For questions, concerns, or requests regarding this Privacy Policy or your data:</p>
-                
-                <a href="mailto:ByteDanceDev@outlook.com" class="contact-email">
-                    ✉️ ByteDanceDev@outlook.com
-                </a>
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <p>For questions, concerns, or requests regarding this Privacy Policy or your data:</p>
+            
+            <a href="mailto:ByteDanceDev@outlook.com" class="contact-email">ByteDanceDev@outlook.com</a>
 
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <h4>🤝 We're Here to Help With</h4>
-                        <p>Privacy questions or concerns, data access or deletion requests, exercising your privacy rights, reporting privacy issues, general feedback</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>⏱️ Response Time</h4>
-                        <p>We aim to respond to all inquiries within 30 days</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>🛡️ Data Protection Officer</h4>
-                        <p>For GDPR-related matters, contact us with "Data Protection" in the subject line</p>
-                    </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>We're Here to Help With</h4>
+                    <p>Privacy questions or concerns, data access or deletion requests, exercising your privacy rights, reporting privacy issues, general feedback</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Response Time</h4>
+                    <p>We aim to respond to all inquiries within 30 days</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Data Protection Officer</h4>
+                    <p>For GDPR-related matters, contact us with "Data Protection" in the subject line</p>
                 </div>
             </div>
         </section>
@@ -1017,51 +748,30 @@
     <!-- Footer -->
     <footer class="footer">
         <p><strong>LoanPrep Privacy Policy</strong></p>
-        <div class="footer-divider"></div>
         <p>© 2025 LoanPrep. All rights reserved.</p>
-        <p>Protecting your privacy, one loan at a time.  🛡️</p>
+        <p>Protecting your privacy, one loan at a time.</p>
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        ↑
-    </button>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
     <script>
         // Back to Top Button
         const backToTopButton = document.getElementById('backToTop');
 
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
+            if (window. pageYOffset > 300) {
                 backToTopButton.classList.add('visible');
             } else {
                 backToTopButton.classList.remove('visible');
             }
         });
 
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        backToTopButton. addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this. getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Highlight active section in navigation
+        // Active Navigation Highlighting
         const sections = document.querySelectorAll('. section');
         const navLinks = document.querySelectorAll('. nav a');
 
@@ -1069,18 +779,27 @@
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section. clientHeight;
-                if (pageYOffset >= (sectionTop - 150)) {
-                    current = section. getAttribute('id');
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
                 }
             });
 
-            navLinks.forEach(link => {
-                link. style.background = '';
-                link. style.color = '';
+            navLinks. forEach(link => {
+                link.classList.remove('active');
                 if (link.getAttribute('href'). slice(1) === current) {
-                    link.style.background = 'var(--primary-color)';
-                    link.style.color = 'white';
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor. addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this. getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 60;
+                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                 }
             });
         });
