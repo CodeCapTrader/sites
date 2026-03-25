@@ -5,139 +5,203 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financial Apps for Everyone</title>
     <style>
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --color-brand:    #1a73e8;
+            --color-text:     #1a1d23;
+            --color-muted:    #6b7280;
+            --color-subtle:   #9ca3af;
+            --color-surface:  #ffffff;
+            --color-bg:       #f4f6f9;
+            --color-border:   #e8eaed;
+            --radius-card:    24px;
+            --radius-btn:     999px;
+            --shadow-card:    0 2px 12px rgba(0,0,0,0.07), 0 8px 32px rgba(0,0,0,0.06);
+            --shadow-card-hover: 0 8px 24px rgba(0,0,0,0.10), 0 20px 48px rgba(0,0,0,0.09);
+            --transition-base: 0.22s ease;
+        }
+
+        html { scroll-behavior: smooth; }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            line-height: 1.65;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* Header */
+        /* ── Header ─────────────────────────────── */
         header {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: saturate(180%) blur(12px);
+            -webkit-backdrop-filter: saturate(180%) blur(12px);
+            border-bottom: 1px solid var(--color-border);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            transition: box-shadow var(--transition-base);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 18px 0;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #1a73e8;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--color-brand);
+            letter-spacing: -0.3px;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 32px;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: var(--color-muted);
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 15px;
+            transition: color var(--transition-base);
         }
 
-        .nav-links a:hover {
-            color: #1a73e8;
-        }
+        .nav-links a:hover { color: var(--color-brand); }
 
-        /* Hero Section */
+        /* ── Hero ────────────────────────────────── */
         .hero {
-            margin-top: 80px;
-            padding: 80px 0;
+            margin-top: 65px;
+            padding: 96px 0 88px;
             text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(145deg, #5a6bdb 0%, #7c4fa8 55%, #9b4fbf 100%);
             color: white;
+            position: relative;
+            overflow: hidden;
         }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 20% 60%, rgba(255,255,255,0.07) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 80% 30%, rgba(255,255,255,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero .container { position: relative; }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: clamp(32px, 5vw, 52px);
             margin-bottom: 20px;
-            font-weight: 700;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
         }
 
         .hero p {
-            font-size: 20px;
-            opacity: 0.95;
-            max-width: 680px;
+            font-size: clamp(16px, 2vw, 19px);
+            opacity: 0.92;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.75;
+        }
+
+        /* ── Section Chrome ──────────────────────── */
+        .section-title {
+            text-align: center;
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            color: var(--color-text);
+            margin-bottom: 12px;
+            letter-spacing: -0.4px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 17px;
+            color: var(--color-muted);
+            max-width: 560px;
             margin: 0 auto;
         }
 
-        /* Apps Section */
+        /* ── Apps Section ────────────────────────── */
         .apps {
-            padding: 80px 0;
+            padding: 88px 0;
         }
 
         .apps-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 56px;
         }
 
-        @media (min-width: 1200px) {
+        @media (min-width: 1100px) {
             .apps-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
 
+        /* ── App Card ────────────────────────────── */
         .app-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--color-surface);
+            border-radius: var(--radius-card);
+            padding: 36px 32px 32px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--color-border);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            display: flex;
+            flex-direction: column;
         }
 
         .app-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-card-hover);
         }
 
+        /* push download btn to bottom */
+        .app-card .download-btn {
+            margin-top: auto;
+        }
+
+        /* ── App Icon ────────────────────────────── */
         .app-icon {
-            width: 100px;
-            height: 100px;
-            border-radius: 22px;
-            margin-bottom: 20px;
+            width: 88px;
+            height: 88px;
+            border-radius: 20px;
+            margin-bottom: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.14);
+            flex-shrink: 0;
         }
 
-        /* BuyerShield Icon */
-        .buyershield-icon {
-            background: #27AE60;
-        }
+        /* BuyerShield */
+        .buyershield-icon { background: #27AE60; }
         .buyershield-icon img {
-            width: 76%;
-            height: 76%;
-            display: block;
-            object-fit: contain;
+            width: 76%; height: 76%;
+            display: block; object-fit: contain;
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
         }
@@ -147,15 +211,11 @@
             line-height: 1;
         }
 
-        /* Smart Tip Calculator Icon */
-        .stc-icon {
-            background: #BF7A45;
-        }
+        /* Smart Tip Calculator */
+        .stc-icon { background: #BF7A45; }
         .stc-icon img {
-            width: 76%;
-            height: 76%;
-            display: block;
-            object-fit: contain;
+            width: 76%; height: 76%;
+            display: block; object-fit: contain;
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
         }
@@ -167,15 +227,11 @@
             line-height: 1;
         }
 
-        /* Smart Loan Payoff Calculator Icon */
-        .slpc-icon {
-            background: #2D9CDB;
-        }
+        /* Smart Loan Payoff Calculator */
+        .slpc-icon { background: #2D9CDB; }
         .slpc-icon img {
-            width: 76%;
-            height: 76%;
-            display: block;
-            object-fit: contain;
+            width: 76%; height: 76%;
+            display: block; object-fit: contain;
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
         }
@@ -188,15 +244,11 @@
             letter-spacing: 1px;
         }
 
-        /* LoanPrep Icon */
-        .loanprep-icon {
-            background: #6C5CE7;
-        }
+        /* LoanPrep */
+        .loanprep-icon { background: #6C5CE7; }
         .loanprep-icon img {
-            width: 76%;
-            height: 76%;
-            display: block;
-            object-fit: contain;
+            width: 76%; height: 76%;
+            display: block; object-fit: contain;
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
         }
@@ -209,95 +261,142 @@
             letter-spacing: 1px;
         }
 
+        /* ── Card Typography ─────────────────────── */
         .app-card h3 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #333;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: var(--color-text);
+            letter-spacing: -0.2px;
+            line-height: 1.3;
         }
 
         .app-tagline {
-            color: #666;
-            font-size: 16px;
-            margin-bottom: 20px;
+            color: var(--color-muted);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
         }
 
         .app-description {
-            color: #555;
-            margin-bottom: 20px;
-            line-height: 1.8;
+            color: #4b5563;
+            margin-bottom: 18px;
+            line-height: 1.75;
+            font-size: 15px;
         }
 
+        /* ── Badge ───────────────────────────────── */
         .new-badge {
-            display: inline-block;
-            background: #ffe9d5;
-            color: #8a4b13;
-            padding: 8px 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff4e6;
+            color: #92400e;
+            border: 1px solid #fcd9a0;
+            padding: 6px 14px;
             border-radius: 999px;
             font-weight: 700;
-            margin-bottom: 12px;
+            font-size: 13px;
+            margin-bottom: 14px;
         }
 
+        /* ── Features List ───────────────────────── */
         .features-list {
             list-style: none;
-            margin-bottom: 30px;
+            margin-bottom: 24px;
         }
 
         .features-list li {
-            padding: 8px 0;
-            color: #555;
+            padding: 6px 0;
+            color: #4b5563;
+            font-size: 14.5px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.6;
         }
 
-        .features-list li:before {
+        .features-list li::before {
             content: "✓";
-            color: #34e89e;
-            font-weight: bold;
-            margin-right: 10px;
+            color: #10b981;
+            font-weight: 700;
+            font-size: 13px;
+            margin-top: 2px;
             flex-shrink: 0;
         }
 
+        /* ── Divider inside card ─────────────────── */
+        .card-divider {
+            height: 1px;
+            background: var(--color-border);
+            margin: 20px 0;
+        }
+
+        /* ── Download Button ─────────────────────── */
         .download-btn {
-            display: inline-block;
-            background: #000;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #111827;
             color: white;
-            padding: 15px 30px;
-            border-radius: 30px;
+            padding: 13px 26px;
+            border-radius: var(--radius-btn);
             text-decoration: none;
-            font-weight: 500;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 600;
+            font-size: 14.5px;
+            transition: background var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+            align-self: flex-start;
+        }
+
+        .download-btn::before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+            flex-shrink: 0;
         }
 
         .download-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            background: #1f2937;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.22);
         }
 
-        /* About Section */
+        /* ── About Section ───────────────────���───── */
         .about {
-            padding: 80px 0;
+            padding: 88px 0;
             background: white;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
             text-align: center;
         }
 
         .about h2 {
-            font-size: 36px;
+            font-size: clamp(24px, 3.5vw, 34px);
+            font-weight: 800;
             margin-bottom: 20px;
-            color: #333;
+            color: var(--color-text);
+            letter-spacing: -0.3px;
         }
 
         .about p {
-            font-size: 18px;
-            color: #666;
-            max-width: 800px;
+            font-size: 16px;
+            color: var(--color-muted);
+            max-width: 760px;
             margin: 0 auto;
+            line-height: 1.85;
         }
 
-        /* Footer */
+        /* ── Footer ──────────────────────────────── */
         footer {
-            background: #333;
-            color: white;
-            padding: 40px 0;
+            background: #111827;
+            color: #9ca3af;
+            padding: 48px 0 36px;
             text-align: center;
         }
 
@@ -306,206 +405,171 @@
             justify-content: center;
             gap: 40px;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
-            color: white;
+            color: #d1d5db;
             text-decoration: none;
-            transition: opacity 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color var(--transition-base);
         }
 
-        .footer-links a:hover {
-            opacity: 0.8;
+        .footer-links a:hover { color: #ffffff; }
+
+        footer p {
+            font-size: 13px;
+            color: #6b7280;
         }
 
-        /* Privacy Policy Modal */
+        /* ── Privacy Modal ───────────────────────── */
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.45);
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
             display: none;
             align-items: center;
             justify-content: center;
             padding: 16px;
             z-index: 2000;
         }
-        .modal-overlay.active {
-            display: flex;
-        }
+        .modal-overlay.active { display: flex; }
+
         .modal {
             width: 100%;
-            max-width: 520px;
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            max-width: 500px;
+            background: var(--color-surface);
+            border-radius: 20px;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.22);
             overflow: hidden;
-            transform: translateY(10px);
-            animation: modal-in 0.18s ease-out forwards;
+            transform: translateY(12px) scale(0.98);
+            animation: modal-in 0.2s cubic-bezier(0.34,1.56,0.64,1) forwards;
         }
         @keyframes modal-in {
-            to { transform: translateY(0); }
+            to { transform: translateY(0) scale(1); }
         }
+
         .modal-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 20px;
-            border-bottom: 1px solid #eef0f2;
+            padding: 18px 22px;
+            border-bottom: 1px solid var(--color-border);
         }
         .modal-title {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
-            color: #333;
+            color: var(--color-text);
         }
         .modal-close {
             appearance: none;
             border: 0;
-            background: transparent;
-            color: #666;
-            font-size: 20px;
-            line-height: 1;
-            padding: 6px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        .modal-close:hover {
             background: #f3f4f6;
-            color: #111;
+            color: var(--color-muted);
+            font-size: 18px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background var(--transition-base), color var(--transition-base);
         }
-        .modal-body {
-            padding: 16px 20px 8px 20px;
-        }
+        .modal-close:hover { background: #e5e7eb; color: #111; }
+
+        .modal-body { padding: 16px 20px 8px; }
+
         .app-option {
             display: flex;
             align-items: center;
             gap: 14px;
             text-decoration: none;
             color: inherit;
-            border: 1px solid #e6e8eb;
-            border-radius: 14px;
-            padding: 12px;
-            margin-bottom: 12px;
-            transition: border-color 0.2s, box-shadow 0.2s, transform 0.08s;
-            background: #fff;
+            border: 1.5px solid var(--color-border);
+            border-radius: 16px;
+            padding: 13px 14px;
+            margin-bottom: 10px;
+            transition: border-color var(--transition-base), box-shadow var(--transition-base), transform 0.1s;
+            background: var(--color-surface);
         }
         .app-option:hover {
-            border-color: #1a73e8;
-            box-shadow: 0 6px 18px rgba(26,115,232,0.10);
+            border-color: var(--color-brand);
+            box-shadow: 0 4px 16px rgba(26,115,232,0.12);
             transform: translateY(-1px);
         }
-        .app-option:active {
-            transform: translateY(0);
-        }
+        .app-option:active { transform: translateY(0); }
+
         .app-option-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 12px;
+            width: 48px;
+            height: 48px;
+            border-radius: 11px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             flex: 0 0 auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
         }
         .app-option-icon img {
-            width: 80%;
-            height: 80%;
+            width: 78%; height: 78%;
             object-fit: contain;
             display: block;
         }
-        .app-option-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #222;
-        }
-        .app-option-desc {
-            font-size: 13px;
-            color: #666;
-        }
+        .app-option-title { font-size: 15px; font-weight: 700; color: #1a1d23; }
+        .app-option-desc  { font-size: 12.5px; color: var(--color-muted); margin-top: 1px; }
+
         .modal-footer {
             display: flex;
             justify-content: flex-end;
-            gap: 10px;
-            padding: 12px 20px 18px 20px;
+            padding: 12px 20px 18px;
         }
         .btn {
             appearance: none;
-            border: 1px solid #e5e7eb;
-            background: #fff;
-            color: #111827;
-            padding: 10px 16px;
+            border: 1.5px solid var(--color-border);
+            background: var(--color-surface);
+            color: var(--color-text);
+            padding: 9px 20px;
             border-radius: 10px;
             cursor: pointer;
             font-weight: 600;
-            transition: background 0.2s, box-shadow 0.2s, transform 0.08s;
+            font-size: 14px;
+            transition: background var(--transition-base), box-shadow var(--transition-base);
         }
         .btn:hover {
             background: #f9fafb;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-            transform: translateY(-1px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
         }
 
-        /* Mobile Responsive */
+        /* ── Responsive ──────────────────────────── */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
+            .nav-links { display: none; }
 
             .apps-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 24px;
             }
 
-            .app-card {
-                padding: 30px;
-            }
+            .app-card { padding: 28px 24px; }
 
             .app-icon {
-                width: 80px;
-                height: 80px;
-            }
-
-            .app-icon svg {
-                width: 56px !important;
-                height: 56px !important;
-            }
-
-            .app-icon img {
-                width: 70% !important;
-                height: 70% !important;
+                width: 72px;
+                height: 72px;
+                border-radius: 17px;
             }
 
             .footer-links {
                 flex-direction: column;
-                gap: 20px;
+                gap: 16px;
             }
-        }
-
-        /* Section Title */
-        .section-title {
-            text-align: center;
-            font-size: 42px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 18px;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
         }
     </style>
 </head>
 <body>
+
     <!-- Header -->
     <header>
         <nav class="container">
@@ -533,10 +597,10 @@
         <div class="container">
             <h2 class="section-title">Our Apps</h2>
             <p class="section-subtitle">Carefully crafted tools to help you manage your finances with confidence</p>
-            
+
             <div class="apps-grid">
 
-                <!-- BuyerShield Card (NEW — First Position) -->
+                <!-- BuyerShield Card (First Position) -->
                 <div class="app-card buyershield-card">
                     <div class="app-icon buyershield-icon">
                         <img src="buyershield-logo.svg" alt="BuyerShield logo" loading="lazy" decoding="async"
@@ -558,18 +622,17 @@
                         <li>Generate a ready-to-use negotiation script based on your findings</li>
                         <li>Capture photos and keep all inspection details in one place</li>
                         <li>Supports gas, diesel, hybrid, plug-in hybrid, and electric vehicles</li>
-                        <li>Compare vehicles side by side when deciding between multiple options</li>
                         <li>Export professional PDF inspection reports for sharing or records</li>
                         <li>Works offline during inspections — no signal required</li>
                     </ul>
 
-                    <p class="app-description" style="margin-bottom:18px;">
+                    <div class="card-divider"></div>
+
+                    <p class="app-description" style="margin-bottom:0;">
                         No account required. No data collection. Everything stays on your device.<br>
                         Simple, structured, and designed to help you inspect with confidence.<br>
                         Make every car viewing more organized, informed, and prepared.
                     </p>
-
-                    <!-- Download link to be added when available -->
                 </div>
 
                 <!-- Smart Tip Calculator Card -->
@@ -598,6 +661,8 @@
                         <li>Designed for regions where tipping is part of everyday life</li>
                         <li>Common tipping ranges like 15%–25%+ made simple</li>
                     </ul>
+
+                    <div class="card-divider"></div>
 
                     <p class="app-description" style="margin-bottom:18px;">
                         Make every tip accurate, effortless, and fair.
@@ -631,6 +696,8 @@
                         <li>Simple, accurate, and designed to help you take control of your debt</li>
                     </ul>
 
+                    <div class="card-divider"></div>
+
                     <p class="app-description" style="margin-bottom:18px;">
                         Make every payment plan smarter, faster, and clearer.
                     </p>
@@ -661,6 +728,8 @@
                         <li>Export detailed PDF reports for your records</li>
                         <li>Simple, educational, and designed to help you prepare with confidence</li>
                     </ul>
+
+                    <div class="card-divider"></div>
 
                     <p class="app-description" style="margin-bottom:18px;">
                         Make every loan application more prepared, organized, and informed.
@@ -752,41 +821,35 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
+        // Header scroll shadow
+        window.addEventListener('scroll', function () {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
-                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.10)';
             } else {
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+                header.style.boxShadow = 'none';
             }
         });
 
-        // Privacy Policy Modal logic
+        // Privacy Policy Modal
         (function () {
-            const openBtn = document.getElementById('privacy-link');
-            const overlay = document.getElementById('privacy-modal');
-            const closeBtn = document.getElementById('privacy-close');
-            const cancelBtn = document.getElementById('privacy-cancel');
+            const openBtn       = document.getElementById('privacy-link');
+            const overlay       = document.getElementById('privacy-modal');
+            const closeBtn      = document.getElementById('privacy-close');
+            const cancelBtn     = document.getElementById('privacy-cancel');
             const firstFocusable = document.getElementById('privacy-buyershield');
-
             let lastFocused = null;
 
             function openModal() {
                 lastFocused = document.activeElement;
                 overlay.classList.add('active');
                 overlay.setAttribute('aria-hidden', 'false');
-                setTimeout(() => {
-                    try { firstFocusable && firstFocusable.focus(); } catch (e) {}
-                }, 0);
+                setTimeout(() => { try { firstFocusable && firstFocusable.focus(); } catch (e) {} }, 0);
                 document.addEventListener('keydown', onKeydown);
             }
 
@@ -794,29 +857,13 @@
                 overlay.classList.remove('active');
                 overlay.setAttribute('aria-hidden', 'true');
                 document.removeEventListener('keydown', onKeydown);
-                if (lastFocused && typeof lastFocused.focus === 'function') {
-                    lastFocused.focus();
-                }
+                if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
             }
 
-            function onKeydown(e) {
-                if (e.key === 'Escape') {
-                    closeModal();
-                }
-            }
+            function onKeydown(e) { if (e.key === 'Escape') closeModal(); }
 
-            // Click outside to close
-            overlay.addEventListener('click', (e) => {
-                if (e.target === overlay) {
-                    closeModal();
-                }
-            });
-
-            openBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                openModal();
-            });
-
+            overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+            openBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
             closeBtn.addEventListener('click', closeModal);
             cancelBtn.addEventListener('click', closeModal);
         })();
