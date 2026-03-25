@@ -99,7 +99,6 @@
         }
 
         @media (min-width: 1200px) {
-            /* 在更宽的屏幕上自适应第三列 */
             .apps-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -130,14 +129,22 @@
             overflow: hidden;
         }
 
-        /* Grow Easy Icon (保留但未使用) */
-        .grow-easy-icon {
-            background: #2874E6;
+        /* BuyerShield Icon */
+        .buyershield-icon {
+            background: #27AE60;
         }
-
-        .grow-easy-icon svg {
-            width: 70px;
-            height: 70px;
+        .buyershield-icon img {
+            width: 76%;
+            height: 76%;
+            display: block;
+            object-fit: contain;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+        .buyershield-icon[data-fallback]::after {
+            content: "🛡";
+            font-size: 44px;
+            line-height: 1;
         }
 
         /* Smart Tip Calculator Icon */
@@ -183,7 +190,7 @@
 
         /* LoanPrep Icon */
         .loanprep-icon {
-            background: #6C5CE7; /* 柔和科技紫 */
+            background: #6C5CE7;
         }
         .loanprep-icon img {
             width: 76%;
@@ -247,6 +254,7 @@
             color: #34e89e;
             font-weight: bold;
             margin-right: 10px;
+            flex-shrink: 0;
         }
 
         .download-btn {
@@ -527,6 +535,43 @@
             <p class="section-subtitle">Carefully crafted tools to help you manage your finances with confidence</p>
             
             <div class="apps-grid">
+
+                <!-- BuyerShield Card (NEW — First Position) -->
+                <div class="app-card buyershield-card">
+                    <div class="app-icon buyershield-icon">
+                        <img src="buyershield-logo.svg" alt="BuyerShield logo" loading="lazy" decoding="async"
+                             onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
+                    </div>
+                    <h3>BuyerShield – Used Car Inspection Tool</h3>
+                    <p class="app-tagline">Your Smart Way to Evaluate a Used Car Before You Buy</p>
+
+                    <p class="app-description">
+                        Prepare for any car viewing with clarity—whether you're buying from a private seller or a dealership. Inspect step by step, understand potential issues, and make informed decisions.
+                    </p>
+
+                    <div class="new-badge">NEW: Structured inspection workflow</div>
+
+                    <ul class="features-list">
+                        <li>Follow a 7-zone checklist covering paperwork, exterior, interior, engine, chassis, test drive, and EV components</li>
+                        <li>Evaluate vehicle condition with a clear score and issue summary</li>
+                        <li>See estimated repair cost ranges to understand potential expenses</li>
+                        <li>Generate a ready-to-use negotiation script based on your findings</li>
+                        <li>Capture photos and keep all inspection details in one place</li>
+                        <li>Supports gas, diesel, hybrid, plug-in hybrid, and electric vehicles</li>
+                        <li>Compare vehicles side by side when deciding between multiple options</li>
+                        <li>Export professional PDF inspection reports for sharing or records</li>
+                        <li>Works offline during inspections — no signal required</li>
+                    </ul>
+
+                    <p class="app-description" style="margin-bottom:18px;">
+                        No account required. No data collection. Everything stays on your device.<br>
+                        Simple, structured, and designed to help you inspect with confidence.<br>
+                        Make every car viewing more organized, informed, and prepared.
+                    </p>
+
+                    <!-- Download link to be added when available -->
+                </div>
+
                 <!-- Smart Tip Calculator Card -->
                 <div class="app-card smart-tip-card">
                     <div class="app-icon stc-icon">
@@ -542,7 +587,7 @@
 
                     <div class="new-badge">NEW: Group dining made easy!</div>
                     <p class="app-description" style="margin-top:8px;">
-                        Track each person’s orders with custom notes, then split the bill fairly in just one tap.
+                        Track each person's orders with custom notes, then split the bill fairly in just one tap.
                     </p>
 
                     <ul class="features-list">
@@ -571,7 +616,7 @@
                     <p class="app-tagline">Your Smart Way to Master Loan Payments</p>
 
                     <p class="app-description">
-                        Understand your loans clearly and plan smarter—whether it’s a home loan, auto loan, or personal loan.
+                        Understand your loans clearly and plan smarter—whether it's a home loan, auto loan, or personal loan.
                         Compare two payoff strategies side by side and see which fits your goals best.
                     </p>
 
@@ -620,9 +665,10 @@
                     <p class="app-description" style="margin-bottom:18px;">
                         Make every loan application more prepared, organized, and informed.
                     </p>
-                    <!-- 若有商店链接，可在此添加 -->
-                    <!-- <a href="https://apps.apple.com/app/loanprep-app-id" class="download-btn" target="_blank" rel="noopener">Download on App Store</a> -->
+
+                    <a href="https://apps.apple.com/us/app/loanprep-eligibility-check/id6755533050" class="download-btn" target="_blank" rel="noopener">Download on App Store</a>
                 </div>
+
             </div>
         </div>
     </section>
@@ -656,6 +702,15 @@
                 <button class="modal-close" type="button" id="privacy-close" aria-label="Close">×</button>
             </div>
             <div class="modal-body">
+                <a class="app-option" href="https://bytedancedev.xyz/BuyerShield-PrivacyPolicy.html" target="_blank" rel="noopener" id="privacy-buyershield">
+                    <div class="app-option-icon buyershield-icon">
+                        <img src="buyershield-logo.svg" alt="" onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
+                    </div>
+                    <div>
+                        <div class="app-option-title">BuyerShield</div>
+                        <div class="app-option-desc">View privacy policy in a new tab</div>
+                    </div>
+                </a>
                 <a class="app-option" href="https://bytedancedev.xyz/SmartTipCalculator-PrivacyPolicy.html" target="_blank" rel="noopener" id="privacy-stc">
                     <div class="app-option-icon stc-icon">
                         <img src="logo.png" alt="" onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
@@ -721,8 +776,7 @@
             const overlay = document.getElementById('privacy-modal');
             const closeBtn = document.getElementById('privacy-close');
             const cancelBtn = document.getElementById('privacy-cancel');
-            // 将第一个 focusable 元素设为第一个隐私链接
-            const firstFocusable = document.getElementById('privacy-stc');
+            const firstFocusable = document.getElementById('privacy-buyershield');
 
             let lastFocused = null;
 
