@@ -7,488 +7,86 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --brand:        #1a56db;
-      --brand-dark:   #1240a8;
-      --brand-light:  #eff4ff;
-      --accent:       #0ea66e;
-      --text:         #1a1f2e;
-      --text-muted:   #5a6378;
-      --border:       #e4e8f0;
-      --bg:           #f5f7fb;
-      --card:         #ffffff;
-      --radius:       12px;
-      --shadow:       0 4px 24px rgba(26, 86, 219, 0.07);
+      --brand:#1a56db;--brand-dark:#1240a8;--brand-light:#eff4ff;--accent:#0ea66e;
+      --text:#1a1f2e;--text-muted:#5a6378;--border:#e4e8f0;--bg:#f5f7fb;
+      --card:#ffffff;--radius:12px;--shadow:0 4px 24px rgba(26,86,219,0.07);
     }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      font-size: 16px;
-      line-height: 1.75;
-    }
-
-    /* ── Top Banner ── */
-    .top-banner {
-      background: linear-gradient(135deg, #1240a8 0%, #1a56db 60%, #2d7cf6 100%);
-      padding: 52px 24px 44px;
-      text-align: center;
-      color: #fff;
-      position: relative;
-    }
-
-    .top-banner .app-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 999px;
-      padding: 6px 18px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .top-banner .app-badge svg { width: 16px; height: 16px; }
-
-    .top-banner h1 {
-      font-size: clamp(28px, 5vw, 42px);
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-
-    .top-banner .meta {
-      font-size: 14px;
-      opacity: 0.8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .top-banner .meta span {
-      display: inline-block;
-      background: rgba(255,255,255,0.18);
-      border-radius: 6px;
-      padding: 2px 10px;
-      font-weight: 500;
-    }
-
-    /* ── Language Switcher ── */
-    .lang-switcher {
-      position: absolute;
-      top: 16px;
-      right: 24px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 999px;
-      padding: 4px;
-      z-index: 10;
-    }
-
-    .lang-btn {
-      background: transparent;
-      border: none;
-      color: rgba(255,255,255,0.75);
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 6px 14px;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: all 0.2s;
-      white-space: nowrap;
-    }
-
-    .lang-btn:hover {
-      color: #fff;
-      background: rgba(255,255,255,0.15);
-    }
-
-    .lang-btn.active {
-      background: #fff;
-      color: var(--brand-dark);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-
-    /* ── Trust Strip ── */
-    .trust-strip {
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 24px;
-    }
-
-    .trust-strip-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 24px;
-    }
-
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-muted);
-    }
-
-    .trust-item svg { color: var(--accent); flex-shrink: 0; }
-
-    /* ── Layout ── */
-    .layout {
-      max-width: 960px;
-      margin: 40px auto 60px;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 32px;
-      align-items: start;
-    }
-
-    /* ── Sidebar TOC ── */
-    .toc {
-      position: sticky;
-      top: 24px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px 0;
-      box-shadow: var(--shadow);
-    }
-
-    .toc h3 {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      padding: 0 20px 12px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 8px;
-    }
-
-    .toc a {
-      display: block;
-      padding: 7px 20px;
-      font-size: 13px;
-      color: var(--text-muted);
-      text-decoration: none;
-      border-left: 3px solid transparent;
-      transition: all 0.18s;
-      line-height: 1.4;
-    }
-
-    .toc a:hover {
-      color: var(--brand);
-      background: var(--brand-light);
-      border-left-color: var(--brand);
-    }
-
-    /* ── Main Content ── */
-    .content {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .intro-card {
-      background: var(--brand-light);
-      border: 1px solid #c7d9f8;
-      border-radius: var(--radius);
-      padding: 24px 28px;
-      font-size: 15px;
-      color: #1a3a7a;
-      line-height: 1.7;
-    }
-
-    .section-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 20px 28px;
-      background: #fafbfd;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      background: var(--brand-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .section-icon svg { width: 20px; height: 20px; color: var(--brand); }
-
-    .section-header-text { flex: 1; }
-
-    .section-number {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--brand);
-      margin-bottom: 2px;
-    }
-
-    .section-header h2 {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.3;
-    }
-
-    .section-body { padding: 24px 28px; }
-
-    .section-body p {
-      font-size: 15px;
-      color: #3a4155;
-      margin-bottom: 14px;
-    }
-
-    .section-body p:last-child { margin-bottom: 0; }
-
-    .section-body h3 {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text);
-      margin: 18px 0 8px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .section-body h3::before {
-      content: '';
-      display: inline-block;
-      width: 4px;
-      height: 14px;
-      background: var(--brand);
-      border-radius: 2px;
-    }
-
-    .section-body ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      margin-bottom: 14px;
-    }
-
-    .section-body ul li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 15px;
-      color: #3a4155;
-    }
-
-    .section-body ul li::before {
-      content: '';
-      display: block;
-      width: 7px;
-      height: 7px;
-      background: var(--brand);
-      border-radius: 50%;
-      margin-top: 8px;
-      flex-shrink: 0;
-    }
-
-    .list-no li::before { background: var(--accent) !important; }
-
-    .highlight-box {
-      background: #f0fdf7;
-      border: 1px solid #a7f3d0;
-      border-radius: 8px;
-      padding: 14px 18px;
-      font-size: 14px;
-      color: #065f46;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin: 16px 0;
-    }
-
-    .highlight-box svg { flex-shrink: 0; margin-top: 1px; color: var(--accent); }
-
-    .note-box {
-      background: #fffbeb;
-      border: 1px solid #fcd34d;
-      border-radius: 8px;
-      padding: 14px 18px;
-      font-size: 14px;
-      color: #78350f;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin: 16px 0;
-    }
-
-    .note-box svg { flex-shrink: 0; margin-top: 1px; color: #f59e0b; }
-
-    .rights-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 8px;
-    }
-
-    .right-item {
-      background: var(--brand-light);
-      border: 1px solid #c7d9f8;
-      border-radius: 8px;
-      padding: 14px 16px;
-    }
-
-    .right-item .right-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--brand-dark);
-      margin-bottom: 4px;
-    }
-
-    .right-item .right-desc {
-      font-size: 13px;
-      color: #3a4a7a;
-      line-height: 1.5;
-    }
-
-    .legal-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .legal-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--card);
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      padding: 8px 14px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .legal-badge svg { color: var(--brand); }
-
-    .contact-card {
-      background: linear-gradient(135deg, #1240a8, #1a56db);
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      color: #fff;
-      text-align: center;
-    }
-
-    .contact-card h2 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .contact-card p {
-      font-size: 14px;
-      opacity: 0.85;
-      margin-bottom: 20px;
-    }
-
-    .contact-card a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      color: var(--brand-dark);
-      font-weight: 700;
-      font-size: 15px;
-      padding: 12px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    }
-
-    .contact-card a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.22);
-    }
-
-    .section-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 20px 0;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 13px;
-      color: var(--text-muted);
-      padding: 24px 20px 36px;
-      border-top: 1px solid var(--border);
-    }
-
-    footer a { color: var(--brand); text-decoration: none; }
-
-    @media (max-width: 720px) {
-      .layout { grid-template-columns: 1fr; }
-      .toc { position: static; }
-      .rights-grid { grid-template-columns: 1fr; }
-      .section-body, .section-header { padding-left: 20px; padding-right: 20px; }
-      .lang-switcher {
-        position: relative;
-        top: 0;
-        right: 0;
-        margin: 0 auto 16px;
-        justify-content: center;
-      }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75}
+    .top-banner{background:linear-gradient(135deg,#1240a8 0%,#1a56db 60%,#2d7cf6 100%);padding:52px 24px 44px;text-align:center;color:#fff;position:relative}
+    .top-banner .app-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:999px;padding:6px 18px;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:18px}
+    .top-banner .app-badge svg{width:16px;height:16px}
+    .top-banner h1{font-size:clamp(28px,5vw,42px);font-weight:700;letter-spacing:-0.5px;line-height:1.2;margin-bottom:12px}
+    .top-banner .meta{font-size:14px;opacity:0.8;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
+    .top-banner .meta span{display:inline-block;background:rgba(255,255,255,0.18);border-radius:6px;padding:2px 10px;font-weight:500}
+    .lang-switcher{position:absolute;top:16px;right:24px;display:flex;align-items:center;gap:4px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:999px;padding:4px;z-index:10}
+    .lang-btn{background:transparent;border:none;color:rgba(255,255,255,0.75);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;cursor:pointer;transition:all 0.2s;white-space:nowrap}
+    .lang-btn:hover{color:#fff;background:rgba(255,255,255,0.15)}
+    .lang-btn.active{background:#fff;color:var(--brand-dark);box-shadow:0 2px 8px rgba(0,0,0,0.15)}
+    .trust-strip{background:var(--card);border-bottom:1px solid var(--border);padding:14px 24px}
+    .trust-strip-inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:24px}
+    .trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--text-muted)}
+    .trust-item svg{color:var(--accent);flex-shrink:0}
+    .layout{max-width:960px;margin:40px auto 60px;padding:0 20px;display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:start}
+    .toc{position:sticky;top:24px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 0;box-shadow:var(--shadow)}
+    .toc h3{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);padding:0 20px 12px;border-bottom:1px solid var(--border);margin-bottom:8px}
+    .toc a{display:block;padding:7px 20px;font-size:13px;color:var(--text-muted);text-decoration:none;border-left:3px solid transparent;transition:all 0.18s;line-height:1.4}
+    .toc a:hover{color:var(--brand);background:var(--brand-light);border-left-color:var(--brand)}
+    .content{display:flex;flex-direction:column;gap:24px}
+    .intro-card{background:var(--brand-light);border:1px solid #c7d9f8;border-radius:var(--radius);padding:24px 28px;font-size:15px;color:#1a3a7a;line-height:1.7}
+    .section-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .section-header{display:flex;align-items:center;gap:14px;padding:20px 28px;background:#fafbfd;border-bottom:1px solid var(--border)}
+    .section-icon{width:38px;height:38px;border-radius:10px;background:var(--brand-light);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .section-icon svg{width:20px;height:20px;color:var(--brand)}
+    .section-header-text{flex:1}
+    .section-number{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--brand);margin-bottom:2px}
+    .section-header h2{font-size:17px;font-weight:700;color:var(--text);line-height:1.3}
+    .section-body{padding:24px 28px}
+    .section-body p{font-size:15px;color:#3a4155;margin-bottom:14px}
+    .section-body p:last-child{margin-bottom:0}
+    .section-body h3{font-size:14px;font-weight:700;color:var(--text);margin:18px 0 8px;display:flex;align-items:center;gap:6px}
+    .section-body h3::before{content:'';display:inline-block;width:4px;height:14px;background:var(--brand);border-radius:2px}
+    .section-body ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+    .section-body ul li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a4155}
+    .section-body ul li::before{content:'';display:block;width:7px;height:7px;background:var(--brand);border-radius:50%;margin-top:8px;flex-shrink:0}
+    .list-no li::before{background:var(--accent)!important}
+    .highlight-box{background:#f0fdf7;border:1px solid #a7f3d0;border-radius:8px;padding:14px 18px;font-size:14px;color:#065f46;display:flex;align-items:flex-start;gap:10px;margin:16px 0}
+    .highlight-box svg{flex-shrink:0;margin-top:1px;color:var(--accent)}
+    .note-box{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:14px 18px;font-size:14px;color:#78350f;display:flex;align-items:flex-start;gap:10px;margin:16px 0}
+    .note-box svg{flex-shrink:0;margin-top:1px;color:#f59e0b}
+    .rights-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+    .right-item{background:var(--brand-light);border:1px solid #c7d9f8;border-radius:8px;padding:14px 16px}
+    .right-item .right-title{font-size:13px;font-weight:700;color:var(--brand-dark);margin-bottom:4px}
+    .right-item .right-desc{font-size:13px;color:#3a4a7a;line-height:1.5}
+    .legal-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .legal-badge{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1.5px solid var(--border);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--text-muted)}
+    .legal-badge svg{color:var(--brand)}
+    .contact-card{background:linear-gradient(135deg,#1240a8,#1a56db);border-radius:var(--radius);padding:32px 28px;color:#fff;text-align:center}
+    .contact-card h2{font-size:20px;font-weight:700;margin-bottom:8px}
+    .contact-card p{font-size:14px;opacity:0.85;margin-bottom:20px}
+    .contact-card a{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--brand-dark);font-weight:700;font-size:15px;padding:12px 28px;border-radius:8px;text-decoration:none;transition:transform 0.15s,box-shadow 0.15s;box-shadow:0 4px 16px rgba(0,0,0,0.18)}
+    .contact-card a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.22)}
+    .section-divider{border:none;border-top:1px solid var(--border);margin:20px 0}
+    footer{text-align:center;font-size:13px;color:var(--text-muted);padding:24px 20px 36px;border-top:1px solid var(--border)}
+    footer a{color:var(--brand);text-decoration:none}
+    @media(max-width:720px){
+      .layout{grid-template-columns:1fr}.toc{position:static}.rights-grid{grid-template-columns:1fr}
+      .section-body,.section-header{padding-left:20px;padding-right:20px}
+      .lang-switcher{position:relative;top:0;right:0;margin:0 auto 16px;justify-content:center}
     }
   </style>
 </head>
 <body>
 
-<!-- ══ TOP BANNER ══ -->
 <div class="top-banner">
   <div class="lang-switcher">
     <button class="lang-btn active" onclick="switchLang('en')">English</button>
     <button class="lang-btn" onclick="switchLang('es')">Español</button>
     <button class="lang-btn" onclick="switchLang('fr')">Français</button>
   </div>
-
   <div class="app-badge">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-    </svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
     BuyerShield App
   </div>
   <h1 data-i18n="banner_title">Privacy Policy</h1>
@@ -498,36 +96,17 @@
   </div>
 </div>
 
-<!-- ══ TRUST STRIP ══ -->
 <div class="trust-strip">
   <div class="trust-strip-inner">
-    <div class="trust-item">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      <span data-i18n="trust_no_collection">No data collection</span>
-    </div>
-    <div class="trust-item">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <span data-i18n="trust_local">100% local storage</span>
-    </div>
-    <div class="trust-item">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      <span data-i18n="trust_no_tracking">No third-party tracking</span>
-    </div>
-    <div class="trust-item">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <span data-i18n="trust_compliant">GDPR &amp; CCPA compliant</span>
-    </div>
-    <div class="trust-item">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-      <span data-i18n="trust_no_servers">No servers operated</span>
-    </div>
+    <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span data-i18n="trust_no_collection">No data collection</span></div>
+    <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span data-i18n="trust_local">100% local storage</span></div>
+    <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span data-i18n="trust_no_tracking">No third-party tracking</span></div>
+    <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span data-i18n="trust_compliant">GDPR &amp; CCPA compliant</span></div>
+    <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span data-i18n="trust_no_servers">No servers operated</span></div>
   </div>
 </div>
 
-<!-- ══ MAIN LAYOUT ══ -->
 <div class="layout">
-
-  <!-- ── Sidebar TOC ── -->
   <nav class="toc" aria-label="Table of Contents">
     <h3 data-i18n="toc_title">Contents</h3>
     <a href="#intro" data-i18n="toc_intro">Introduction</a>
@@ -544,416 +123,237 @@
     <a href="#contact" data-i18n="toc_contact">11. Contact Us</a>
   </nav>
 
-  <!-- ── Content ── -->
   <main class="content">
+    <div class="intro-card" id="intro" data-i18n="intro_text"></div>
 
-    <div class="intro-card" id="intro" data-i18n="intro_text">
-      BuyerShield ("we", "our", or "the App") is committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data. This policy applies to all users worldwide, regardless of location.
-    </div>
-
-    <!-- §1 -->
     <div class="section-card" id="s1">
       <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        </div>
-        <div class="section-header-text">
-          <div class="section-number" data-i18n="s1_label">Section 1</div>
-          <h2 data-i18n="s1_title">Information We Collect</h2>
-        </div>
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+        <div class="section-header-text"><div class="section-number" data-i18n="s1_label">Section 1</div><h2 data-i18n="s1_title">Information We Collect</h2></div>
       </div>
       <div class="section-body" data-i18n-html="s1_body"></div>
     </div>
 
-    <!-- §2 -->
     <div class="section-card" id="s2">
       <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
-        </div>
-        <div class="section-header-text">
-          <div class="section-number" data-i18n="s2_label">Section 2</div>
-          <h2 data-i18n="s2_title">How We Use Your Information</h2>
-        </div>
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
+        <div class="section-header-text"><div class="section-number" data-i18n="s2_label">Section 2</div><h2 data-i18n="s2_title">How We Use Your Information</h2></div>
       </div>
       <div class="section-body" data-i18n-html="s2_body"></div>
     </div>
 
-    <!-- §3 -->
     <div class="section-card" id="s3">
       <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        </div>
-        <div class="section-header-text">
-          <div class="section-number" data-i18n="s3_label">Section 3</div>
-          <h2 data-i18n="s3_title">Data Storage &amp; Security</h2>
-        </div>
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="section-header-text"><div class="section-number" data-i18n="s3_label">Section 3</div><h2 data-i18n="s3_title">Data Storage &amp; Security</h2></div>
       </div>
       <div class="section-body" data-i18n-html="s3_body"></div>
     </div>
 
-    <!-- §4 -->
     <div class="section-card" id="s4">
       <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg>
-        </div>
-        <div class="section-header-text">
-          <div class="section-number" data-i18n="s4_label">Section 4</div>
-          <h2 data-i18n="s4_title">Third-Party Services</h2>
-        </div>
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg></div>
+        <div class="section-header-text"><div class="section-number" data-i18n="s4_label">Section 4</div><h2 data-i18n="s4_title">Third-Party Services</h2></div>
       </div>
       <div class="section-body" data-i18n-html="s4_body"></div>
     </div>
 
-    <!-- §5 -->
     <div class="section-card" id="s5">
       <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <div class="section-header-text">
-          <div class="section-number" data-i18n="s5_label">Section 5</div>
-          <h2 data-i18n="s5_title">Children's Privacy</h2>
-        </div>
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="section-header-text"><div class="section-number" data-i18n="s5_label">Section 5</div><h2 data-i18n="s5_title">Children's Privacy</h2></div>
       </div>
       <div class="section-body" data-i18n-html="s5_body"></div>
     </div>
 
-    <!-- §6 -->
     <div class="section-card" id="s6">
       <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-        </div>
-        <div class="section-header-text">
-          <div class="section-number" data-i18n="s6_label">Section 6</div>
-          <h2 data-i18n="s6_title">Your Rights</h2>
-        </div>
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+        <div class="section-header-text"><div class="section-number" data-i18n="s6_label">Section 6</div><h2 data-i18n="s6_title">Your Rights</h2></div>
       </div>
       <div class="section-body" data-i18n-html="s6_body"></div>
     </div>
 
-    <!-- §7 -->
     <div class="section-card" id="s7">
       <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <div class="section-header-text">
-          <div class="section-number" data-i18n="s7_label">Section 7</div>
-          <h2 data-i18n="s7_title">International Users</h2>
-        </div>
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="section-header-text"><div class="section-number" data-i18n="s7_label">Section 7</div><h2 data-i18n="s7_title">International Users</h2></div>
       </div>
       <div class="section-body" data-i18n-html="s7_body"></div>
     </div>
 
-    <!-- §8 -->
     <div class="section-card" id="s8">
       <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <div class="section-header-text">
-          <div class="section-number" data-i18n="s8_label">Section 8</div>
-          <h2 data-i18n="s8_title">Data Retention</h2>
-        </div>
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="section-header-text"><div class="section-number" data-i18n="s8_label">Section 8</div><h2 data-i18n="s8_title">Data Retention</h2></div>
       </div>
       <div class="section-body" data-i18n-html="s8_body"></div>
     </div>
 
-    <!-- §9 -->
     <div class="section-card" id="s9">
       <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-        </div>
-        <div class="section-header-text">
-          <div class="section-number" data-i18n="s9_label">Section 9</div>
-          <h2 data-i18n="s9_title">Changes to This Policy</h2>
-        </div>
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+        <div class="section-header-text"><div class="section-number" data-i18n="s9_label">Section 9</div><h2 data-i18n="s9_title">Changes to This Policy</h2></div>
       </div>
       <div class="section-body" data-i18n-html="s9_body"></div>
     </div>
 
-    <!-- §10 -->
     <div class="section-card" id="s10">
       <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="1" x2="23" y2="23"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.56 9"/><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-        </div>
-        <div class="section-header-text">
-          <div class="section-number" data-i18n="s10_label">Section 10</div>
-          <h2 data-i18n="s10_title">Do Not Track</h2>
-        </div>
+        <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="1" x2="23" y2="23"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.56 9"/><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
+        <div class="section-header-text"><div class="section-number" data-i18n="s10_label">Section 10</div><h2 data-i18n="s10_title">Do Not Track</h2></div>
       </div>
       <div class="section-body" data-i18n-html="s10_body"></div>
     </div>
 
-    <!-- §11 Contact -->
     <div class="contact-card" id="contact">
       <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       <h2 data-i18n="contact_title">Contact Us</h2>
       <p data-i18n="contact_desc">If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact us at:</p>
-      <a href="mailto:yumiao.dev@gmail.com">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        yumiao.dev@gmail.com
-      </a>
+      <a href="mailto:yumiao.dev@gmail.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> yumiao.dev@gmail.com</a>
       <p style="margin-top:16px;" data-i18n="contact_response">We will respond to your inquiry as soon as reasonably practicable.</p>
     </div>
-
   </main>
 </div>
 
-<!-- ══ FOOTER ══ -->
 <footer>
   <p>© 2026 BuyerShield · <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a></p>
-  <p style="margin-top:6px; font-size:12px;" data-i18n="footer_updated">This privacy policy was last updated on March 22, 2026.</p>
+  <p style="margin-top:6px;font-size:12px;" data-i18n="footer_updated">This privacy policy was last updated on March 22, 2026.</p>
 </footer>
 
 <script>
-/* ═══════════════════════════════════════════════════════════════
-   SVG icon fragments reused across all languages
-   ═══════════════════════════════════════════════════════════════ */
-const SVG_CHECK = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>';
-const SVG_SHIELD = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>';
-const SVG_INFO = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
-const SVG_BADGE = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>';
+// ═══════════════════════════════════════════════════
+// Reusable SVG fragments
+// ═══════════════════════════════════════════════════
+var SC='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>';
+var SS='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>';
+var SI='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
+var SB='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>';
 
-/* ══════════════════════════════════════════════════���════════════
-   i18n Translation Data
-   ═══════════════════════════════════════════════════════════════ */
-const i18n = {
-
-/* ── ENGLISH ────────────────────────────────────────────────── */
-en: {
-  banner_title: "Privacy Policy",
-  banner_date: "Last updated: March 22, 2026",
-  banner_scope: "Applies to all users worldwide",
-  trust_no_collection: "No data collection",
-  trust_local: "100% local storage",
-  trust_no_tracking: "No third-party tracking",
-  trust_compliant: "GDPR & CCPA compliant",
-  trust_no_servers: "No servers operated",
-  toc_title: "Contents",
-  toc_intro: "Introduction",
-  toc_s1: "1. Information We Collect",
-  toc_s2: "2. How We Use Your Information",
-  toc_s3: "3. Data Storage & Security",
-  toc_s4: "4. Third-Party Services",
-  toc_s5: "5. Children's Privacy",
-  toc_s6: "6. Your Rights",
-  toc_s7: "7. International Users",
-  toc_s8: "8. Data Retention",
-  toc_s9: "9. Changes to This Policy",
-  toc_s10: "10. Do Not Track",
-  toc_contact: "11. Contact Us",
-  intro_text: 'BuyerShield (\u201cwe\u201d, \u201cour\u201d, or \u201cthe App\u201d) is committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data. This policy applies to all users worldwide, regardless of location.',
-  s1_label: "Section 1", s1_title: "Information We Collect",
-  s1_body: `<div class="highlight-box">${SVG_CHECK} We are designed with a privacy-first approach. The App stores all data locally on your device and does not operate any external servers.</div>
-<h3>a) Information You Provide</h3>
-<ul>
-  <li>Vehicle details (year, make, model, mileage, price, VIN \u2014 optional)</li>
-  <li>Inspection observations and condition notes</li>
-  <li>Photos taken during inspections</li>
-  <li>No real names, email addresses, phone numbers, or personal identifiers are required to use the App.</li>
-</ul>
-<h3>b) Information Collected Automatically</h3>
-<ul>
-  <li>Purchase transaction records processed through Apple\u2019s StoreKit framework (product IDs, transaction dates, subscription status). These transactions are managed entirely by Apple.</li>
-</ul>
-<h3>c) Information We Do NOT Collect</h3>
-<ul class="list-no">
-  <li>Location data</li>
-  <li>Device identifiers or advertising IDs</li>
-  <li>Browsing history</li>
-  <li>Analytics or usage tracking data</li>
-  <li>Contact information</li>
-  <li>We do not use any third-party analytics, advertising, or tracking SDKs.</li>
-</ul>`,
-
-  s2_label: "Section 2", s2_title: "How We Use Your Information",
-  s2_body: `<p>All data you enter is used solely to:</p>
-<ul>
-  <li>Generate inspection checklists, risk scores, and negotiation guidance within the App.</li>
-  <li>Produce PDF inspection reports stored on your device.</li>
-  <li>Verify your purchase entitlements (via Apple StoreKit).</li>
-</ul>
-<div class="highlight-box">${SVG_SHIELD} Your data never leaves your device. We do not transmit, upload, share, or sell any user data to any third party, server, or cloud service.</div>`,
-
-  s3_label: "Section 3", s3_title: "Data Storage & Security",
-  s3_body: `<ul>
-  <li>All data is stored locally on your device using Apple\u2019s SwiftData framework.</li>
-  <li>Data is protected by your device\u2019s built-in security features (passcode, Face ID, Touch ID).</li>
-  <li>We do not operate any servers, databases, or cloud infrastructure.</li>
-  <li>If you delete the App, all locally stored data will be permanently removed.</li>
-</ul>
-<div class="note-box">${SVG_INFO} You can also delete all data manually from within the App via Settings \u2192 Delete All Inspections.</div>`,
-
-  s4_label: "Section 4", s4_title: "Third-Party Services",
-  s4_body: `<p>The App integrates only with:</p>
-<ul>
-  <li>Apple StoreKit \u2014 for processing in-app purchases and subscriptions. Purchase transactions are handled entirely by Apple and are subject to Apple\u2019s Privacy Policy (<a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/privacy/</a>).</li>
-</ul>
-<p>We do not integrate with any advertising networks, analytics providers, social media platforms, or other third-party data processors.</p>`,
-
-  s5_label: "Section 5", s5_title: "Children\u2019s Privacy",
-  s5_body: `<p>The App is not directed at children under 13 years of age (or the minimum age required in your jurisdiction). We do not knowingly collect personal information from children. Since the App collects no personal information and stores all data locally, there is no mechanism for children\u2019s data to be transmitted to us.</p>`,
-
-  s6_label: "Section 6", s6_title: "Your Rights",
-  s6_body: `<p>Depending on your jurisdiction, you may have the following rights:</p>
-<div class="rights-grid">
-  <div class="right-item"><div class="right-title">\uD83D\uDD0D Right to Access</div><div class="right-desc">You can view all your data directly within the App at any time.</div></div>
-  <div class="right-item"><div class="right-title">\uD83D\uDDD1\uFE0F Right to Deletion</div><div class="right-desc">You can delete all your data from Settings \u2192 Delete All Inspections, or by deleting the App.</div></div>
-  <div class="right-item"><div class="right-title">\uD83D\uDCE4 Right to Portability</div><div class="right-desc">You can export inspection data as PDF reports.</div></div>
-  <div class="right-item"><div class="right-title">\u2699\uFE0F Right to Restrict Processing</div><div class="right-desc">Since all processing occurs locally, you control it entirely by choosing what data to enter.</div></div>
-</div>
-<hr class="section-divider"/>
-<div class="legal-badges">
-  <div class="legal-badge">${SVG_BADGE} GDPR (EEA)</div>
-  <div class="legal-badge">${SVG_BADGE} CCPA / CPRA (California)</div>
-</div>
-<p style="margin-top:14px; font-size:14px; color:var(--text-muted);">Since we do not collect, store, or process personal data on any server, most data protection requests are fulfilled automatically through the App\u2019s local-only architecture.</p>`,
-
-  s7_label: "Section 7", s7_title: "International Users",
-  s7_body: `<p>The App may be used in multiple countries and regions. Since all data is stored locally on your device and is never transmitted to any server, your data remains within your device and is subject to the data protection laws of your jurisdiction. No cross-border data transfer occurs.</p>
-<hr class="section-divider"/>
-<h3>7a. Legal Basis for Processing (EEA Users)</h3>
-<p>For users in the European Economic Area, our legal basis for processing data is:</p>
-<ul>
-  <li>Contractual necessity \u2014 processing your vehicle and inspection data is required to deliver the App\u2019s core functionality.</li>
-  <li>Legitimate interest \u2014 verifying purchase entitlements via Apple StoreKit to provide the correct tier of service.</li>
-</ul>
-<p>Since all data remains on your device and no personal data is transmitted to us, no consent is required for data processing under GDPR.</p>
-<hr class="section-divider"/>
-<h3>7b. California Residents (CCPA/CPRA)</h3>
-<p>If you are a California resident:</p>
-<ul>
-  <li>We do not sell or share your personal information as defined by the CCPA/CPRA.</li>
-  <li>We do not use or disclose sensitive personal information for purposes other than those permitted by the CCPA/CPRA.</li>
-  <li>You have the right to know, delete, and opt out of the sale of personal information. Since we do not collect or transmit personal data, these rights are satisfied by design.</li>
-</ul>`,
-
-  s8_label: "Section 8", s8_title: "Data Retention",
-  s8_body: `<ul>
-  <li>Free tier: Inspection data is stored on your device. Older data may be removed automatically after an extended period of inactivity to manage device storage.</li>
-  <li>BuyerShield+ and Pro: Data is retained indefinitely on your device unless you manually delete it.</li>
-  <li>If you uninstall the App, all data is permanently deleted from your device.</li>
-  <li>You can delete all data at any time from Settings \u2192 Delete All Inspections.</li>
-</ul>`,
-
-  s9_label: "Section 9", s9_title: "Changes to This Policy",
-  s9_body: `<p>We may update this Privacy Policy from time to time. Changes will be reflected within the App with an updated \u201cLast updated\u201d date. Your continued use of the App after any changes constitutes acceptance of the revised policy. We encourage you to review this policy periodically.</p>`,
-
-  s10_label: "Section 10", s10_title: "Do Not Track",
-  s10_body: `<p>The App does not track users across third-party websites or services. We honor Do Not Track signals by design, as we do not engage in any form of tracking.</p>`,
-
-  contact_title: "Contact Us",
-  contact_desc: "If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact us at:",
-  contact_response: "We will respond to your inquiry as soon as reasonably practicable.",
-  footer_updated: "This privacy policy was last updated on March 22, 2026."
+// ═══════════════════════════════════════════════════
+// i18n data — EN / ES / FR
+// ═══════════════════════════════════════════════════
+var i18n={
+en:{
+banner_title:"Privacy Policy",
+banner_date:"Last updated: March 22, 2026",
+banner_scope:"Applies to all users worldwide",
+trust_no_collection:"No data collection",
+trust_local:"100% local storage",
+trust_no_tracking:"No third-party tracking",
+trust_compliant:"GDPR & CCPA compliant",
+trust_no_servers:"No servers operated",
+toc_title:"Contents",
+toc_intro:"Introduction",
+toc_s1:"1. Information We Collect",
+toc_s2:"2. How We Use Your Information",
+toc_s3:"3. Data Storage & Security",
+toc_s4:"4. Third-Party Services",
+toc_s5:"5. Children\u2019s Privacy",
+toc_s6:"6. Your Rights",
+toc_s7:"7. International Users",
+toc_s8:"8. Data Retention",
+toc_s9:"9. Changes to This Policy",
+toc_s10:"10. Do Not Track",
+toc_contact:"11. Contact Us",
+intro_text:'BuyerShield (\u201cwe\u201d, \u201cour\u201d, or \u201cthe App\u201d) is committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data. This policy applies to all users worldwide, regardless of location.',
+s1_label:"Section 1",s1_title:"Information We Collect",
+s1_body:'<div class="highlight-box">'+SC+' We are designed with a privacy-first approach. The App stores all data locally on your device and does not operate any external servers.</div><h3>a) Information You Provide</h3><ul><li>Vehicle details (year, make, model, mileage, price, VIN \u2014 optional)</li><li>Inspection observations and condition notes</li><li>Photos taken during inspections</li><li>No real names, email addresses, phone numbers, or personal identifiers are required to use the App.</li></ul><h3>b) Information Collected Automatically</h3><ul><li>Purchase transaction records processed through Apple\u2019s StoreKit framework (product IDs, transaction dates, subscription status). These transactions are managed entirely by Apple.</li></ul><h3>c) Information We Do NOT Collect</h3><ul class="list-no"><li>Location data</li><li>Device identifiers or advertising IDs</li><li>Browsing history</li><li>Analytics or usage tracking data</li><li>Contact information</li><li>We do not use any third-party analytics, advertising, or tracking SDKs.</li></ul>',
+s2_label:"Section 2",s2_title:"How We Use Your Information",
+s2_body:'<p>All data you enter is used solely to:</p><ul><li>Generate inspection checklists, risk scores, and negotiation guidance within the App.</li><li>Produce PDF inspection reports stored on your device.</li><li>Verify your purchase entitlements (via Apple StoreKit).</li></ul><div class="highlight-box">'+SS+' Your data never leaves your device. We do not transmit, upload, share, or sell any user data to any third party, server, or cloud service.</div>',
+s3_label:"Section 3",s3_title:"Data Storage & Security",
+s3_body:'<ul><li>All data is stored locally on your device using Apple\u2019s SwiftData framework.</li><li>Data is protected by your device\u2019s built-in security features (passcode, Face ID, Touch ID).</li><li>We do not operate any servers, databases, or cloud infrastructure.</li><li>If you delete the App, all locally stored data will be permanently removed.</li></ul><div class="note-box">'+SI+' You can also delete all data manually from within the App via Settings \u2192 Delete All Inspections.</div>',
+s4_label:"Section 4",s4_title:"Third-Party Services",
+s4_body:'<p>The App integrates only with:</p><ul><li>Apple StoreKit \u2014 for processing in-app purchases and subscriptions. Purchase transactions are handled entirely by Apple and are subject to Apple\u2019s Privacy Policy (<a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/privacy/</a>).</li></ul><p>We do not integrate with any advertising networks, analytics providers, social media platforms, or other third-party data processors.</p>',
+s5_label:"Section 5",s5_title:"Children\u2019s Privacy",
+s5_body:'<p>The App is not directed at children under 13 years of age (or the minimum age required in your jurisdiction). We do not knowingly collect personal information from children. Since the App collects no personal information and stores all data locally, there is no mechanism for children\u2019s data to be transmitted to us.</p>',
+s6_label:"Section 6",s6_title:"Your Rights",
+s6_body:'<p>Depending on your jurisdiction, you may have the following rights:</p><div class="rights-grid"><div class="right-item"><div class="right-title">\uD83D\uDD0D Right to Access</div><div class="right-desc">You can view all your data directly within the App at any time.</div></div><div class="right-item"><div class="right-title">\uD83D\uDDD1\uFE0F Right to Deletion</div><div class="right-desc">You can delete all your data from Settings \u2192 Delete All Inspections, or by deleting the App.</div></div><div class="right-item"><div class="right-title">\uD83D\uDCE4 Right to Portability</div><div class="right-desc">You can export inspection data as PDF reports.</div></div><div class="right-item"><div class="right-title">\u2699\uFE0F Right to Restrict Processing</div><div class="right-desc">Since all processing occurs locally, you control it entirely by choosing what data to enter.</div></div></div><hr class="section-divider"/><div class="legal-badges"><div class="legal-badge">'+SB+' GDPR (EEA)</div><div class="legal-badge">'+SB+' CCPA / CPRA (California)</div></div><p style="margin-top:14px;font-size:14px;color:var(--text-muted);">Since we do not collect, store, or process personal data on any server, most data protection requests are fulfilled automatically through the App\u2019s local-only architecture.</p>',
+s7_label:"Section 7",s7_title:"International Users",
+s7_body:'<p>The App may be used in multiple countries and regions. Since all data is stored locally on your device and is never transmitted to any server, your data remains within your device and is subject to the data protection laws of your jurisdiction. No cross-border data transfer occurs.</p><hr class="section-divider"/><h3>7a. Legal Basis for Processing (EEA Users)</h3><p>For users in the European Economic Area, our legal basis for processing data is:</p><ul><li>Contractual necessity \u2014 processing your vehicle and inspection data is required to deliver the App\u2019s core functionality.</li><li>Legitimate interest \u2014 verifying purchase entitlements via Apple StoreKit to provide the correct tier of service.</li></ul><p>Since all data remains on your device and no personal data is transmitted to us, no consent is required for data processing under GDPR.</p><hr class="section-divider"/><h3>7b. California Residents (CCPA/CPRA)</h3><p>If you are a California resident:</p><ul><li>We do not sell or share your personal information as defined by the CCPA/CPRA.</li><li>We do not use or disclose sensitive personal information for purposes other than those permitted by the CCPA/CPRA.</li><li>You have the right to know, delete, and opt out of the sale of personal information. Since we do not collect or transmit personal data, these rights are satisfied by design.</li></ul>',
+s8_label:"Section 8",s8_title:"Data Retention",
+s8_body:'<ul><li>Free tier: Inspection data is stored on your device. Older data may be removed automatically after an extended period of inactivity to manage device storage.</li><li>BuyerShield+ and Pro: Data is retained indefinitely on your device unless you manually delete it.</li><li>If you uninstall the App, all data is permanently deleted from your device.</li><li>You can delete all data at any time from Settings \u2192 Delete All Inspections.</li></ul>',
+s9_label:"Section 9",s9_title:"Changes to This Policy",
+s9_body:'<p>We may update this Privacy Policy from time to time. Changes will be reflected within the App with an updated \u201cLast updated\u201d date. Your continued use of the App after any changes constitutes acceptance of the revised policy. We encourage you to review this policy periodically.</p>',
+s10_label:"Section 10",s10_title:"Do Not Track",
+s10_body:'<p>The App does not track users across third-party websites or services. We honor Do Not Track signals by design, as we do not engage in any form of tracking.</p>',
+contact_title:"Contact Us",
+contact_desc:"If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact us at:",
+contact_response:"We will respond to your inquiry as soon as reasonably practicable.",
+footer_updated:"This privacy policy was last updated on March 22, 2026."
 },
 
-/* ── SPANISH (US) ───────────────────────────────────────────── */
-es: {
-  banner_title: "Pol\u00edtica de Privacidad",
-  banner_date: "\u00daltima actualizaci\u00f3n: 22 de marzo de 2026",
-  banner_scope: "Se aplica a todos los usuarios en todo el mundo",
-  trust_no_collection: "Sin recopilaci\u00f3n de datos",
-  trust_local: "100% almacenamiento local",
-  trust_no_tracking: "Sin rastreo de terceros",
-  trust_compliant: "Cumple con GDPR y CCPA",
-  trust_no_servers: "Sin servidores operados",
-  toc_title: "Contenido",
-  toc_intro: "Introducci\u00f3n",
-  toc_s1: "1. Informaci\u00f3n que recopilamos",
-  toc_s2: "2. C\u00f3mo usamos su informaci\u00f3n",
-  toc_s3: "3. Almacenamiento y seguridad de datos",
-  toc_s4: "4. Servicios de terceros",
-  toc_s5: "5. Privacidad de los ni\u00f1os",
-  toc_s6: "6. Sus derechos",
-  toc_s7: "7. Usuarios internacionales",
-  toc_s8: "8. Retenci\u00f3n de datos",
-  toc_s9: "9. Cambios a esta pol\u00edtica",
-  toc_s10: "10. No rastrear",
-  toc_contact: "11. Cont\u00e1ctenos",
-  intro_text: 'BuyerShield (\u201cnosotros\u201d, \u201cnuestro\u201d o \u201cla Aplicaci\u00f3n\u201d) se compromete a proteger su privacidad. Esta Pol\u00edtica de Privacidad explica qu\u00e9 informaci\u00f3n recopilamos, c\u00f3mo la usamos y sus derechos con respecto a sus datos. Esta pol\u00edtica se aplica a todos los usuarios en todo el mundo, independientemente de su ubicaci\u00f3n.',
-  s1_label: "Secci\u00f3n 1", s1_title: "Informaci\u00f3n que recopilamos",
-  s1_body: `<div class="highlight-box">${SVG_CHECK} Estamos dise\u00f1ados con un enfoque de privacidad primero. La Aplicaci\u00f3n almacena todos los datos localmente en su dispositivo y no opera ning\u00fan servidor externo.</div>
-<h3>a) Informaci\u00f3n que usted proporciona</h3>
-<ul>
-  <li>Detalles del veh\u00edculo (a\u00f1o, marca, modelo, kilometraje, precio, VIN \u2014 opcional)</li>
-  <li>Observaciones de inspecci\u00f3n y notas sobre el estado</li>
-  <li>Fotos tomadas durante las inspecciones</li>
-  <li>No se requieren nombres reales, direcciones de correo electr\u00f3nico, n\u00fameros de tel\u00e9fono ni identificadores personales para usar la Aplicaci\u00f3n.</li>
-</ul>
-<h3>b) Informaci\u00f3n recopilada autom\u00e1ticamente</h3>
-<ul>
-  <li>Registros de transacciones de compra procesados a trav\u00e9s del framework StoreKit de Apple (IDs de productos, fechas de transacci\u00f3n, estado de suscripci\u00f3n). Estas transacciones son gestionadas completamente por Apple.</li>
-</ul>
-<h3>c) Informaci\u00f3n que NO recopilamos</h3>
-<ul class="list-no">
-  <li>Datos de ubicaci\u00f3n</li>
-  <li>Identificadores de dispositivo o IDs publicitarios</li>
-  <li>Historial de navegaci\u00f3n</li>
-  <li>Datos de an\u00e1lisis o seguimiento de uso</li>
-  <li>Informaci\u00f3n de contacto</li>
-  <li>No utilizamos ning\u00fan SDK de an\u00e1lisis, publicidad o rastreo de terceros.</li>
-</ul>`,
+es:{
+banner_title:"Pol\u00edtica de Privacidad",
+banner_date:"\u00daltima actualizaci\u00f3n: 22 de marzo de 2026",
+banner_scope:"Se aplica a todos los usuarios en todo el mundo",
+trust_no_collection:"Sin recopilaci\u00f3n de datos",
+trust_local:"100% almacenamiento local",
+trust_no_tracking:"Sin rastreo de terceros",
+trust_compliant:"Cumple con GDPR y CCPA",
+trust_no_servers:"Sin servidores operados",
+toc_title:"Contenido",
+toc_intro:"Introducci\u00f3n",
+toc_s1:"1. Informaci\u00f3n que recopilamos",
+toc_s2:"2. C\u00f3mo usamos su informaci\u00f3n",
+toc_s3:"3. Almacenamiento y seguridad de datos",
+toc_s4:"4. Servicios de terceros",
+toc_s5:"5. Privacidad de los ni\u00f1os",
+toc_s6:"6. Sus derechos",
+toc_s7:"7. Usuarios internacionales",
+toc_s8:"8. Retenci\u00f3n de datos",
+toc_s9:"9. Cambios a esta pol\u00edtica",
+toc_s10:"10. No rastrear",
+toc_contact:"11. Cont\u00e1ctenos",
+intro_text:'BuyerShield (\u201cnosotros\u201d, \u201cnuestro\u201d o \u201cla Aplicaci\u00f3n\u201d) se compromete a proteger su privacidad. Esta Pol\u00edtica de Privacidad explica qu\u00e9 informaci\u00f3n recopilamos, c\u00f3mo la usamos y sus derechos con respecto a sus datos. Esta pol\u00edtica se aplica a todos los usuarios en todo el mundo, independientemente de su ubicaci\u00f3n.',
+s1_label:"Secci\u00f3n 1",s1_title:"Informaci\u00f3n que recopilamos",
+s1_body:'<div class="highlight-box">'+SC+' Estamos dise\u00f1ados con un enfoque de privacidad primero. La Aplicaci\u00f3n almacena todos los datos localmente en su dispositivo y no opera ning\u00fan servidor externo.</div><h3>a) Informaci\u00f3n que usted proporciona</h3><ul><li>Detalles del veh\u00edculo (a\u00f1o, marca, modelo, kilometraje, precio, VIN \u2014 opcional)</li><li>Observaciones de inspecci\u00f3n y notas sobre el estado</li><li>Fotos tomadas durante las inspecciones</li><li>No se requieren nombres reales, direcciones de correo electr\u00f3nico, n\u00fameros de tel\u00e9fono ni identificadores personales para usar la Aplicaci\u00f3n.</li></ul><h3>b) Informaci\u00f3n recopilada autom\u00e1ticamente</h3><ul><li>Registros de transacciones de compra procesados a trav\u00e9s del framework StoreKit de Apple (IDs de productos, fechas de transacci\u00f3n, estado de suscripci\u00f3n). Estas transacciones son gestionadas completamente por Apple.</li></ul><h3>c) Informaci\u00f3n que NO recopilamos</h3><ul class="list-no"><li>Datos de ubicaci\u00f3n</li><li>Identificadores de dispositivo o IDs publicitarios</li><li>Historial de navegaci\u00f3n</li><li>Datos de an\u00e1lisis o seguimiento de uso</li><li>Informaci\u00f3n de contacto</li><li>No utilizamos ning\u00fan SDK de an\u00e1lisis, publicidad o rastreo de terceros.</li></ul>',
+s2_label:"Secci\u00f3n 2",s2_title:"C\u00f3mo usamos su informaci\u00f3n",
+s2_body:'<p>Todos los datos que usted ingresa se utilizan \u00fanicamente para:</p><ul><li>Generar listas de verificaci\u00f3n de inspecci\u00f3n, puntuaciones de riesgo y orientaci\u00f3n de negociaci\u00f3n dentro de la Aplicaci\u00f3n.</li><li>Producir informes de inspecci\u00f3n en PDF almacenados en su dispositivo.</li><li>Verificar sus derechos de compra (a trav\u00e9s de Apple StoreKit).</li></ul><div class="highlight-box">'+SS+' Sus datos nunca salen de su dispositivo. No transmitimos, cargamos, compartimos ni vendemos ning\u00fan dato de usuario a terceros, servidores o servicios en la nube.</div>',
+s3_label:"Secci\u00f3n 3",s3_title:"Almacenamiento y seguridad de datos",
+s3_body:'<ul><li>Todos los datos se almacenan localmente en su dispositivo utilizando el framework SwiftData de Apple.</li><li>Los datos est\u00e1n protegidos por las funciones de seguridad integradas de su dispositivo (c\u00f3digo de acceso, Face ID, Touch ID).</li><li>No operamos ning\u00fan servidor, base de datos ni infraestructura en la nube.</li><li>Si elimina la Aplicaci\u00f3n, todos los datos almacenados localmente se eliminar\u00e1n permanentemente.</li></ul><div class="note-box">'+SI+' Tambi\u00e9n puede eliminar todos los datos manualmente desde la Aplicaci\u00f3n a trav\u00e9s de Configuraci\u00f3n \u2192 Eliminar todas las inspecciones.</div>',
+s4_label:"Secci\u00f3n 4",s4_title:"Servicios de terceros",
+s4_body:'<p>La Aplicaci\u00f3n se integra \u00fanicamente con:</p><ul><li>Apple StoreKit \u2014 para procesar compras dentro de la aplicaci\u00f3n y suscripciones. Las transacciones de compra son gestionadas completamente por Apple y est\u00e1n sujetas a la Pol\u00edtica de Privacidad de Apple (<a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/privacy/</a>).</li></ul><p>No nos integramos con ninguna red publicitaria, proveedor de an\u00e1lisis, plataforma de redes sociales ni otros procesadores de datos de terceros.</p>',
+s5_label:"Secci\u00f3n 5",s5_title:"Privacidad de los ni\u00f1os",
+s5_body:'<p>La Aplicaci\u00f3n no est\u00e1 dirigida a ni\u00f1os menores de 13 a\u00f1os (o la edad m\u00ednima requerida en su jurisdicci\u00f3n). No recopilamos intencionalmente informaci\u00f3n personal de ni\u00f1os. Dado que la Aplicaci\u00f3n no recopila informaci\u00f3n personal y almacena todos los datos localmente, no existe ning\u00fan mecanismo para que los datos de los ni\u00f1os nos sean transmitidos.</p>',
+s6_label:"Secci\u00f3n 6",s6_title:"Sus derechos",
+s6_body:'<p>Dependiendo de su jurisdicci\u00f3n, usted puede tener los siguientes derechos:</p><div class="rights-grid"><div class="right-item"><div class="right-title">\uD83D\uDD0D Derecho de acceso</div><div class="right-desc">Puede ver todos sus datos directamente dentro de la Aplicaci\u00f3n en cualquier momento.</div></div><div class="right-item"><div class="right-title">\uD83D\uDDD1\uFE0F Derecho de eliminaci\u00f3n</div><div class="right-desc">Puede eliminar todos sus datos desde Configuraci\u00f3n \u2192 Eliminar todas las inspecciones, o eliminando la Aplicaci\u00f3n.</div></div><div class="right-item"><div class="right-title">\uD83D\uDCE4 Derecho a la portabilidad</div><div class="right-desc">Puede exportar los datos de inspecci\u00f3n como informes PDF.</div></div><div class="right-item"><div class="right-title">\u2699\uFE0F Derecho a restringir el procesamiento</div><div class="right-desc">Dado que todo el procesamiento ocurre localmente, usted lo controla completamente eligiendo qu\u00e9 datos ingresar.</div></div></div><hr class="section-divider"/><div class="legal-badges"><div class="legal-badge">'+SB+' GDPR (EEE)</div><div class="legal-badge">'+SB+' CCPA / CPRA (California)</div></div><p style="margin-top:14px;font-size:14px;color:var(--text-muted);">Dado que no recopilamos, almacenamos ni procesamos datos personales en ning\u00fan servidor, la mayor\u00eda de las solicitudes de protecci\u00f3n de datos se cumplen autom\u00e1ticamente a trav\u00e9s de la arquitectura exclusivamente local de la Aplicaci\u00f3n.</p>',
+s7_label:"Secci\u00f3n 7",s7_title:"Usuarios internacionales",
+s7_body:'<p>La Aplicaci\u00f3n puede utilizarse en m\u00faltiples pa\u00edses y regiones. Dado que todos los datos se almacenan localmente en su dispositivo y nunca se transmiten a ning\u00fan servidor, sus datos permanecen dentro de su dispositivo y est\u00e1n sujetos a las leyes de protecci\u00f3n de datos de su jurisdicci\u00f3n. No se produce ninguna transferencia transfronteriza de datos.</p><hr class="section-divider"/><h3>7a. Base legal para el procesamiento (usuarios del EEE)</h3><p>Para los usuarios del Espacio Econ\u00f3mico Europeo, nuestra base legal para el procesamiento de datos es:</p><ul><li>Necesidad contractual \u2014 el procesamiento de los datos de su veh\u00edculo e inspecci\u00f3n es necesario para ofrecer la funcionalidad principal de la Aplicaci\u00f3n.</li><li>Inter\u00e9s leg\u00edtimo \u2014 verificar los derechos de compra a trav\u00e9s de Apple StoreKit para proporcionar el nivel correcto de servicio.</li></ul><p>Dado que todos los datos permanecen en su dispositivo y no se nos transmite ning\u00fan dato personal, no se requiere consentimiento para el procesamiento de datos seg\u00fan el GDPR.</p><hr class="section-divider"/><h3>7b. Residentes de California (CCPA/CPRA)</h3><p>Si usted es residente de California:</p><ul><li>No vendemos ni compartimos su informaci\u00f3n personal seg\u00fan lo definido por la CCPA/CPRA.</li><li>No usamos ni divulgamos informaci\u00f3n personal sensible para fines distintos a los permitidos por la CCPA/CPRA.</li><li>Usted tiene derecho a conocer, eliminar y optar por no participar en la venta de informaci\u00f3n personal. Dado que no recopilamos ni transmitimos datos personales, estos derechos se satisfacen por dise\u00f1o.</li></ul>',
+s8_label:"Secci\u00f3n 8",s8_title:"Retenci\u00f3n de datos",
+s8_body:'<ul><li>Nivel gratuito: Los datos de inspecci\u00f3n se almacenan en su dispositivo. Los datos m\u00e1s antiguos pueden eliminarse autom\u00e1ticamente despu\u00e9s de un per\u00edodo prolongado de inactividad para gestionar el almacenamiento del dispositivo.</li><li>BuyerShield+ y Pro: Los datos se conservan indefinidamente en su dispositivo a menos que los elimine manualmente.</li><li>Si desinstala la Aplicaci\u00f3n, todos los datos se eliminan permanentemente de su dispositivo.</li><li>Puede eliminar todos los datos en cualquier momento desde Configuraci\u00f3n \u2192 Eliminar todas las inspecciones.</li></ul>',
+s9_label:"Secci\u00f3n 9",s9_title:"Cambios a esta pol\u00edtica",
+s9_body:'<p>Podemos actualizar esta Pol\u00edtica de Privacidad de vez en cuando. Los cambios se reflejar\u00e1n dentro de la Aplicaci\u00f3n con una fecha de \u201c\u00daltima actualizaci\u00f3n\u201d actualizada. Su uso continuado de la Aplicaci\u00f3n despu\u00e9s de cualquier cambio constituye la aceptaci\u00f3n de la pol\u00edtica revisada. Le recomendamos revisar esta pol\u00edtica peri\u00f3dicamente.</p>',
+s10_label:"Secci\u00f3n 10",s10_title:"No rastrear",
+s10_body:'<p>La Aplicaci\u00f3n no rastrea a los usuarios a trav\u00e9s de sitios web o servicios de terceros. Respetamos las se\u00f1ales de No Rastrear por dise\u00f1o, ya que no participamos en ninguna forma de rastreo.</p>',
+contact_title:"Cont\u00e1ctenos",
+contact_desc:"Si tiene alguna pregunta, inquietud o solicitud con respecto a esta Pol\u00edtica de Privacidad o sus datos, cont\u00e1ctenos en:",
+contact_response:"Responderemos a su consulta tan pronto como sea razonablemente posible.",
+footer_updated:"Esta pol\u00edtica de privacidad fue actualizada por \u00faltima vez el 22 de marzo de 2026."
+},
 
-  s2_label: "Secci\u00f3n 2", s2_title: "C\u00f3mo usamos su informaci\u00f3n",
-  s2_body: `<p>Todos los datos que usted ingresa se utilizan \u00fanicamente para:</p>
-<ul>
-  <li>Generar listas de verificaci\u00f3n de inspecci\u00f3n, puntuaciones de riesgo y orientaci\u00f3n de negociaci\u00f3n dentro de la Aplicaci\u00f3n.</li>
-  <li>Producir informes de inspecci\u00f3n en PDF almacenados en su dispositivo.</li>
-  <li>Verificar sus derechos de compra (a trav\u00e9s de Apple StoreKit).</li>
-</ul>
-<div class="highlight-box">${SVG_SHIELD} Sus datos nunca salen de su dispositivo. No transmitimos, cargamos, compartimos ni vendemos ning\u00fan dato de usuario a terceros, servidores o servicios en la nube.</div>`,
-
-  s3_label: "Secci\u00f3n 3", s3_title: "Almacenamiento y seguridad de datos",
-  s3_body: `<ul>
-  <li>Todos los datos se almacenan localmente en su dispositivo utilizando el framework SwiftData de Apple.</li>
-  <li>Los datos est\u00e1n protegidos por las funciones de seguridad integradas de su dispositivo (c\u00f3digo de acceso, Face ID, Touch ID).</li>
-  <li>No operamos ning\u00fan servidor, base de datos ni infraestructura en la nube.</li>
-  <li>Si elimina la Aplicaci\u00f3n, todos los datos almacenados localmente se eliminar\u00e1n permanentemente.</li>
-</ul>
-<div class="note-box">${SVG_INFO} Tambi\u00e9n puede eliminar todos los datos manualmente desde la Aplicaci\u00f3n a trav\u00e9s de Configuraci\u00f3n \u2192 Eliminar todas las inspecciones.</div>`,
-
-  s4_label: "Secci\u00f3n 4", s4_title: "Servicios de terceros",
-  s4_body: `<p>La Aplicaci\u00f3n se integra \u00fanicamente con:</p>
-<ul>
-  <li>Apple StoreKit \u2014 para procesar compras dentro de la aplicaci\u00f3n y suscripciones. Las transacciones de compra son gestionadas completamente por Apple y est\u00e1n sujetas a la Pol\u00edtica de Privacidad de Apple (<a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/privacy/</a>).</li>
-</ul>
-<p>No nos integramos con ninguna red publicitaria, proveedor de an\u00e1lisis, plataforma de redes sociales ni otros procesadores de datos de terceros.</p>`,
-
-  s5_label: "Secci\u00f3n 5", s5_title: "Privacidad de los ni\u00f1os",
-  s5_body: `<p>La Aplicaci\u00f3n no est\u00e1 dirigida a ni\u00f1os menores de 13 a\u00f1os (o la edad m\u00ednima requerida en su jurisdicci\u00f3n). No recopilamos intencionalmente informaci\u00f3n personal de ni\u00f1os. Dado que la Aplicaci\u00f3n no recopila informaci\u00f3n personal y almacena todos los datos localmente, no existe ning\u00fan mecanismo para que los datos de los ni\u00f1os nos sean transmitidos.</p>`,
-
-  s6_label: "Secci\u00f3n 6", s6_title: "Sus derechos",
-  s6_body: `<p>Dependiendo de su jurisdicci\u00f3n, usted puede tener los siguientes derechos:</p>
-<div class="rights-grid">
-  <div class="right-item"><div class="right-title">\uD83D\uDD0D Derecho de acceso</div><div class="right-desc">Puede ver todos sus datos directamente dentro de la Aplicaci\u00f3n en cualquier momento.</div></div>
-  <div class="right-item"><div class="right-title">\uD83D\uDDD1\uFE0F Derecho de eliminaci\u00f3n</div><div class="right-desc">Puede eliminar todos sus datos desde Configuraci\u00f3n \u2192 Eliminar todas las inspecciones, o eliminando la Aplicaci\u00f3n.</div></div>
-  <div class="right-item"><div class="right-title">\uD83D\uDCE4 Derecho a la portabilidad</div><div class="right-desc">Puede exportar los datos de inspecci\u00f3n como informes PDF.</div></div>
-  <div class="right-item"><div class="right-title">\u2699\uFE0F Derecho a restringir el procesamiento</div><div class="right-desc">Dado que todo el procesamiento ocurre localmente, usted lo controla completamente eligiendo qu\u00e9 datos ingresar.</div></div>
-</div>
-<hr class="section-divider"/>
-<div class="legal-badges">
-  <div class="legal-badge">${SVG_BADGE} GDPR (EEE)</div>
-  <div class="legal-badge">${SVG_BADGE} CCPA / CPRA (California)</div>
-</div>
-<p style="margin-top:14px; font-size:14px; color:var(--text-muted);">Dado que no recopilamos, almacenamos ni procesamos datos personales en ning\u00fan servidor, la mayor\u00eda de las solicitudes de protecci\u00f3n de datos se cumplen autom\u00e1ticamente a trav\u00e9s de la arquitectura exclusivamente local de la Aplicaci\u00f3n.</p>`,
-
-  s7_label: "Secci\u00f3n 7", s7_title: "Usuarios internacionales",
-  s7_body: `<p>La Aplicaci\u00f3n puede utilizarse en m\u00faltiples pa\u00edses y regiones. Dado que todos los datos se almacenan localmente en su dispositivo y nunca se transmiten a ning\u00fan servidor, sus datos permanecen dentro de su dispositivo y est\u00e1n sujetos a las leyes de protecci\u00f3n de datos de su jurisdicci\u00f3n. No se produce ninguna transferencia transfronteriza de datos.</p>
-<hr class="section-divider"/>
-<h3>7a. Base legal para el procesamiento (usuarios del EEE)</h3>
-<p>Para los usuarios del Espacio Econ\u00f3mico Europeo, nuestra base legal para el procesamiento de datos es:</p>
-<ul>
-  <li>Necesidad contractual \u2014 el procesamiento de los datos de su veh\u00edculo e inspecci\u00f3n es necesario para ofrecer la funcionalidad principal de la Aplicaci\u00f3n.</li>
-  <li>Inter\u00e9s leg\u00edtimo \u2014 verificar los derechos de compra a trav\u00e9s de Apple StoreKit para proporcionar el nivel correcto de servicio.</li>
-</ul>
-<p>Dado que todos los datos permanecen en su dispositivo y no se nos transmite ning\u00fan dato personal, no se requiere consentimiento para el procesamiento de datos seg\u00fan el GDPR.</p>
-<hr class="section-divider"/>
-<h3>7b. Residentes de California (CCPA/CPRA)</h3>
+fr:{
+banner_title:"Politique de confidentialit\u00e9",
+banner_date:"Derni\u00e8re mise \u00e0 jour\u00a0: 22 mars 2026",
+banner_scope:"S\u2019applique \u00e0 tous les utilisateurs dans le monde entier",
+trust_no_collection:"Aucune collecte de donn\u00e9es",
+trust_local:"100\u00a0% stockage local",
+trust_no_tracking:"Aucun suivi par des tiers",
+trust_compliant:"Conforme au RGPD et \u00e0 la CCPA",
+trust_no_servers:"Aucun serveur exploit\u00e9",
+toc_title:"Sommaire",
+toc_intro:"Introduction",
+toc_s1:"1. Informations que nous recueillons",
+toc_s2:"2. Comment nous utilisons vos informations",
+toc_s3:"3. Stockage et s\u00e9curit\u00e9 des donn\u00e9es",
+toc_s4:"4. Services tiers",
+toc_s5:"5. Vie priv\u00e9e des enfants",
+toc_s6:"6. Vos droits",
+toc_s7:"7. Utilisateurs internationaux",
+toc_s8:"8. Conservation des donn\u00e9es",
+toc_s9:"9. Modifications de cette politique",
+toc_s10:"10. Ne pas suivre",
+toc_contact:"11. Nous contacter",
+intro_text:'BuyerShield (\u00ab\u00a0nous\u00a0\u00bb, \u00ab\u00a0notre\u00a0\u00bb ou \u00ab\u00a0l\u2019Application\u00a0\u00bb) s\u2019engage \u00e0 prot\u00e9ger votre vie priv\u00e9e. Cette Politique de confidentialit\u00e9 explique quelles informations nous recueillons, comment nous les utilisons et vos droits concernant vos donn\u00e9es. Cette politique s\u2019applique \u00e0 tous les utilisateurs dans le monde entier, quel que soit leur emplacement.',
+s1_label:"Section 1",s1_title:"Informations que nous recueillons",
+s1_body:'<div class="highlight-box">'+SC+' Nous sommes con\u00e7us avec une approche ax\u00e9e sur la confidentialit\u00e9. L\u2019Application stocke toutes les donn\u00e9es localement sur votre appareil et n\u2019exploite aucun serveur externe.</div><h3>a) Informations que vous fournissez</h3><ul><li>D\u00e9tails du v\u00e9hicule (ann\u00e9e, marque, mod\u00e8le, kilom\u00e9trage, prix, NIV \u2014 facultatif)</li><li>Observations d\u2019inspection et notes sur l\u2019\u00e9tat</li><li>Photos prises lors des inspections</li><li>Aucun nom r\u00e9el, adresse courriel, num\u00e9ro de t\u00e9l\u00e9phone ou identifiant personnel n\u2019est requis pour utiliser l\u2019Application.</li></ul><h3>b) Informations recueillies automatiquement</h3><ul><li>Enregistrements de transactions d\u2019achat trait\u00e9s via le framework StoreKit d\u2019Apple (identifiants de produits, dates de transaction, statut d\u2019abonnement). Ces transactions sont enti\u00e8rement g\u00e9r\u00e9es par Apple.</li></ul><h3>c) Informations que nous ne recueillons PAS</h3><ul class="list-no"><li>Donn\u00e9es de localisation</li><li>Identifiants d\u2019appareil ou identifiants publicitaires</li><li>Historique de navigation</li><li>Donn\u00e9es d\u2019analyse ou de suivi d\u2019utilisation</li><li>
