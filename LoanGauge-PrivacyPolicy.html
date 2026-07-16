@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy for the LoanGauge mobile application." />
+  <title>Privacy Policy — LoanGauge</title>
+  <style>
+    :root {
+      --bg: #f5f6f8;
+      --surface: #ffffff;
+      --text: #1f2430;
+      --text-muted: #5b6472;
+      --heading: #10131a;
+      --accent: #3b6cff;
+      --accent-soft: #eaf0ff;
+      --border: #e6e8ee;
+      --shadow: 0 10px 40px rgba(20, 27, 45, 0.08);
+      --radius: 16px;
+      --maxw: 820px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0e1117;
+        --surface: #161b23;
+        --text: #d6dae3;
+        --text-muted: #9aa4b2;
+        --heading: #f2f4f8;
+        --accent: #6f97ff;
+        --accent-soft: #1c2740;
+        --border: #262d38;
+        --shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+        Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--accent) 0%, #7a5cff 100%);
+      color: #fff;
+      padding: 72px 24px 96px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.9rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 0;
+      opacity: 0.9;
+      font-size: 1.05rem;
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: -56px auto 64px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(28px, 5vw, 56px);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      padding-bottom: 24px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .meta strong {
+      color: var(--heading);
+      font-weight: 600;
+    }
+
+    .toc {
+      background: var(--accent-soft);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 28px 0 40px;
+    }
+
+    .toc h2 {
+      margin: 0 0 12px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 20px;
+      columns: 2;
+      column-gap: 32px;
+    }
+
+    .toc a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    h2.section {
+      margin: 44px 0 14px;
+      font-size: 1.35rem;
+      color: var(--heading);
+      font-weight: 650;
+      letter-spacing: -0.01em;
+      scroll-margin-top: 24px;
+    }
+
+    h2.section:first-of-type {
+      margin-top: 8px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--text);
+    }
+
+    ul {
+      margin: 0 0 16px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .contact {
+      margin-top: 40px;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px dashed var(--border);
+      background: var(--accent-soft);
+    }
+
+    .contact h2 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+      color: var(--heading);
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      margin-top: 8px;
+      font-size: 0.98rem;
+    }
+
+    .contact-row span {
+      color: var(--text-muted);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 8px 20px 48px;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+    }
+
+    .summary {
+      background: var(--accent-soft);
+      border-radius: 12px;
+      padding: 20px 24px 6px;
+      margin: 8px 0 8px;
+    }
+
+    .subhead {
+      margin: 26px 0 8px;
+      font-weight: 650;
+      color: var(--heading);
+      font-size: 1.02rem;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-left: 3px solid var(--accent);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 0 0 16px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    ul ul {
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+
+    .disclaimer {
+      margin-top: 40px;
+      padding: 16px 20px;
+      border-radius: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 560px) {
+      .toc ol {
+        columns: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Privacy Policy</h1>
+    <p>LoanGauge &mdash; an educational tool for understanding car-title lending.</p>
+  </header>
+
+  <main class="container">
+    <article class="card">
+      <div class="meta">
+        <span><strong>Developer:</strong> Miao YU</span>
+        <span><strong>Contact:</strong> <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a></span>
+        <span><strong>Last updated:</strong> July 16, 2026</span>
+        <span><strong>Effective date:</strong> July 16, 2026</span>
+      </div>
+
+      <p class="lead">
+        This Privacy Policy explains how <strong>Miao YU</strong> ("<strong>we</strong>,"
+        "<strong>us</strong>," or "<strong>our</strong>") handles information in connection
+        with the <strong>LoanGauge</strong> mobile application (the "<strong>App</strong>").
+        This English-language version is the master, globally applicable version of our
+        Privacy Policy. Where we provide translations, the English version governs in the
+        event of any conflict.
+      </p>
+      <p>
+        LoanGauge is an <strong>educational tool</strong>. It helps users understand how
+        car-title lending works and generates illustrative estimates. We are
+        <strong>not a lender, broker, credit-services organization, or financial advisor</strong>,
+        and we do not process loan applications.
+      </p>
+      <p>
+        By downloading or using the App, you acknowledge that you have read and understood
+        this Privacy Policy.
+      </p>
+
+      <nav class="toc" aria-label="Table of contents">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#summary">Summary (plain-language overview)</a></li>
+          <li><a href="#scope">Scope</a></li>
+          <li><a href="#info-we-collect">Information we collect</a></li>
+          <li><a href="#not-collect">What we do not collect</a></li>
+          <li><a href="#how-we-use">How we use information</a></li>
+          <li><a href="#legal-bases">Legal bases for processing (EEA/UK)</a></li>
+          <li><a href="#storage">How information is stored and retained</a></li>
+          <li><a href="#advertising">Advertising</a></li>
+          <li><a href="#analytics">Analytics</a></li>
+          <li><a href="#sharing">How we share information</a></li>
+          <li><a href="#transfers">International data transfers</a></li>
+          <li><a href="#rights">Your privacy rights</a></li>
+          <li><a href="#children">Children's privacy</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#third-party">Third-party services and links</a></li>
+          <li><a href="#changes">Changes to this Privacy Policy</a></li>
+          <li><a href="#contact">Contact us</a></li>
+        </ol>
+      </nav>
+
+      <h2 class="section" id="summary">1. Summary (plain-language overview)</h2>
+      <div class="summary">
+        <ul>
+          <li>The App is designed to work <strong>on your device</strong>. The vehicle details, preferences, and estimates you create are <strong>stored locally on your device</strong>, not on our servers.</li>
+          <li>We do <strong>not</strong> operate servers that receive your content, and we do <strong>not</strong> use third-party analytics, advertising, or tracking SDKs in the current version. The App's only external connections are to <strong>Apple</strong> for optional in-app purchases, purchase restoration, and app-rating prompts.</li>
+          <li>We do <strong>not</strong> require an account, and we do <strong>not</strong> ask you to provide your name, email, address, or government identifiers to use the App.</li>
+          <li>We do <strong>not</strong> access your <strong>GPS or precise location</strong>. A default region/state is inferred only from your device's locale and time-zone settings and is used on-device.</li>
+          <li>Payments for optional in-app purchases are handled by <strong>Apple</strong>. We never receive your full payment-card details.</li>
+          <li>The <strong>current version of the App does not display third-party advertisements</strong> and does not use advertising identifiers. Future versions may include advertising (see Section 8).</li>
+          <li>We do <strong>not sell or "share" your personal information</strong> as those terms are defined under applicable U.S. state privacy laws.</li>
+        </ul>
+      </div>
+      <p class="note">This summary is for convenience only; please read the full policy below.</p>
+
+      <h2 class="section" id="scope">2. Scope</h2>
+      <p>
+        This policy applies to the LoanGauge mobile application and any related services that
+        link to it. It does not apply to third-party services, websites, or products that we
+        do not control, including Apple's App Store, Google's services, or any lender you may
+        contact.
+      </p>
+
+      <h2 class="section" id="info-we-collect">3. Information we collect</h2>
+      <p>We practice <strong>data minimization</strong> and collect as little information as possible.</p>
+
+      <h3 class="subhead">a. Information you provide and create in the App.</h3>
+      <p>
+        When you use the App you may enter vehicle information (such as category, make, model,
+        year, mileage, condition, title status, outstanding balance, and a desired amount),
+        select a state/region, and use checklists. This information, along with the estimates
+        it generates and your preferences (such as appearance mode and any unlocked content),
+        is <strong>stored locally on your device</strong>. We do not transmit this content to
+        our servers, and we cannot access it. If you export a report as a PDF, the file is
+        generated <strong>on your device</strong>; it leaves your device only if and where you
+        choose to share it (for example, through the iOS share sheet).
+      </p>
+
+      <h3 class="subhead">b. Purchase information.</h3>
+      <p>
+        If you make an optional in-app purchase, the transaction is processed by
+        <strong>Apple</strong> through the App Store using your Apple ID. Apple may share with
+        us limited, non&ndash;payment-card information such as a transaction identifier and
+        confirmation of purchase or restoration, so we can unlock the content you bought. We
+        do <strong>not</strong> receive your credit- or debit-card number.
+      </p>
+
+      <h3 class="subhead">c. Device and technical information.</h3>
+      <p>
+        The App may process basic technical information on your device (such as device model,
+        operating-system version, language, region/time-zone settings, and app version) to
+        operate correctly, format currency and content, and infer a default region. This
+        processing occurs on-device.
+      </p>
+
+      <h3 class="subhead">d. Diagnostics you choose to share via Apple.</h3>
+      <p>
+        If you have enabled sharing of diagnostics and usage data in your iOS settings, Apple
+        may provide us with <strong>aggregated, anonymized</strong> crash and usage reports
+        through App Analytics. This data is controlled by Apple and does not identify you to
+        us. You can change this in <strong>iOS Settings &rarr; Privacy &amp; Security &rarr;
+        Analytics &amp; Improvements</strong>.
+      </p>
+
+      <h3 class="subhead">e. App ratings.</h3>
+      <p>
+        If you choose to rate the App, the rating prompt is presented by Apple. Your review
+        and rating are handled by Apple under Apple's terms; we do not receive personal
+        information from this feature.
+      </p>
+
+      <h3 class="subhead">f. Advertising identifiers. <span class="badge">Ad versions only</span></h3>
+      <p class="note">Applies only to versions that display ads &mdash; see Section 8.</p>
+      <p>
+        The <strong>current version does not collect advertising identifiers</strong>. In
+        future versions that include advertising, our advertising provider (Google AdMob) may
+        collect device and advertising identifiers as described in Section 8.
+      </p>
+
+      <h2 class="section" id="not-collect">4. What we do <em>not</em> collect</h2>
+      <ul>
+        <li>We do <strong>not</strong> collect your name, email address, phone number, mailing address, or government-issued identifiers.</li>
+        <li>We do <strong>not</strong> access your <strong>precise or GPS location</strong>, contacts, photos, microphone, or camera.</li>
+        <li>We do <strong>not</strong> create user accounts or profiles on our servers.</li>
+      </ul>
+
+      <h2 class="section" id="how-we-use">5. How we use information</h2>
+      <p>We use the limited information described above to:</p>
+      <ul>
+        <li>provide and operate the App's educational features and generate on-device estimates;</li>
+        <li>localize content, currency, and default region;</li>
+        <li>process and restore your optional in-app purchases (via Apple);</li>
+        <li>maintain the security, integrity, and proper functioning of the App;</li>
+        <li>diagnose problems and improve the App using aggregated, anonymized information; and</li>
+        <li>comply with legal obligations.</li>
+      </ul>
+      <p>
+        We do <strong>not</strong> use your information for automated decisions that produce
+        legal or similarly significant effects about you. Estimates are illustrative and are
+        not lending decisions.
+      </p>
+
+      <h2 class="section" id="legal-bases">6. Legal bases for processing (EEA/UK users)</h2>
+      <p>Where the EU/UK General Data Protection Regulation applies, we rely on the following legal bases:</p>
+      <ul>
+        <li><strong>Performance of a contract</strong> &mdash; to provide the App and process purchases you request.</li>
+        <li><strong>Legitimate interests</strong> &mdash; to keep the App secure, functional, and improved, balanced against your rights.</li>
+        <li><strong>Consent</strong> &mdash; where required, for example before serving <strong>personalized advertising</strong> or non-essential tracking in future ad-supported versions. You may withdraw consent at any time.</li>
+        <li><strong>Legal obligation</strong> &mdash; to comply with applicable law.</li>
+      </ul>
+
+      <h2 class="section" id="storage">7. How your information is stored and retained</h2>
+      <ul>
+        <li><strong>Local storage.</strong> Content you create in the App is stored <strong>on your device</strong> using the operating system's standard app-storage mechanisms. It remains until you delete it (for example, using the App's "Reset All Data" function or by uninstalling the App).</li>
+        <li><strong>Retention.</strong> Because we do not store your App content on our servers, we do not retain it. Purchase records maintained by Apple are subject to Apple's retention practices. Any aggregated, anonymized diagnostics are retained only as long as needed for the purposes described.</li>
+      </ul>
+      <p class="note">
+        Consistent with this design, our Apple App Store privacy disclosures (the App Store
+        &ldquo;privacy label&rdquo;) reflect that the current version does not collect personal
+        data through the App or link it to your identity. Where the label reflects data such as
+        purchase activity, that processing is performed by <strong>Apple</strong> to deliver the
+        in-app purchases you request.
+      </p>
+
+      <h2 class="section" id="advertising">8. Advertising <span class="badge">AdMob</span></h2>
+      <h3 class="subhead">Current status.</h3>
+      <p>
+        The <strong>current version of the App does not display third-party advertisements</strong>,
+        does not use an advertising SDK, and does not collect advertising identifiers for ad
+        purposes.
+      </p>
+      <h3 class="subhead">Future ad-supported versions.</h3>
+      <p>
+        A future version of the App may display advertisements served through
+        <strong>Google AdMob</strong>. If and when advertising is introduced:
+      </p>
+      <ul>
+        <li>AdMob and its partners may collect and process device information and identifiers (such as the device advertising identifier / IDFA, IP address, and general ad-interaction data) to deliver and measure ads and to limit repetitive ads.</li>
+        <li>On iOS, we will present Apple's <strong>App Tracking Transparency (ATT)</strong> prompt where required. If you do not grant permission, ads will be limited to <strong>non-personalized</strong> advertising.</li>
+        <li>You can control ad personalization through your device settings (for example, <strong>iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking</strong> and <strong>&rarr; Apple Advertising</strong>) and through Google's ad settings.</li>
+        <li>Google's handling of data in this context is governed by Google's Privacy Policy and its advertising terms. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a> and <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">policies.google.com/technologies/ads</a>.</li>
+      </ul>
+      <p>When advertising is enabled, we will update this policy and its effective date accordingly.</p>
+
+      <h2 class="section" id="analytics">9. Analytics</h2>
+      <p>
+        The <strong>current version does not integrate third-party analytics SDKs</strong>. We
+        may use Apple's aggregated, anonymized App Analytics as described in Section 3(d). If a
+        future version introduces third-party analytics or crash-reporting tools, we will
+        describe them here and update the effective date.
+      </p>
+
+      <h2 class="section" id="sharing">10. How we share information</h2>
+      <p>We do not sell your personal information. We share information only as follows:</p>
+      <ul>
+        <li><strong>Apple</strong> &mdash; for App Store distribution, in-app purchases, ratings, and optional diagnostics, under Apple's privacy terms.</li>
+        <li><strong>Google (AdMob)</strong> &mdash; only in future ad-supported versions, as described in Section 8.</li>
+        <li><strong>Service providers</strong> &mdash; parties that help us operate the App (for example, hosting for this policy page), bound by confidentiality and data-protection obligations.</li>
+        <li><strong>Legal and safety</strong> &mdash; where required by law, regulation, legal process, or to protect rights, safety, or the integrity of the App.</li>
+        <li><strong>Business transfers</strong> &mdash; in connection with a merger, acquisition, financing, or sale of assets, subject to this policy.</li>
+      </ul>
+
+      <h2 class="section" id="transfers">11. International data transfers</h2>
+      <p>
+        We provide this App globally. Service providers such as Apple and Google may process
+        limited information in countries other than your own, including the United States,
+        whose data-protection laws may differ from those in your jurisdiction. Where required,
+        such transfers rely on appropriate safeguards (for example, the European Commission's
+        Standard Contractual Clauses).
+      </p>
+
+      <h2 class="section" id="rights">12. Your privacy rights</h2>
+      <p>
+        Depending on where you live, you may have some or all of the following rights regarding
+        personal information about you: to <strong>access, correct, delete, port, restrict, or
+        object</strong> to processing, and to <strong>withdraw consent</strong>.
+      </p>
+      <ul>
+        <li>Because most of your App content is stored only on your device, you can exercise deletion directly at any time using <strong>"Reset All Data"</strong> in the App or by uninstalling it.</li>
+        <li><strong>EEA/UK (GDPR):</strong> you also have the right to lodge a complaint with your local supervisory authority.</li>
+        <li><strong>California (CCPA/CPRA):</strong> you have rights to know, delete, and correct, and the right to opt out of the "sale" or "sharing" of personal information and of targeted advertising. In the current version, <strong>we do not sell or share personal information</strong> as defined by these laws. If a future ad-supported version involves "sharing" for cross-context behavioral advertising, it will occur only with your consent through Apple's App Tracking Transparency prompt, and you will be able to opt out at any time via your device settings (see Section 8). We do not discriminate against you for exercising your rights.</li>
+        <li><strong>Other U.S. states and other jurisdictions:</strong> you may have comparable rights under applicable local law.</li>
+      </ul>
+      <p>
+        To make a request that involves information we control, contact us at
+        <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. We may need to verify
+        your request. For information held by Apple or Google, please use their respective
+        privacy controls.
+      </p>
+
+      <h2 class="section" id="children">13. Children's privacy</h2>
+      <p>
+        The App is intended for adults and is <strong>not directed to children under 18</strong>.
+        We do not knowingly collect personal information from children. Because any information
+        entered in the App is stored <strong>only on the device</strong> and is not transmitted
+        to or accessible by us, a parent or guardian can remove all of that content directly at
+        any time using <strong>&ldquo;Reset All Data&rdquo;</strong> in the App or by uninstalling
+        it. If a child has provided personal information to us <em>directly</em> through a channel
+        we control (for example, by emailing us), contact us at
+        <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a> and we will delete the
+        information we hold. We comply with applicable children's-privacy laws, including COPPA
+        (U.S.) and the GDPR's provisions on children where relevant.
+      </p>
+
+      <h2 class="section" id="security">14. Security</h2>
+      <p>
+        We use reasonable technical and organizational measures appropriate to the limited data
+        involved. Because your App content stays on your device, its security also depends on
+        your device's own protections (passcode, biometrics, and OS updates). No method of
+        storage or transmission is completely secure.
+      </p>
+
+      <h2 class="section" id="third-party">15. Third-party services and links</h2>
+      <p>
+        The App and this policy may reference third-party services (such as Apple, Google, or
+        external educational resources). We are not responsible for the privacy practices of
+        third parties. Please review their privacy policies. Any lender or financial provider
+        you choose to contact is independent of us and governed by its own policies.
+      </p>
+
+      <h2 class="section" id="changes">16. Changes to this Privacy Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time &mdash; for example, when we
+        introduce advertising or new features. We will revise the "Last updated"/"Effective
+        date" above and, where appropriate, provide additional notice. Your continued use of
+        the App after an update takes effect constitutes acceptance of the revised policy.
+      </p>
+
+      <h2 class="section" id="contact">17. Contact us</h2>
+      <p>
+        If you have questions or requests regarding this Privacy Policy or your information,
+        contact:
+      </p>
+
+      <div class="contact">
+        <h2>Get in touch</h2>
+        <div class="contact-row">
+          <span>Developer:</span> <strong>Miao YU</strong>
+        </div>
+        <div class="contact-row">
+          <span>Email:</span> <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>
+        </div>
+      </div>
+
+      <p class="disclaimer">
+        LoanGauge is an educational tool only and does not provide financial, legal, or lending
+        advice. Estimates are illustrative and are not offers, approvals, or lending decisions.
+      </p>
+    </article>
+
+    <footer>
+      &copy; 2026 Miao YU. All rights reserved.
+    </footer>
+  </main>
+</body>
+</html>
