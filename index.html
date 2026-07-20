@@ -261,6 +261,23 @@
             letter-spacing: 1px;
         }
 
+        /* LoanGauge */
+        .loangauge-icon { background: #D97706; }
+        .loangauge-icon img {
+            width: 76%; height: 76%;
+            display: block; object-fit: contain;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+        .loangauge-icon[data-fallback]::after {
+            content: "LG";
+            color: #FFF8E7;
+            font-weight: 800;
+            font-size: 38px;
+            line-height: 1;
+            letter-spacing: 1px;
+        }
+
         /* ── Card Typography ─────────────────────── */
         .app-card h3 {
             font-size: 22px;
@@ -367,7 +384,7 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.22);
         }
 
-        /* ── About Section ───────────────────���───── */
+        /* ── About Section ──────────────────────── */
         .about {
             padding: 88px 0;
             background: white;
@@ -705,6 +722,34 @@
                     <a href="https://apps.apple.com/app/smart-loan-payoff-calculator/id6754951165" class="download-btn" target="_blank" rel="noopener">Download on App Store</a>
                 </div>
 
+                <!-- LoanGauge Card -->
+                <div class="app-card loangauge-card">
+                    <div class="app-icon loangauge-icon">
+                        <img src="loangauge-logo.svg" alt="LoanGauge logo" loading="lazy" decoding="async"
+                             onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
+                    </div>
+                    <h3>LoanGauge – Car-Title Loan Education Tool</h3>
+                    <p class="app-tagline">Your Reference for Understanding Title Loan Basics</p>
+
+                    <p class="app-description">
+                        Learn how car-title lending works and see illustrative, model-based estimates before you contact a lender. LoanGauge is not a lender, broker, or financial advisor—it does not make loan offers or process applications.
+                    </p>
+
+                    <ul class="features-list">
+                        <li>Enter vehicle details to see an estimated loan range based on category, make, model, year, mileage, condition, and state</li>
+                        <li>Review how factors like mileage, condition, and title status may affect the estimate</li>
+                        <li>Explore example repayment scenarios and a general affordability guideline</li>
+                        <li>Use a document checklist to help gather items lenders typically request</li>
+                        <li>Export a full report as a PDF for your records</li>
+                    </ul>
+
+                    <div class="card-divider"></div>
+
+                    <p class="app-description" style="margin-bottom:0; font-size:13.5px; color:#6b7280;">
+                        Estimates are simplified, for general education only, and may differ significantly from any real lender's terms. Always confirm current rules with your state and consider lower-cost alternatives first.
+                    </p>
+                </div>
+
                 <!-- LoanPrep Card -->
                 <div class="app-card loanprep-card">
                     <div class="app-icon loanprep-icon">
@@ -746,9 +791,6 @@
     <section class="about" id="about">
         <div class="container">
             <h2>Privacy-First Financial Tools</h2>
-            <p>
-                We prioritize your privacy. Core app data—like bills, splits, and personal notes—is stored locally on your device; the app does not require an account or automatically upload your financial entries to our servers. To keep the app free, we use Google AdMob to show ads; AdMob and its partners may collect device identifiers, IP addresses, and usage data to deliver and measure ads. The app itself does not share your personal bills or notes with third parties.
-            </p>
         </div>
     </section>
 
@@ -795,6 +837,15 @@
                     </div>
                     <div>
                         <div class="app-option-title">Smart Loan Payoff Calculator</div>
+                        <div class="app-option-desc">View privacy policy in a new tab</div>
+                    </div>
+                </a>
+                <a class="app-option" href="https://bytedancedev.xyz/LoanGauge-PrivacyPolicy.html" target="_blank" rel="noopener" id="privacy-loangauge">
+                    <div class="app-option-icon loangauge-icon">
+                        <img src="loangauge-logo.svg" alt="" onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
+                    </div>
+                    <div>
+                        <div class="app-option-title">LoanGauge</div>
                         <div class="app-option-desc">View privacy policy in a new tab</div>
                     </div>
                 </a>
