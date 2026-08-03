@@ -275,8 +275,8 @@
       <div class="meta">
         <span><strong>Developer:</strong> Miao YU</span>
         <span><strong>Contact:</strong> <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a></span>
-        <span><strong>Last updated:</strong> July 16, 2026</span>
-        <span><strong>Effective date:</strong> July 16, 2026</span>
+        <span><strong>Last updated:</strong> August 2, 2026</span>
+        <span><strong>Effective date:</strong> August 2, 2026</span>
       </div>
 
       <p class="lead">
@@ -294,6 +294,12 @@
         and we do not process loan applications.
       </p>
       <p>
+        The App is <strong>supported by advertising</strong>. It uses
+        <strong>Google AdMob</strong> to display ads and, where required by law, asks for your
+        consent before any ad is requested. Sections 8 and 12 explain what that means for your
+        data and how you can change or withdraw your choices at any time.
+      </p>
+      <p>
         By downloading or using the App, you acknowledge that you have read and understood
         this Privacy Policy.
       </p>
@@ -308,7 +314,7 @@
           <li><a href="#how-we-use">How we use information</a></li>
           <li><a href="#legal-bases">Legal bases for processing (EEA/UK)</a></li>
           <li><a href="#storage">How information is stored and retained</a></li>
-          <li><a href="#advertising">Advertising</a></li>
+          <li><a href="#advertising">Advertising and consent</a></li>
           <li><a href="#analytics">Analytics</a></li>
           <li><a href="#sharing">How we share information</a></li>
           <li><a href="#transfers">International data transfers</a></li>
@@ -324,13 +330,16 @@
       <h2 class="section" id="summary">1. Summary (plain-language overview)</h2>
       <div class="summary">
         <ul>
-          <li>The App is designed to work <strong>on your device</strong>. The vehicle details, preferences, and estimates you create are <strong>stored locally on your device</strong>, not on our servers.</li>
-          <li>We do <strong>not</strong> operate servers that receive your content, and we do <strong>not</strong> use third-party analytics, advertising, or tracking SDKs in the current version. The App's only external connections are to <strong>Apple</strong> for optional in-app purchases, purchase restoration, and app-rating prompts.</li>
+          <li>The App's own features run <strong>on your device</strong>. The vehicle details, preferences, checklists, points balance, and estimates you create are <strong>stored locally on your device</strong>, not on our servers.</li>
+          <li>We do <strong>not</strong> operate servers that receive your content, and we do <strong>not</strong> use a third-party product-analytics SDK. We <strong>cannot</strong> read what you enter in the App.</li>
           <li>We do <strong>not</strong> require an account, and we do <strong>not</strong> ask you to provide your name, email, address, or government identifiers to use the App.</li>
-          <li>We do <strong>not</strong> access your <strong>GPS or precise location</strong>. A default region/state is inferred only from your device's locale and time-zone settings and is used on-device.</li>
-          <li>Payments for optional in-app purchases are handled by <strong>Apple</strong>. We never receive your full payment-card details.</li>
-          <li>The <strong>current version of the App does not display third-party advertisements</strong> and does not use advertising identifiers. Future versions may include advertising (see Section 8).</li>
-          <li>We do <strong>not sell or "share" your personal information</strong> as those terms are defined under applicable U.S. state privacy laws.</li>
+          <li>The App is <strong>ad-supported</strong>. It integrates the <strong>Google Mobile Ads (AdMob)</strong> SDK and shows banner, in-content native, interstitial, app-open, and opt-in rewarded-video ads. AdMob and its advertising partners process device data and identifiers to deliver, cap, and measure those ads. See Section 8.</li>
+          <li>Where a consent choice is required in your region (for example the <strong>EEA and the UK</strong>), the App shows a <strong>Google User Messaging Platform (UMP)</strong> consent message <em>before</em> any ad request, with an explicit <strong>&ldquo;Do not consent&rdquo;</strong> option. If you refuse consent as a whole, the ads SDK is <strong>not started</strong> and <strong>no ad at all</strong> is shown &mdash; not even a non-personalized one. If you decline only personalization, non-personalized ads are shown instead. Either way, the rest of the App works normally.</li>
+          <li>In those regions the App shows an <strong>"Ad Privacy Options"</strong> entry under <strong>Profile &rarr; About</strong> that reopens the consent form so you can <strong>change or withdraw your consent at any time</strong>.</li>
+          <li>On iOS we present Apple's <strong>App Tracking Transparency (ATT)</strong> prompt. If you decline, ads are limited to <strong>non-personalized</strong> advertising.</li>
+          <li>We do <strong>not</strong> ask for location permission, do <strong>not</strong> read your GPS position, and <strong>never receive location data ourselves</strong>. Advertising partners may derive an <strong>approximate location from your IP address</strong>. The consent message also lists <strong>precise geolocation</strong> as an optional feature: it is <strong>off unless you actively turn it on</strong>, and you can refuse or withdraw it at any time (see Section 8d).</li>
+          <li>Payments for optional in-app purchases are handled by <strong>Apple</strong>. We never receive your payment-card details. Buying <strong>"Unlock Everything"</strong> removes all ads.</li>
+          <li>We do <strong>not sell your personal information for money</strong>. Personalized advertising may nevertheless qualify as a <strong>"sale"</strong> or <strong>"share"</strong> (cross-context behavioral advertising) under some U.S. state privacy laws; Section 12 explains how to opt out.</li>
         </ul>
       </div>
       <p class="note">This summary is for convenience only; please read the full policy below.</p>
@@ -351,11 +360,18 @@
         When you use the App you may enter vehicle information (such as category, make, model,
         year, mileage, condition, title status, outstanding balance, and a desired amount),
         select a state/region, and use checklists. This information, along with the estimates
-        it generates and your preferences (such as appearance mode and any unlocked content),
-        is <strong>stored locally on your device</strong>. We do not transmit this content to
-        our servers, and we cannot access it. If you export a report as a PDF, the file is
-        generated <strong>on your device</strong>; it leaves your device only if and where you
-        choose to share it (for example, through the iOS share sheet).
+        it generates, your points balance and check-in history, your notification preferences,
+        and your other preferences (such as appearance mode and any unlocked content), is
+        <strong>stored locally on your device</strong> using the operating system's standard
+        app-storage mechanisms. We do not transmit this content to our servers, and we cannot
+        access it. If you export a report as a PDF, the file is generated
+        <strong>on your device</strong>; it leaves your device only if and where you choose to
+        share it (for example, through the iOS share sheet).
+      </p>
+      <p>
+        <strong>Notifications.</strong> If you turn on reminders, they are
+        <strong>local notifications scheduled on your device</strong>. There is no push server
+        and no device token; nothing about your reminders is sent to us or to any third party.
       </p>
 
       <h3 class="subhead">b. Purchase information.</h3>
@@ -391,19 +407,34 @@
         information from this feature.
       </p>
 
-      <h3 class="subhead">f. Advertising identifiers. <span class="badge">Ad versions only</span></h3>
-      <p class="note">Applies only to versions that display ads &mdash; see Section 8.</p>
+      <h3 class="subhead">f. Advertising data. <span class="badge">AdMob</span></h3>
       <p>
-        The <strong>current version does not collect advertising identifiers</strong>. In
-        future versions that include advertising, our advertising provider (Google AdMob) may
-        collect device and advertising identifiers as described in Section 8.
+        The App integrates the Google Mobile Ads (AdMob) SDK. Subject to your consent choices
+        and your ATT selection, Google and its advertising partners may collect and process:
+      </p>
+      <ul>
+        <li>the <strong>advertising identifier (IDFA)</strong> &mdash; only if you allow tracking through the ATT prompt &mdash; and the vendor identifier (IDFV);</li>
+        <li><strong>IP address</strong> and the approximate location derived from it; and, <strong>only if you actively opt in</strong> to the corresponding optional feature in the consent message, precise geolocation data (see Section 8d);</li>
+        <li>device and technical data such as device model, OS version, language, screen size, network type, and app version;</li>
+        <li><strong>ad-interaction data</strong> such as ad requests, impressions, viewability, clicks, and rewarded-video completions, used for delivery, frequency capping, fraud prevention, billing, and aggregated reporting.</li>
+      </ul>
+      <p>
+        The App itself also keeps <strong>on-device counters</strong> (ads shown this session and
+        today, timestamps of the last full-screen ad) purely to enforce our own frequency limits.
+        These counters stay on your device and are never transmitted.
+      </p>
+      <p class="note">
+        No ad object is created and no ad request is made until the consent flow described in
+        Section 8 has completed and allows it. If you purchase <strong>"Unlock Everything"</strong>,
+        the ad SDK is not used at all.
       </p>
 
       <h2 class="section" id="not-collect">4. What we do <em>not</em> collect</h2>
       <ul>
         <li>We do <strong>not</strong> collect your name, email address, phone number, mailing address, or government-issued identifiers.</li>
-        <li>We do <strong>not</strong> access your <strong>precise or GPS location</strong>, contacts, photos, microphone, or camera.</li>
-        <li>We do <strong>not</strong> create user accounts or profiles on our servers.</li>
+        <li>The App does <strong>not</strong> request the device's <strong>location permission</strong> and never reads your GPS position; it does not access your contacts, photos, microphone, health data, or camera. (For location data derived by our advertising partners, see Sections 3(f) and 8.)</li>
+        <li>We do <strong>not</strong> create user accounts or profiles on our servers, and we receive <strong>none</strong> of the vehicle data, estimates, checklists, or reports you create in the App.</li>
+        <li>We do <strong>not</strong> operate an analytics backend and do <strong>not</strong> receive an identifier that lets us recognize you across sessions or apps.</li>
       </ul>
 
       <h2 class="section" id="how-we-use">5. How we use information</h2>
@@ -412,7 +443,9 @@
         <li>provide and operate the App's educational features and generate on-device estimates;</li>
         <li>localize content, currency, and default region;</li>
         <li>process and restore your optional in-app purchases (via Apple);</li>
-        <li>maintain the security, integrity, and proper functioning of the App;</li>
+        <li>deliver, cap, and measure advertising, and &mdash; where you consent &mdash; personalize it (Section 8);</li>
+        <li>schedule the local reminders you turn on, and operate the points and rewarded-video features;</li>
+        <li>maintain the security, integrity, and proper functioning of the App, including preventing invalid ad traffic;</li>
         <li>diagnose problems and improve the App using aggregated, anonymized information; and</li>
         <li>comply with legal obligations.</li>
       </ul>
@@ -425,58 +458,152 @@
       <h2 class="section" id="legal-bases">6. Legal bases for processing (EEA/UK users)</h2>
       <p>Where the EU/UK General Data Protection Regulation applies, we rely on the following legal bases:</p>
       <ul>
-        <li><strong>Performance of a contract</strong> &mdash; to provide the App and process purchases you request.</li>
-        <li><strong>Legitimate interests</strong> &mdash; to keep the App secure, functional, and improved, balanced against your rights.</li>
-        <li><strong>Consent</strong> &mdash; where required, for example before serving <strong>personalized advertising</strong> or non-essential tracking in future ad-supported versions. You may withdraw consent at any time.</li>
-        <li><strong>Legal obligation</strong> &mdash; to comply with applicable law.</li>
+        <li><strong>Consent</strong> (Art. 6(1)(a) GDPR, and Art. 5(3) of the ePrivacy Directive for storing or accessing information on your device) &mdash; for advertising, advertising identifiers, ad personalization and measurement, and for any optional feature you actively turn on in the consent message, such as the use of precise geolocation data. Consent is collected through the Google UMP consent message described in Section 8, and you may <strong>withdraw it at any time</strong> via the "Ad Privacy Options" entry in the App. Withdrawal does not affect the lawfulness of processing carried out before withdrawal.</li>
+        <li><strong>Performance of a contract</strong> (Art. 6(1)(b)) &mdash; to provide the App and process and restore the purchases you request.</li>
+        <li><strong>Legitimate interests</strong> (Art. 6(1)(f)) &mdash; to keep the App secure and functional, to enforce our own on-device ad frequency limits, and to prevent invalid ad traffic and fraud, balanced against your rights.</li>
+        <li><strong>Legal obligation</strong> (Art. 6(1)(c)) &mdash; to comply with applicable law.</li>
       </ul>
+      <p>
+        For processing carried out through the App we act as the <strong>controller</strong>.
+        For the advertising described in Section 8, <strong>Google</strong> acts as an
+        independent controller (and, for certain measurement activities, as a joint or separate
+        controller) under its own terms; the vendors you see listed in the consent message act
+        as controllers for their own processing.
+      </p>
 
       <h2 class="section" id="storage">7. How your information is stored and retained</h2>
       <ul>
-        <li><strong>Local storage.</strong> Content you create in the App is stored <strong>on your device</strong> using the operating system's standard app-storage mechanisms. It remains until you delete it (for example, using the App's "Reset All Data" function or by uninstalling the App).</li>
-        <li><strong>Retention.</strong> Because we do not store your App content on our servers, we do not retain it. Purchase records maintained by Apple are subject to Apple's retention practices. Any aggregated, anonymized diagnostics are retained only as long as needed for the purposes described.</li>
+        <li><strong>Local storage.</strong> Content you create in the App, your preferences, your points balance, and our on-device ad frequency counters are stored <strong>on your device</strong> using the operating system's standard app-storage mechanisms. They remain until you delete them (for example, using the App's "Reset All Data" function or by uninstalling the App).</li>
+        <li><strong>Consent record.</strong> Your consent choices are stored on your device by the Google UMP SDK, in the format defined by the IAB Transparency &amp; Consent Framework, and are made available to the advertising vendors you have chosen. Uninstalling the App removes this record.</li>
+        <li><strong>Retention by us.</strong> Because we do not store your App content on our servers, we do not retain it. We hold only what you send us directly (for example, an email you write to us), for as long as needed to handle your request.</li>
+        <li><strong>Retention by others.</strong> Purchase records maintained by Apple, and advertising data processed by Google and its partners, are retained according to their own policies. See <a href="https://business.safety.google/privacy/" target="_blank" rel="noopener noreferrer">Google's data-retention information</a>.</li>
       </ul>
       <p class="note">
-        Consistent with this design, our Apple App Store privacy disclosures (the App Store
-        &ldquo;privacy label&rdquo;) reflect that the current version does not collect personal
-        data through the App or link it to your identity. Where the label reflects data such as
-        purchase activity, that processing is performed by <strong>Apple</strong> to deliver the
-        in-app purchases you request.
+        Our Apple App Store privacy disclosures (the App Store &ldquo;privacy label&rdquo;) and our
+        app privacy manifest reflect this design: the App is marked as <strong>used for tracking</strong>,
+        and the data types disclosed as collected are the <strong>device/advertising identifier</strong>
+        and <strong>advertising data</strong>, collected by our advertising partner for third-party
+        advertising and not linked by us to your identity.
       </p>
 
-      <h2 class="section" id="advertising">8. Advertising <span class="badge">AdMob</span></h2>
-      <h3 class="subhead">Current status.</h3>
+      <h2 class="section" id="advertising">8. Advertising and consent <span class="badge">AdMob</span></h2>
+
+      <h3 class="subhead">a. What we show.</h3>
       <p>
-        The <strong>current version of the App does not display third-party advertisements</strong>,
-        does not use an advertising SDK, and does not collect advertising identifiers for ad
-        purposes.
-      </p>
-      <h3 class="subhead">Future ad-supported versions.</h3>
-      <p>
-        A future version of the App may display advertisements served through
-        <strong>Google AdMob</strong>. If and when advertising is introduced:
+        The App is ad-supported and uses the <strong>Google Mobile Ads (AdMob)</strong> SDK,
+        provided by Google Ireland Limited (for users in the EEA, the UK and Switzerland) or
+        Google LLC. The App may display:
       </p>
       <ul>
-        <li>AdMob and its partners may collect and process device information and identifiers (such as the device advertising identifier / IDFA, IP address, and general ad-interaction data) to deliver and measure ads and to limit repetitive ads.</li>
-        <li>On iOS, we will present Apple's <strong>App Tracking Transparency (ATT)</strong> prompt where required. If you do not grant permission, ads will be limited to <strong>non-personalized</strong> advertising.</li>
-        <li>You can control ad personalization through your device settings (for example, <strong>iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking</strong> and <strong>&rarr; Apple Advertising</strong>) and through Google's ad settings.</li>
-        <li>Google's handling of data in this context is governed by Google's Privacy Policy and its advertising terms. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a> and <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">policies.google.com/technologies/ads</a>.</li>
+        <li><strong>Banner</strong> ads anchored at the bottom of browsing screens;</li>
+        <li><strong>Native</strong> ad cards placed in content, always marked with an "Ad" badge and the AdChoices icon;</li>
+        <li><strong>Interstitial</strong> (full-screen) ads at natural transition points;</li>
+        <li><strong>App-open</strong> ads when you return to the App after a genuine period in the background;</li>
+        <li><strong>Rewarded video</strong> ads, which are always <strong>opt-in</strong>: they play only when you deliberately choose to watch one in exchange for points.</li>
       </ul>
-      <p>When advertising is enabled, we will update this policy and its effective date accordingly.</p>
+      <p>
+        The App applies its own frequency limits (cooldowns, per-session and per-day caps) and
+        does not show full-screen ads on certain screens, including onboarding, the paywall, the
+        store, and legal pages, or during the step-by-step estimate input flow. These limits are
+        enforced with counters stored only on your device.
+      </p>
+
+      <h3 class="subhead">b. Consent, and how to change it.</h3>
+      <p>
+        Where a consent choice is required by law in your region &mdash; including the
+        <strong>European Economic Area</strong>, the <strong>United Kingdom</strong>, and certain
+        other regulated jurisdictions &mdash; the App presents a consent message from Google's
+        <strong>User Messaging Platform (UMP)</strong> the first time it is shown, and
+        <strong>before any ad is requested</strong>. The message identifies the purposes of
+        processing and the advertising vendors involved, and lets you consent, refuse, or manage
+        each option individually. Your choices are recorded on your device under the
+        <strong>IAB Transparency &amp; Consent Framework (TCF)</strong> and communicated to those
+        vendors.
+      </p>
+      <ul>
+        <li>Refusing is as easy as agreeing: the message shows an explicit <strong>&ldquo;Do not consent&rdquo;</strong> option alongside the consent option, in addition to the option to manage each purpose and vendor individually.</li>
+        <li>If you <strong>refuse consent as a whole</strong> (for example by choosing &ldquo;Do not consent&rdquo;), the Google Mobile Ads SDK is <strong>not initialized</strong> and <strong>no ad of any format is requested</strong> &mdash; not even a non-personalized one, and not the opt-in rewarded video, which means rewarded points cannot be earned by watching videos in that state. This is a consequence of the framework itself: without your permission to store and access information on your device, no ad can lawfully be requested.</li>
+        <li>If you instead <strong>allow the basic storage and access purpose but decline personalization</strong> (through &ldquo;Manage options&rdquo;), the App continues to show <strong>non-personalized</strong> ads, which are based on the content and general context rather than on a profile of you.</li>
+        <li>Whichever choice you make, <strong>every other feature of the App continues to work normally</strong>. Access to the App is not conditioned on your consent to advertising.</li>
+        <li>In regions where a consent choice is required, the App displays an <strong>&ldquo;Ad Privacy Options&rdquo;</strong> entry on the <strong>Profile</strong> screen, in the <strong>&ldquo;About&rdquo;</strong> section next to the Privacy Policy and Terms of Use links. It stays available there for as long as the requirement applies. Selecting it reopens the same consent management form, where you can review the purposes and vendors and <strong>change or withdraw your consent at any time</strong>. Withdrawing consent does not affect the lawfulness of processing carried out before withdrawal.</li>
+        <li>As a convenience, the same option is also offered in the rewarded-video area when videos are unavailable because consent was declined, so you can reconsider without leaving the screen. This is an additional shortcut only; the entry on the Profile screen is the permanent one.</li>
+        <li>Where applicable law does <strong>not</strong> require a consent choice for your region, Google's UMP does not classify privacy options as required and this entry is not shown. You can still control ad personalization through your device settings, as described below.</li>
+        <li>Some vendors may rely on <strong>legitimate interests</strong> for certain purposes. Where that is the case, the consent form lets you object to it; the same form remains available through the "Ad Privacy Options" entry.</li>
+      </ul>
+
+      <h3 class="subhead">c. App Tracking Transparency (iOS).</h3>
+      <p>
+        Once the consent flow has completed, and only if you have not already made this choice
+        on your device, the App presents Apple's <strong>App Tracking Transparency (ATT)</strong>
+        prompt. The two prompts are never shown at the same time, and neither is shown during
+        onboarding.
+      </p>
+      <ul>
+        <li>If you <strong>allow</strong> tracking, the advertising identifier (IDFA) may be used to personalize and measure ads.</li>
+        <li>If you <strong>decline</strong>, the IDFA is not available and ads are limited to <strong>non-personalized</strong> advertising. Non-personalized ads still involve limited processing of device data (such as IP address and general ad-interaction signals) for ad delivery, frequency capping, fraud prevention, and aggregated reporting; they are contextual rather than based on a profile of you.</li>
+        <li>You can change this choice at any time in <strong>iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking</strong>, and adjust Apple's own ad personalization under <strong>&rarr; Apple Advertising</strong>.</li>
+      </ul>
+
+      <h3 class="subhead">d. Location data used for advertising.</h3>
+      <p>
+        The App does <strong>not</strong> request the device's location permission, does
+        <strong>not</strong> read your GPS position, and contains no location SDK.
+        <strong>We never receive location data of any kind</strong> about you.
+      </p>
+      <ul>
+        <li><strong>Approximate location.</strong> As with any internet connection, advertising partners can derive an approximate location (typically country or city level) from your IP address. This is used for ad delivery, legal compliance, and fraud prevention.</li>
+        <li><strong>Precise geolocation.</strong> The consent message presents "use precise geolocation data" as a <strong>special feature</strong> under the IAB Transparency &amp; Consent Framework. It is an <strong>opt-in</strong> feature: it cannot be relied on under legitimate interests, and it applies only if you <strong>actively enable it yourself</strong> in the consent message. If you do, participating vendors may process precise location data for the advertising purposes you agreed to. You can decline it at the outset, or turn it off later at any time through the <strong>"Ad Privacy Options"</strong> entry described in Section 8b. Declining has no effect on your ability to use the App.</li>
+      </ul>
+
+      <h3 class="subhead">e. Children and ad content.</h3>
+      <p>
+        The App is not directed to children, is not in Apple's Kids Category, and is not tagged
+        for users under the age of consent. Requested ads are restricted to Google's
+        <strong>"G" (general audiences)</strong> maximum content rating.
+      </p>
+
+      <h3 class="subhead">f. Google's role and further information.</h3>
+      <p>
+        Google's processing of data in this context is governed by Google's own terms. See
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>,
+        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">policies.google.com/technologies/ads</a>,
+        <a href="https://business.safety.google/adscontrollerterms/" target="_blank" rel="noopener noreferrer">Google Ads Controller-Controller Data Protection Terms</a>,
+        and the list of
+        <a href="https://support.google.com/admob/answer/9012903" target="_blank" rel="noopener noreferrer">advertising partners that may serve ads in this App</a>.
+        The full vendor list applicable to you is also available inside the consent message itself.
+      </p>
+
+      <h3 class="subhead">g. Removing ads.</h3>
+      <p>
+        The optional <strong>"Unlock Everything"</strong> in-app purchase removes all advertising.
+        Once it is active, no further ad is requested or displayed, and on subsequent launches the
+        ad SDK is not started at all.
+      </p>
 
       <h2 class="section" id="analytics">9. Analytics</h2>
       <p>
-        The <strong>current version does not integrate third-party analytics SDKs</strong>. We
-        may use Apple's aggregated, anonymized App Analytics as described in Section 3(d). If a
-        future version introduces third-party analytics or crash-reporting tools, we will
+        The App does <strong>not</strong> integrate a third-party product-analytics or
+        crash-reporting SDK, and we do not track how you use the App's features. We may use
+        Apple's aggregated, anonymized App Analytics as described in Section 3(d).
+      </p>
+      <p>
+        Separately, the Google Mobile Ads SDK performs <strong>ad measurement and reporting</strong>
+        (impressions, clicks, conversions, invalid-traffic detection) as an inherent part of
+        serving ads; we receive only aggregated performance reports in the AdMob console, which do
+        not identify you. If a future version introduces additional analytics tools, we will
         describe them here and update the effective date.
       </p>
 
       <h2 class="section" id="sharing">10. How we share information</h2>
-      <p>We do not sell your personal information. We share information only as follows:</p>
+      <p>
+        We do <strong>not</strong> sell your personal information for money, and we do not
+        transfer your App content to anyone. Note that personalized advertising may nevertheless
+        be characterized as a &ldquo;sale&rdquo; or &ldquo;share&rdquo; under certain U.S. state
+        privacy laws &mdash; see Section 12. We share information only as follows:
+      </p>
       <ul>
         <li><strong>Apple</strong> &mdash; for App Store distribution, in-app purchases, ratings, and optional diagnostics, under Apple's privacy terms.</li>
-        <li><strong>Google (AdMob)</strong> &mdash; only in future ad-supported versions, as described in Section 8.</li>
+        <li><strong>Google (AdMob) and its advertising partners</strong> &mdash; device data, identifiers, and ad-interaction data, in accordance with your consent and ATT choices, as described in Section 8. The applicable vendor list is shown in the consent message.</li>
         <li><strong>Service providers</strong> &mdash; parties that help us operate the App (for example, hosting for this policy page), bound by confidentiality and data-protection obligations.</li>
         <li><strong>Legal and safety</strong> &mdash; where required by law, regulation, legal process, or to protect rights, safety, or the integrity of the App.</li>
         <li><strong>Business transfers</strong> &mdash; in connection with a merger, acquisition, financing, or sale of assets, subject to this policy.</li>
@@ -484,11 +611,15 @@
 
       <h2 class="section" id="transfers">11. International data transfers</h2>
       <p>
-        We provide this App globally. Service providers such as Apple and Google may process
-        limited information in countries other than your own, including the United States,
-        whose data-protection laws may differ from those in your jurisdiction. Where required,
-        such transfers rely on appropriate safeguards (for example, the European Commission's
-        Standard Contractual Clauses).
+        We provide this App globally. Apple, Google, and Google's advertising partners may
+        process information in countries other than your own, including the
+        <strong>United States</strong>, whose data-protection laws may differ from those in your
+        jurisdiction. Where required, such transfers rely on appropriate safeguards &mdash; for
+        example, the European Commission's <strong>Standard Contractual Clauses</strong>, the
+        UK International Data Transfer Addendum, and, where applicable, the
+        <strong>EU&ndash;U.S. Data Privacy Framework</strong> and its UK Extension. Details of
+        Google's transfer mechanisms are set out in Google's privacy documentation linked in
+        Section 8.
       </p>
 
       <h2 class="section" id="rights">12. Your privacy rights</h2>
@@ -498,16 +629,27 @@
         object</strong> to processing, and to <strong>withdraw consent</strong>.
       </p>
       <ul>
-        <li>Because most of your App content is stored only on your device, you can exercise deletion directly at any time using <strong>"Reset All Data"</strong> in the App or by uninstalling it.</li>
-        <li><strong>EEA/UK (GDPR):</strong> you also have the right to lodge a complaint with your local supervisory authority.</li>
-        <li><strong>California (CCPA/CPRA):</strong> you have rights to know, delete, and correct, and the right to opt out of the "sale" or "sharing" of personal information and of targeted advertising. In the current version, <strong>we do not sell or share personal information</strong> as defined by these laws. If a future ad-supported version involves "sharing" for cross-context behavioral advertising, it will occur only with your consent through Apple's App Tracking Transparency prompt, and you will be able to opt out at any time via your device settings (see Section 8). We do not discriminate against you for exercising your rights.</li>
-        <li><strong>Other U.S. states and other jurisdictions:</strong> you may have comparable rights under applicable local law.</li>
+        <li>Because your App content is stored only on your device, you can exercise deletion directly at any time using <strong>"Reset All Data"</strong> in the App or by uninstalling it.</li>
+        <li><strong>Advertising choices:</strong> use <strong>"Ad Privacy Options"</strong> in the App where it is shown (Section 8b), the ATT setting in <strong>iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking</strong>, and Google's own ad controls. Where the entry is not shown because no consent choice is required in your region, the device settings remain available.</li>
+        <li><strong>EEA/UK (GDPR):</strong> you may withdraw consent at any time, and you have the right to lodge a complaint with your local supervisory authority. Because we do not hold identifiable data about you, we may be unable to identify you (Art. 11 GDPR); requests concerning advertising data should also be directed to Google.</li>
+        <li>
+          <strong>California (CCPA/CPRA) and other U.S. state privacy laws:</strong> you have rights to know, access, delete, and correct, and the right to opt out of the "sale" or "sharing" of personal information and of targeted advertising and profiling.
+          <ul>
+            <li>We do <strong>not</strong> sell your personal information for money, and we do not knowingly sell or share the personal information of consumers under 16.</li>
+            <li>However, <strong>personalized advertising delivered through AdMob may qualify as a "sale" or a "share" (cross-context behavioral advertising) or as "targeted advertising"</strong> under CPRA and similar state laws.</li>
+            <li>You can <strong>opt out</strong> by declining Apple's App Tracking Transparency prompt (or turning off "Allow Apps to Request to Track" / the per-app toggle in iOS Settings), by using the in-app <strong>"Ad Privacy Options"</strong> entry where it is shown, or by purchasing the ad-free unlock. The App is not a website and does not process browser-based opt-out preference signals such as Global Privacy Control; the controls just described are the means of opting out.</li>
+            <li>The categories involved are <strong>identifiers</strong> (advertising/device identifiers, IP address), <strong>internet or other electronic network activity</strong> (ad interactions), and <strong>geolocation data</strong> (approximate location inferred from IP address; precise location only if you have actively opted in through the consent message, where one is shown); they are disclosed to advertising partners for advertising purposes.</li>
+            <li>We do not collect or process <strong>sensitive personal information</strong> for purposes that would trigger a right to limit its use.</li>
+            <li>We do not discriminate against you for exercising your rights.</li>
+          </ul>
+        </li>
+        <li><strong>Other jurisdictions:</strong> you may have comparable rights under applicable local law.</li>
       </ul>
       <p>
         To make a request that involves information we control, contact us at
         <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. We may need to verify
-        your request. For information held by Apple or Google, please use their respective
-        privacy controls.
+        your request, and we may be unable to fulfil it if we cannot link any data to you. For
+        information held by Apple or Google, please use their respective privacy controls.
       </p>
 
       <h2 class="section" id="children">13. Children's privacy</h2>
@@ -520,16 +662,19 @@
         it. If a child has provided personal information to us <em>directly</em> through a channel
         we control (for example, by emailing us), contact us at
         <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a> and we will delete the
-        information we hold. We comply with applicable children's-privacy laws, including COPPA
-        (U.S.) and the GDPR's provisions on children where relevant.
+        information we hold. Advertising in the App is not directed to children: the App is not
+        tagged for users under the age of consent, and ad requests are limited to the "G"
+        (general audiences) content rating. We comply with applicable children's-privacy laws,
+        including COPPA (U.S.) and the GDPR's provisions on children where relevant.
       </p>
 
       <h2 class="section" id="security">14. Security</h2>
       <p>
         We use reasonable technical and organizational measures appropriate to the limited data
         involved. Because your App content stays on your device, its security also depends on
-        your device's own protections (passcode, biometrics, and OS updates). No method of
-        storage or transmission is completely secure.
+        your device's own protections (passcode, biometrics, and OS updates). Traffic between the
+        App and third-party services is encrypted in transit. No method of storage or transmission
+        is completely secure.
       </p>
 
       <h2 class="section" id="third-party">15. Third-party services and links</h2>
@@ -542,10 +687,28 @@
 
       <h2 class="section" id="changes">16. Changes to this Privacy Policy</h2>
       <p>
-        We may update this Privacy Policy from time to time &mdash; for example, when we
-        introduce advertising or new features. We will revise the "Last updated"/"Effective
-        date" above and, where appropriate, provide additional notice. Your continued use of
-        the App after an update takes effect constitutes acceptance of the revised policy.
+        We may update this Privacy Policy from time to time &mdash; for example, when we change
+        our advertising partners or introduce new features. When we do, we will revise the
+        &ldquo;Last updated&rdquo; and &ldquo;Effective date&rdquo; shown at the top of this
+        page, and the current version will always be available at this address and through the
+        link in the App.
+      </p>
+      <p>
+        <strong>We do not send push notifications about policy changes</strong>, and we have no
+        way to contact you individually, because we do not collect your email address or any
+        other contact details. Please review this page from time to time. Where we consider a
+        change to be material, we may in addition surface a notice inside the App, but you should
+        not rely on receiving one.
+      </p>
+      <p>
+        Except where a change requires your consent, your continued use of the App after the new
+        effective date means the revised policy applies to you.
+        <strong>Consent-based processing is different:</strong> we do not treat continued use as
+        consent. Where advertising or another activity requires your consent, that consent is
+        obtained only through the consent message described in Section 8, and where a change
+        materially affects what you agreed to, you will be asked again through that same
+        mechanism. Until then, your existing choices remain in effect and can be changed at any
+        time as described in Sections 8b and 12.
       </p>
 
       <h2 class="section" id="contact">17. Contact us</h2>
