@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Privacy Policy · LoanSnug</title>
+<meta name="description" content="Privacy Policy for the LoanSnug app. Documents stay on your iPhone or iPad. English, Vietnamese and Indonesian. The English text controls.">
+<link rel="canonical" href="">
+<script>
+(function () {
+  var lang = "en";
+  var forced = document.documentElement.getAttribute("data-force-lang");
+  var titles = {
+    en: "Privacy Policy · LoanSnug",
+    vi: "Chính sách quyền riêng tư · LoanSnug",
+    id: "Kebijakan Privasi · LoanSnug"
+  };
+  if (forced === "vi" || forced === "id" || forced === "en") {
+    lang = forced;
+  } else {
+    try {
+      var q = new URLSearchParams(location.search).get("lang");
+      var saved = localStorage.getItem("loansnug-legal-lang");
+      var nav = (navigator.language || "").toLowerCase();
+      if (q === "vi" || q === "id" || q === "en") lang = q;
+      else if (saved === "vi" || saved === "id" || saved === "en") lang = saved;
+      else if (nav.indexOf("vi") === 0) lang = "vi";
+      else if (nav.indexOf("id") === 0) lang = "id";
+    } catch (e) {}
+  }
+  document.documentElement.setAttribute("data-current", lang);
+  document.documentElement.lang = lang;
+  document.title = titles[lang] || titles.en;
+})();
+</script>
+<style>
+  :root {
+    --bg: #f4f1ea;
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e4dfd4;
+    --accent: #0f5c56;
+    --accent-soft: #e5f4f1;
+    --card: #fffcf7;
+    --warn-bg: #fff6e8;
+    --warn-ink: #7c4a03;
+    --warn-line: #f0d7a8;
+    --chip: #efeae1;
+    --shadow: 0 1px 0 rgba(28, 25, 23, 0.04);
+    --serif: "Iowan Old Style", Palatino, "Palatino Linotype", "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141210;
+      --ink: #f5f5f4;
+      --muted: #a8a29e;
+      --line: #3a342c;
+      --accent: #7dcec4;
+      --accent-soft: #1a2c29;
+      --card: #1e1b18;
+      --warn-bg: #2a2116;
+      --warn-ink: #f6d48a;
+      --warn-line: #5c4520;
+      --chip: #2a2622;
+      --shadow: none;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+  }
+  a { color: var(--accent); }
+  a:hover { text-decoration-thickness: 2px; }
+  html[data-current="en"] [data-lang="vi"],
+  html[data-current="en"] [data-lang="id"],
+  html[data-current="vi"] [data-lang="en"],
+  html[data-current="vi"] [data-lang="id"],
+  html[data-current="id"] [data-lang="en"],
+  html[data-current="id"] [data-lang="vi"] { display: none; }
+  .wrap { width: min(760px, calc(100% - 32px)); margin: 0 auto; }
+  header.top {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .top-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px 16px; padding: 12px 0; flex-wrap: wrap; }
+  .brand { display: flex; flex-direction: column; gap: 1px; text-decoration: none; color: inherit; }
+  .brand strong { font-family: var(--serif); font-size: 18px; letter-spacing: -0.02em; }
+  .brand span { color: var(--muted); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
+  .langs { display: flex; padding: 3px; background: var(--chip); border-radius: 999px; }
+  .langs button {
+    border: 0; background: transparent; color: var(--muted);
+    font: 600 14px/1 var(--sans); padding: 8px 12px; border-radius: 999px; cursor: pointer;
+  }
+  .langs button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
+  main { padding: 28px 0 72px; }
+  h1 { font-family: var(--serif); font-size: clamp(34px, 6vw, 48px); line-height: 1.08; letter-spacing: -0.03em; margin: 8px 0 12px; font-weight: 600; }
+  h2 { font-family: var(--serif); font-size: 28px; line-height: 1.2; letter-spacing: -0.02em; margin: 40px 0 10px; font-weight: 600; }
+  h3 { font-size: 18px; margin: 22px 0 6px; }
+  p, li { color: var(--ink); }
+  .meta { color: var(--muted); margin: 0 0 18px; }
+  .todo {
+    background: var(--warn-bg); color: var(--warn-ink); border: 1px solid var(--warn-line);
+    border-radius: 14px; padding: 14px 16px; margin: 0 0 22px;
+  }
+  .todo strong { display: block; margin-bottom: 4px; }
+  .summary { display: grid; gap: 10px; margin: 18px 0 8px; }
+  .summary article, .card, .callout {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; box-shadow: var(--shadow);
+  }
+  .summary h3 { margin: 0 0 4px; font-size: 16px; }
+  .summary p, .card p { margin: 0; color: var(--muted); }
+  .callout { background: var(--accent-soft); border-color: transparent; }
+  .callout p { color: var(--ink); margin: 0; }
+  nav.toc ol { margin: 8px 0 0; padding-left: 20px; }
+  nav.toc a { text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 12px 0 4px; }
+  th, td { text-align: left; vertical-align: top; border-top: 1px solid var(--line); padding: 10px 8px 10px 0; }
+  th { color: var(--muted); font-size: 13px; font-weight: 600; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; }
+  footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding: 22px 0 40px; }
+  .table-scroll { overflow-x: auto; margin: 12px 0 4px; -webkit-overflow-scrolling: touch; }
+  .table-scroll table { margin: 0; min-width: 520px; }
+  @media print {
+    header.top { position: static; }
+    .langs, .todo { display: none !important; }
+    body { background: white; }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#top">
+      <strong>LoanSnug</strong>
+      <span data-lang="en">Privacy Policy</span>
+      <span data-lang="vi">Chính sách quyền riêng tư</span>
+      <span data-lang="id">Kebijakan Privasi</span>
+    </a>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" data-set-lang="en" aria-pressed="true">English</button>
+      <button type="button" data-set-lang="vi" aria-pressed="false">Tiếng Việt</button>
+      <button type="button" data-set-lang="id" aria-pressed="false">Bahasa Indonesia</button>
+    </div>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+
+<div data-lang="en">
+  <p class="meta">Effective 15 November 2026 · Last updated 15 November 2026</p>
+  <h1>Privacy Policy</h1>
+  <p>This policy explains how the LoanSnug app for iPhone and iPad handles information. It is written for people anywhere the app is offered. If a law where you live gives you stronger protection, that stronger protection applies to you.</p>
+  <p>“LoanSnug”, “we”, “us” and “our” mean miao Yu, the individual developer who offers LoanSnug. “You” means the person using it. The English text is the controlling version of this policy. Any other language is a translation so the policy is easier to read. If a translation differs from the English text, the English text prevails. If a mandatory law where you live requires a different result, that law still applies to you.</p>
+
+  <div class="summary">
+    <article><h3>Your files stay on your device.</h3><p>LoanSnug has no user accounts and no servers of its own. We do not upload your documents, and we do not receive your files or what is in them.</p></article>
+    <article><h3>Checks run on the device.</h3><p>Text recognition, date reading and file-quality checks run on your iPhone or iPad. The recognized text itself is not saved.</p></article>
+    <article><h3>Ads are separate from your documents.</h3><p>The free version shows ads from Google AdMob. We do not give Google your documents or the details read from them. LoanSnug Pro removes ads.</p></article>
+    <article><h3>You can delete it.</h3><p>Delete a document, or everything, in Storage. Deleting the app removes its data from that device.</p></article>
+  </div>
+
+  <nav class="toc card" aria-label="Contents">
+    <strong>Contents</strong>
+    <ol>
+      <li><a href="#en-who">Who we are</a></li>
+      <li><a href="#en-scope">What this policy covers</a></li>
+      <li><a href="#en-app">What the app does</a></li>
+      <li><a href="#en-ondevice">Information that stays on your device</a></li>
+      <li><a href="#en-leaves">When information can leave your device</a></li>
+      <li><a href="#en-ads">Advertising, tracking and consent</a></li>
+      <li><a href="#en-permissions">Device permissions</a></li>
+      <li><a href="#en-bases">Purposes and legal bases</a></li>
+      <li><a href="#en-sensitive">Sensitive information</a></li>
+      <li><a href="#en-retention">How long it stays, and how to delete it</a></li>
+      <li><a href="#en-security">Security</a></li>
+      <li><a href="#en-rights">Your choices and rights</a></li>
+      <li><a href="#en-us">United States</a></li>
+      <li><a href="#en-eu">EEA, United Kingdom and Switzerland</a></li>
+      <li><a href="#en-vn">Vietnam</a></li>
+      <li><a href="#en-indonesia">Indonesia</a></li>
+      <li><a href="#en-other">Other regions</a></li>
+      <li><a href="#en-children">Children</a></li>
+      <li><a href="#en-transfers">International transfers</a></li>
+      <li><a href="#en-page">This web page</a></li>
+      <li><a href="#en-changes">Changes</a></li>
+      <li><a href="#en-contact">Contact and complaints</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="en-who">1. Who we are</h2>
+  <table>
+    <tr><th>Operator</th><td>miao Yu, an individual developer, and the seller of LoanSnug</td></tr>
+    <tr><th>App</th><td>LoanSnug for iPhone and iPad (Apple bundle ID <code>com.yumiao.LoanSnug</code>)</td></tr>
+    <tr><th>Email</th><td><a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. This address is part of this policy. The mailbox is provided by Google.</td></tr>
+    <tr><th>Postal address</th><td>The postal address shown for this seller on the Apple App Store listing, if that listing shows one. That address, when shown, is part of this policy. This page does not state a different address.</td></tr>
+    <tr><th>Related terms</th><td><a href="LoanSnug-Terms.html">Terms of Use</a>. The same text is in the app under Settings → Privacy &amp; Security → Terms of Use.</td></tr>
+  </table>
+  <p>For people in the EEA, the United Kingdom or Switzerland, the operator is the controller of any personal data it actually receives, such as an email you send us. This page does not name a representative in the EEA, the United Kingdom or Switzerland, and it does not name a data-protection officer. If the law requires one of those appointments before the app is offered to people there, miao Yu will make the appointment or stop offering the app there. Until an appointment is listed in section 1, email <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. For advertising data, Google is an independent controller. For payments and device backups, Apple is an independent controller. The people who may receive personal data are: Google, which provides the support mailbox, if you write to <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>; Apple, for a purchase, the operating system, and a device backup you allow; and Google, for ads in the free version. A person you export or share a file with receives it from you. Document contents that stay on your device are kept by you. We cannot access them. Where a law still treats the provider of an on-device app as responsible for that processing, the only purpose is the feature you chose, the storage is the device, and you use the in-app delete, export, and settings tools to exercise your rights.</p>
+
+  <h2 id="en-scope">2. What this policy covers</h2>
+  <p>It covers the LoanSnug app, and this privacy-policy page. It applies wherever the app is available on the App Store, including the United States, Vietnam, Indonesia, the EEA, the United Kingdom, Switzerland, and other storefronts.</p>
+  <p>Document checklists inside the app are currently prepared for the United States, Vietnam and Indonesia. You may still install the app in another country. The privacy practices on this page are the practices we use in every country where the app is offered. Where your local law is stricter, we follow the stricter rule for you.</p>
+  <p>The same limits apply in every country and region where the app is offered. We do not take your documents onto a server of ours, we do not sell them, we do not use them to choose ads, and we do not make a lending decision. You do not have to give us personal data to use the document tools, because those tools run on your device. This policy does not waive a local requirement for a representative, a registry filing, or separate consent before advertising data leaves your country, and it does not state that any such step has already been completed unless section 1 lists it. You can refuse tracking and ads consent. LoanSnug Pro does not request ads.</p>
+
+  <h2 id="en-app">3. What the app does</h2>
+  <p>LoanSnug helps you organize documents you may want for a loan application: identity, work, income, assets, loan-specific papers and taxes. It can scan or import files, read dates and basic file quality on your device, point out gaps, and build a document pack for you to export yourself.</p>
+  <div class="callout"><p>LoanSnug does not submit applications, connect to a lender, pull a credit report, score credit, verify identity or income, or detect forged documents. A result describes how your files are organized and what the on-device checks saw. It is not a lending decision.</p></div>
+
+  <h2 id="en-ondevice">4. Information that stays on your device</h2>
+  <p>The following is stored in the app’s private storage on your iPhone or iPad. We do not receive it.</p>
+  <h3>Documents you add</h3>
+  <p>You can scan with the camera, pick photos, or import files. The app saves a copy. Those files can contain very sensitive content, because you choose them: a photo identity document, a bank statement, a pay document, a tax document, or a similar paper. The original file remains on the device until you delete it.</p>
+  <h3>Details you type</h3>
+  <p>A preparation can include a name, country, loan type, purpose, a planned date, income-source categories, pay frequency, checklist choices, names of checklist items you add, a bank nickname, an optional bank name, and notes. The app asks for a nickname, not an account number. Notes are free text. Do not put identity numbers or account numbers in notes if you do not want them stored even on the device.</p>
+  <h3>What the on-device check saves</h3>
+  <p>The app can save dates it read (including an expiry date, a statement month or a tax year), file-quality findings, page count, file size, a hash of the file, a one-way fingerprint of recognized text, and the length of that text. The fingerprint helps spot duplicate or unreadable files. The recognized text itself is not saved. The app may also save, on the device only, a numeric description of how the first page looks, so it can notice a similar page. That description is not a copy of the page, and it is not sent to us.</p>
+  <p>If a driver’s-licence barcode or a passport machine-readable zone is present, the app uses it only to read an expiry date. Other fields in that barcode or zone, including the document number, are not saved. A PDF password you enter is used to make an unlocked copy and is not kept. A password you set for an export is used for that export and is not saved.</p>
+  <h3>Settings and a local purchase record</h3>
+  <p>The app stores preferences on the device: appearance, App Lock, when the lock is required, whether the app is covered in the app switcher, whether documents are included in device backups, reminder switches, reminder time, how many times the app has been opened, and when a rating prompt was last considered. It also stores, on the device only, whether LoanSnug Pro is active, which preparations have a detailed report unlocked, unused pack-export credits, and Apple transaction identifiers needed to apply a purchase once. It does not store your Apple ID or your payment-card number.</p>
+
+  <h2 id="en-leaves">5. When information can leave your device</h2>
+  <h3>When you export or share</h3>
+  <p>Documents leave the app when you export, print, or share them, for example through AirDrop, Mail, Files, or another app you choose. We do not see that transfer and we do not choose the recipient. If you protect an export with a password, each PDF is encrypted with it. A ZIP of separate files is not itself encrypted; share the password with the other person yourself.</p>
+  <h3>Device backup</h3>
+  <p>By default, documents are included in a backup of the device. If iCloud Backup or a computer backup is on, Apple or that computer may store the backup. Those backups are managed by Apple or by you, not by LoanSnug. You can turn this off in App Lock &amp; Security. When it is off, the documents are left out of device backups and are lost if the device is replaced without another copy.</p>
+  <h3>Advertising</h3>
+  <p>In the free version, Google may receive the advertising data described in section 6. That data does not include your documents or the dates and findings read from them.</p>
+  <h3>Purchases</h3>
+  <p>Payments are charged to your Apple ID and processed by Apple. Apple receives the payment details. We receive, on the device, the result of the purchase through StoreKit. We do not receive your card number.</p>
+  <h3>Messages you send us</h3>
+  <p>If you email <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>, we receive whatever you put in that message. Do not send identity documents, account numbers, or other sensitive files unless we have asked for them to solve a specific problem and you choose to send them. The mailbox is provided by Google. We delete the message from that mailbox, or remove information that identifies you, within 24 months after the request is closed, unless a longer period is required to meet a legal duty or to deal with a dispute. A copy may remain with Google under Google’s own rules. You may ask us to delete a support message sooner, and we will delete it from the mailbox unless the law requires us to keep it. If a breach of a message you sent us is likely to cause serious harm and the law requires notice, we notify you and the authority that law names.</p>
+
+  <h2 id="en-ads">6. Advertising, tracking and consent</h2>
+  <p>The free version shows ads from Google AdMob: banners, ads labeled “Ad” inside pages, full-screen ads at breaks in the flow, ads when the app is opened, and optional rewarded videos. Rewarded videos are started by you. Watching them can unlock a detailed report or one pack export instead of a purchase. LoanSnug Pro removes ads. Pro users are not shown the tracking prompt or the ads-consent form, because the app does not request ads for them.</p>
+  <p>To deliver, secure, measure and, where allowed, personalize ads, Google may process:</p>
+  <ul>
+    <li>IP address, and a coarse location derived from it;</li>
+    <li>device and advertising identifiers, including the Identifier for Advertisers only if you allow tracking;</li>
+    <li>ad interactions, diagnostics, and fraud-prevention signals;</li>
+    <li>your ads-consent choice.</li>
+  </ul>
+  <p>The app asks for App Tracking Transparency before ads-consent where Apple requires that prompt. The system sentence says the advertising identifier is used to show more relevant ads and measure their effectiveness. If you allow tracking, Google may use that identifier for those purposes. If you do not allow tracking, the app does not authorize use of the advertising identifier. Ads may still appear using more limited methods, including contextual ads and Apple’s SKAdNetwork, if Google’s consent tool says ads may be requested. Where a privacy form is required, the app requests ads only when Google’s User Messaging Platform allows it.</p>
+  <p>You can change this at any time:</p>
+  <ul>
+    <li>iOS Settings → Privacy &amp; Security → Tracking, for LoanSnug;</li>
+    <li>in the app, Settings → Ad Privacy Choices, when that row is shown;</li>
+    <li>Google’s <a href="https://myadcenter.google.com" rel="noopener noreferrer">My Ad Center</a>;</li>
+    <li>or by buying LoanSnug Pro, which removes ads.</li>
+  </ul>
+  <p>We do not sell your documents or the information in them for money. We do not use document contents to choose ads. If you allow personalized ads, Google and its advertising partners may use device identifiers and ad interactions to show ads across apps and sites. Some US state laws treat that as “sharing” for cross-context behavioral advertising, or as a “sale”, even when no money is paid for the data. Declining tracking, using Ad Privacy Choices, or buying Pro is how you opt out of that advertising use. We do not offer a financial incentive for allowing tracking. Refusing tracking, refusing the ads-consent form, or buying LoanSnug Pro is an opt-out of sale and of sharing for cross-context behavioral advertising, in every place that uses those ideas. You do not need an account to opt out.</p>
+  <p>Google’s disclosures are in the <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a>, <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer">How Google uses information from sites or apps that use its services</a>, and <a href="https://support.google.com/admob/answer/6128543" rel="noopener noreferrer">AdMob and user privacy</a>.</p>
+
+  <h2 id="en-permissions">7. Device permissions</h2>
+  <table>
+    <tr><th>Permission</th><th>When it is used</th><th>What we receive</th></tr>
+    <tr><td>Camera</td><td>Only when you scan a document.</td><td>Nothing off the device. The scan is saved in the app.</td></tr>
+    <tr><td>Photos</td><td>You pick photos in the system picker. The app does not ask for your whole library.</td><td>Only the photos you select, saved in the app.</td></tr>
+    <tr><td>Files</td><td>You import a file you choose.</td><td>That file, saved in the app.</td></tr>
+    <tr><td>Face ID, Touch ID or passcode</td><td>Only if you turn on App Lock.</td><td>Success or failure. Biometric images and templates stay with the device. We never receive them.</td></tr>
+    <tr><td>Notifications</td><td>If you allow reminders.</td><td>Nothing is sent to us. Reminders are scheduled on the device. Their text does not include your name, an account number, or an amount. An expiry reminder may name the kind of document.</td></tr>
+    <tr><td>Tracking</td><td>Free version, so ads can be measured and made more relevant if you allow it.</td><td>We do not receive the advertising identifier on a server of ours. Google may receive it if you allow tracking.</td></tr>
+    <tr><td>Network</td><td>Ads, the App Store, and any share method you choose that needs a connection.</td><td>Described in sections 5 and 6. Organizing documents does not require an account.</td></tr>
+  </table>
+
+  <h2 id="en-bases">8. Purposes and legal bases</h2>
+  <p>Where the GDPR, UK GDPR or a similar law applies, we rely on the following bases for personal data we actually process. On-device documents that we never receive are described above so you understand the app; they are under your control on your device.</p>
+  <table>
+    <tr><th>Purpose</th><th>Basis</th></tr>
+    <tr><td>Show the app, save your work on the device, and provide a feature you ask for</td><td>Contract, for the service you request. On-device processing stays on the device.</td></tr>
+    <tr><td>Personalized ads and use of the advertising identifier</td><td>Consent. You can refuse or withdraw it.</td></tr>
+    <tr><td>Limited ad delivery, security and fraud prevention where consent is not required</td><td>Legitimate interests in running a free, ad-supported version safely. You may object where the law allows.</td></tr>
+    <tr><td>Optional reminders, optional inclusion in a device backup, App Lock</td><td>Consent or steps you take on the device. You can turn each one off.</td></tr>
+    <tr><td>Read and reply to an email you send us, and keep it where the law requires</td><td>Contract, legitimate interests, or a legal obligation, depending on the message.</td></tr>
+    <tr><td>Purchases</td><td>Contract, performed by Apple under Apple’s terms.</td></tr>
+  </table>
+  <p>We do not make a decision that produces a legal or similarly significant effect about a loan by automated means. The app does not decide whether you qualify for credit.</p>
+
+  <h2 id="en-sensitive">9. Sensitive information</h2>
+  <p>A file you import may contain information that privacy laws treat as sensitive: a government identifier, a full account number, financial details, tax details, or a photograph of a face on an identity document. That content sits in the file on your device. We do not ask you to type a Social Security number or other national identity number, a bank account number, an income amount, a credit score, or an interest rate.</p>
+  <p>We do not use those files to build a profile, and we do not train a model on them. Face ID, when you turn on App Lock, is handled by the operating system.</p>
+  <p>The advertising identifier and precise identifiers used for cross-context advertising can be “sensitive” personal information under some US state laws. We do not use that identifier unless you allow tracking. You can decline.</p>
+
+  <h2 id="en-retention">10. How long it stays, and how to delete it</h2>
+  <ul>
+    <li>Documents, preparations, notes, on-device findings and settings stay on the device until you delete them, or until you delete the app.</li>
+    <li>In the app, Storage can delete documents. Deleting a preparation removes that preparation. Deleting the app removes the app’s data from that device.</li>
+    <li>A copy can remain in an iCloud or computer backup made while “Include Documents in Device Backups” was on. Delete that backup through Apple or your computer if you want it gone. We cannot delete it, because we do not hold it.</li>
+    <li>LoanSnug Pro can be restored from your Apple ID with Restore Purchases. A paid detailed-report unlock and a paid pack-export credit are stored for that device. They are not restored by Apple after you delete the app, unless a device backup restores the app’s data. Unlocks earned by watching ads are stored only on the device and are not purchases.</li>
+    <li>Google keeps advertising data under Google’s retention rules. Apple keeps purchase records under Apple’s rules. We cannot delete those copies for them. Use the Google and Apple links in this policy to make a request to them.</li>
+    <li>Support emails are kept only for the time described in section 5.</li>
+  </ul>
+  <p>There is no LoanSnug account to delete. Account-deletion rules that apply to apps with accounts do not create an account here.</p>
+
+  <h2 id="en-security">11. Security</h2>
+  <p>Document files are stored with complete file protection, so iOS keeps them encrypted and unavailable while the device is locked. App Lock is optional and uses Face ID, Touch ID, or the device passcode. Hiding the app’s content in the app switcher is on unless you turn it off. Passwords you type for a PDF are not saved.</p>
+  <p>No method is perfect. You are responsible for your device passcode, for who can unlock the device, and for the people you share a file with. We cannot reset a forgotten device passcode, and we cannot recover a file after it is deleted, because we do not keep a copy.</p>
+
+  <h2 id="en-rights">12. Your choices and rights</h2>
+  <p>Depending on where you live, you may have the right to know, access, correct, delete, receive a copy, restrict or object to processing, withdraw consent, opt out of sale or sharing for targeted advertising, opt out of certain profiling, and appeal a refusal. You will not be discriminated against for exercising a privacy right. These rights are not absolute. A law may limit them.</p>
+  <p>Because we do not receive your documents, the direct tools are on the device:</p>
+  <ul>
+    <li>access and take a copy by opening or exporting the file;</li>
+    <li>correct a date, a name, or notes in the app;</li>
+    <li>delete a document, a preparation, or the app;</li>
+    <li>withdraw consent for tracking, ads, notifications, backup inclusion, or App Lock in the settings described above.</li>
+  </ul>
+  <p>For personal data you have sent us, email <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. We may need enough information to find the message, and we may decline a request the law does not require us to fulfill. We acknowledge a request we can identify without undue delay. Where your law sets a deadline, including a 72-hour deadline for a valid request under Vietnamese rules, we follow that deadline. Where your law does not set a shorter deadline, we aim to complete the request within 30 days. We extend that time only where the law allows, and we tell you if we do.</p>
+  <p>You may use an authorized agent where your law allows it. We may ask the agent for proof, and we may confirm the request with you.</p>
+
+  <h2 id="en-us">13. United States</h2>
+  <p>This section is a notice for residents of states with consumer privacy laws, including California, Colorado, Connecticut, Virginia, Utah, Texas, Oregon, Montana, and other states that adopt similar rules. It supplements the rest of this policy.</p>
+  <table>
+    <tr><th>Category</th><th>What happens</th><th>Sold or shared by us?</th></tr>
+    <tr><td>Identifiers, such as an IP address or an advertising identifier</td><td>Processed by Google when the free version requests an ad. The advertising identifier is used only if you allow tracking. A local preparation code stays on the device.</td><td>We do not sell it for money. Personalized advertising by Google may be a “share” or a “sale” under state law if you allow it. Opt out as described in section 6.</td></tr>
+    <tr><td>Commercial information</td><td>Apple processes the payment. The app stores the unlock on the device.</td><td>No.</td></tr>
+    <tr><td>Internet or network activity</td><td>Ad interactions and diagnostics may be processed by Google.</td><td>Same opt-out as identifiers.</td></tr>
+    <tr><td>Approximate geolocation</td><td>Google may derive a coarse location from an IP address to deliver and measure ads. The app does not use GPS for this.</td><td>Same opt-out as identifiers.</td></tr>
+    <tr><td>Customer content you import, including financial, identity and employment documents; audio, visual or similar information in a scan; professional information in a letter you import</td><td>Stored on the device. Not transmitted to us.</td><td>No.</td></tr>
+    <tr><td>Sensitive personal information in those files, and the advertising identifier if a state treats it as sensitive</td><td>File contents stay on the device. The advertising identifier is used only with tracking permission.</td><td>We do not sell file contents. Opt out of advertising-identifier use by declining tracking.</td></tr>
+    <tr><td>Inferences</td><td>We do not create profiles about your credit, health, or preferences from your documents.</td><td>No.</td></tr>
+  </table>
+  <p>We do not use or disclose sensitive personal information for purposes that give California residents a separate “limit the use of sensitive personal information” right beyond the advertising opt-out above. We do not share personal information with third parties for their own direct marketing in a way that triggers California’s Shine the Light disclosure. We do not knowingly sell or share personal information of anyone under 16.</p>
+  <p>California residents may request access to, or deletion of, personal information we collected, and may correct inaccurate personal information. Because we do not collect document contents, those requests are handled as described in section 12. This policy is our notice at collection.</p>
+
+  <h2 id="en-eu">14. EEA, United Kingdom and Switzerland</h2>
+  <p>You may ask us to carry out the rights in section 12, including the right to lodge a complaint with a supervisory authority. A list of EEA authorities is published by the <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" rel="noopener noreferrer">European Data Protection Board</a>. In the United Kingdom, the authority is the <a href="https://ico.org.uk" rel="noopener noreferrer">Information Commissioner’s Office</a>. In Switzerland, it is the Federal Data Protection and Information Commissioner.</p>
+  <p>You may withdraw consent at any time. Withdrawal does not affect processing that was lawful before the withdrawal. You may object to processing based on legitimate interests. Where we rely on consent for personalized ads, refusing consent does not stop you from using the document tools. It can change whether personalized ads, or any ads, are shown.</p>
+  <p>If we later appoint an EU or UK representative, we will list their name and contact details in section 1.</p>
+
+  <h2 id="en-vn">15. Vietnam</h2>
+  <p>If Vietnamese personal-data law applies to processing we carry out, including the Law on Personal Data Protection and the rules that implement it, this section is for you. It is also why this policy is published in Vietnamese.</p>
+  <p>Files you keep in the app may be sensitive personal data, such as identity-document data and financial data. They are processed on your device so you can organize them. We do not collect those files, we do not transfer them outside Vietnam, and we do not transfer them to a lender. A transfer happens only if you yourself export or share the file.</p>
+  <p>Advertising data described in section 6 may be processed by Google outside Vietnam when the free version shows an ad. That processing follows your tracking choice and your ads-consent choice. You can refuse. LoanSnug Pro does not request ads. This section does not state that a cross-border transfer assessment or filing has been completed.</p>
+  <p>You may ask to know, consent or withdraw consent, access, correct, delete, restrict, and object, and you may complain to the authority responsible for personal data protection in Vietnam. Contact us first at <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. We will respond within the period Vietnamese law requires for a valid request, including within 72 hours where that deadline applies.</p>
+
+  <h2 id="en-indonesia">16. Indonesia</h2>
+  <p>If Indonesian personal-data law applies to processing we carry out, including Law No. 27 of 2022 on Personal Data Protection and the rules that implement it, this section is for you. It is also why this policy is published in Indonesian. The Indonesian text is a translation for ease of reading. If it differs from this English text, this English text prevails, except where a mandatory law requires a different result.</p>
+  <p>Files you keep in the app may be specific personal data, such as identity-document data and financial data. They are processed on your device so you can organize them. We do not collect those files, we do not transfer them outside Indonesia, and we do not transfer them to a lender. A transfer of a file happens only if you yourself export or share it.</p>
+  <p>Advertising data described in section 6 may be processed by Google outside Indonesia when the free version requests an ad. That processing follows your tracking choice and your ads-consent choice. You can refuse. LoanSnug Pro does not request ads. This section does not state that a cross-border transfer assessment or filing has been completed.</p>
+  <p>You may ask to be informed, to access, to correct, to delete, to withdraw consent, to object, to delay or limit processing, and to obtain a copy where the law gives that right. You may also complain to the authority responsible for personal data protection in Indonesia and seek a remedy the law allows. Contact us first at <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. We respond within the period Indonesian law requires for a valid request. This page does not name a data-protection officer for Indonesia.</p>
+
+  <h2 id="en-other">17. Other regions</h2>
+  <p>If you live in Canada (including under federal law or Quebec’s privacy law), Brazil, Mexico, Argentina, Chile, Australia, New Zealand, Japan, South Korea, Singapore, Thailand, India, the Philippines, Malaysia, Israel, Turkey, the United Arab Emirates, Saudi Arabia, South Africa, Nigeria, Kenya, or any other place with a privacy law, you may use the choices in section 12. Indonesia is described in section 16. Any stronger local right, shorter deadline, or local authority still applies. Useful authority pages include the <a href="https://www.priv.gc.ca" rel="noopener noreferrer">Office of the Privacy Commissioner of Canada</a>, Brazil’s <a href="https://www.gov.br/anpd" rel="noopener noreferrer">ANPD</a>, and Australia’s <a href="https://www.oaic.gov.au" rel="noopener noreferrer">OAIC</a>.</p>
+  <p>In mainland China, documents still stay on the device and are not uploaded to us. If a Chinese law requires a separate consent or a local step before advertising data is processed outside mainland China, we will follow that requirement, which may mean the app does not request ads. You can also decline tracking or use LoanSnug Pro.</p>
+  <p>We have not appointed a local representative, data-protection officer, or information officer, and we have not listed a registration number, unless section 1 says so. This policy does not claim that a filing which a particular country requires has already been made. If a law requires that step before the app is offered there, the seller will complete it, or stop offering the app there, before relying on this policy in that place.</p>
+
+  <h2 id="en-children">18. Children</h2>
+  <p>LoanSnug is a tool for preparing loan documents. It is meant for adults. It is not directed to children under 13, or under 16 where that is the relevant age, and we do not knowingly collect personal information from them. The advertising tools are configured on the basis that the user is not a child.</p>
+  <p>If you are under 18, or under the age of majority where you live, do not use the app. If you believe a child has sent us personal information, email <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a> and we will delete it.</p>
+
+  <h2 id="en-transfers">19. International transfers</h2>
+  <p>We do not operate servers that receive your documents, so we do not transfer those documents across borders.</p>
+  <p>Google and Apple may process advertising data, purchase data, and device backups in the United States and other countries. Their safeguards can include adequacy decisions, standard contractual clauses, the UK International Data Transfer Addendum, and similar tools they offer. Their privacy policies, linked above and at <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple’s Privacy Policy</a>, describe those transfers. A message sent to <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a> is handled by Google, which provides that mailbox, and may be stored outside your country. This policy does not state that a transfer assessment or filing has been completed for every country where the app can be installed. Where your law requires separate consent before advertising data leaves your country, refuse tracking and ads consent. LoanSnug Pro does not request ads, so it does not start that transfer.</p>
+
+  <h2 id="en-page">20. This web page</h2>
+  <p>This page does not show ads and does not use an analytics tool. It does not set a tracking cookie. If you switch language, the page stores <code>en</code>, <code>vi</code> or <code>id</code> in local storage on your device so it can open in that language next time. That value records only the language choice. It is the only thing this page stores. Blocking local storage does not block the page; each language will simply be available without a saved choice.</p>
+
+  <h2 id="en-changes">21. Changes</h2>
+  <p>If we change this policy, we will update the date at the top and post the new version at this address. Because there is no account, we cannot email every user. The app’s Privacy screen links to this page when a link is configured. Where a new use needs consent, we will ask before that use. Where a law requires notice before a change takes effect, the new date will give that notice.</p>
+
+  <h2 id="en-contact">22. Contact and complaints</h2>
+  <p>Email <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Please describe the right you want to use and the country where you live. A postal address, if the App Store listing shows one for this seller, can also be used. You may also complain to the authority named for your region in this policy, and you may bring a claim where the law allows, including the courts of your residence when a consumer law gives you that right.</p>
+  <p>The <a href="LoanSnug-Terms.html">Terms of Use</a> explain the licence, purchases, and the limits of what the app is. They do not reduce the rights this policy gives you under a mandatory privacy law.</p>
+</div>
+
+<div data-lang="vi">
+  <p class="meta">Có hiệu lực từ 15 tháng 11 năm 2026 · Cập nhật lần cuối 15 tháng 11 năm 2026</p>
+  <h1>Chính sách quyền riêng tư</h1>
+  <div class="callout"><p><strong>Bản dịch.</strong> Bản tiếng Việt này được cung cấp để bạn dễ đọc. Nếu cách hiểu khác với bản tiếng Anh, bản tiếng Anh được áp dụng. Nếu luật bắt buộc nơi bạn sống yêu cầu kết quả khác, luật đó vẫn được áp dụng cho bạn.</p></div>
+  <p>Chính sách này giải thích cách ứng dụng LoanSnug trên iPhone và iPad xử lý thông tin. Chính sách được viết cho người dùng ở mọi nơi ứng dụng được cung cấp. Nếu pháp luật nơi bạn sống bảo vệ bạn mạnh hơn, mức bảo vệ mạnh hơn đó được áp dụng cho bạn.</p>
+  <p>“LoanSnug”, “chúng tôi” là miao Yu, nhà phát triển cá nhân cung cấp LoanSnug. “Bạn” là người dùng ứng dụng. Bản tiếng Anh là bản có giá trị quyết định của chính sách này. Mọi ngôn ngữ khác đều là bản dịch để chính sách dễ đọc hơn. Nếu bản dịch khác với bản tiếng Anh, bản tiếng Anh được áp dụng. Nếu luật bắt buộc nơi bạn sống yêu cầu kết quả khác, luật đó vẫn được áp dụng cho bạn.</p>
+
+  <div class="summary">
+    <article><h3>Tệp của bạn ở trên thiết bị.</h3><p>LoanSnug không có tài khoản người dùng và không có máy chủ riêng. Chúng tôi không tải tài liệu của bạn lên, và không nhận tệp hay nội dung trong tệp.</p></article>
+    <article><h3>Việc kiểm tra chạy trên thiết bị.</h3><p>Nhận dạng chữ, đọc ngày và kiểm tra chất lượng tệp chạy trên iPhone hoặc iPad của bạn. Phần chữ đã nhận dạng không được lưu lại.</p></article>
+    <article><h3>Quảng cáo tách khỏi tài liệu của bạn.</h3><p>Bản miễn phí hiển thị quảng cáo của Google AdMob. Chúng tôi không đưa cho Google tài liệu của bạn hoặc chi tiết đọc được từ tài liệu. LoanSnug Pro bỏ quảng cáo.</p></article>
+    <article><h3>Bạn có thể xóa.</h3><p>Xóa một tài liệu, hoặc xóa toàn bộ, trong Bộ nhớ. Xóa ứng dụng sẽ xóa dữ liệu của ứng dụng trên thiết bị đó.</p></article>
+  </div>
+
+  <nav class="toc card" aria-label="Mục lục">
+    <strong>Mục lục</strong>
+    <ol>
+      <li><a href="#vi-who">Chúng tôi là ai</a></li>
+      <li><a href="#vi-scope">Chính sách này áp dụng cho những gì</a></li>
+      <li><a href="#vi-app">Ứng dụng làm gì</a></li>
+      <li><a href="#vi-ondevice">Thông tin nằm trên thiết bị của bạn</a></li>
+      <li><a href="#vi-leaves">Khi nào thông tin có thể rời thiết bị</a></li>
+      <li><a href="#vi-ads">Quảng cáo, theo dõi và sự đồng ý</a></li>
+      <li><a href="#vi-permissions">Quyền của thiết bị</a></li>
+      <li><a href="#vi-bases">Mục đích và cơ sở pháp lý</a></li>
+      <li><a href="#vi-sensitive">Thông tin nhạy cảm</a></li>
+      <li><a href="#vi-retention">Lưu giữ bao lâu và cách xóa</a></li>
+      <li><a href="#vi-security">Bảo mật</a></li>
+      <li><a href="#vi-rights">Lựa chọn và quyền của bạn</a></li>
+      <li><a href="#vi-us">Hoa Kỳ</a></li>
+      <li><a href="#vi-eu">EEA, Vương quốc Anh và Thụy Sĩ</a></li>
+      <li><a href="#vi-vn">Việt Nam</a></li>
+      <li><a href="#vi-indonesia">Indonesia</a></li>
+      <li><a href="#vi-other">Các khu vực khác</a></li>
+      <li><a href="#vi-children">Trẻ em</a></li>
+      <li><a href="#vi-transfers">Chuyển dữ liệu ra nước ngoài</a></li>
+      <li><a href="#vi-page">Trang web này</a></li>
+      <li><a href="#vi-changes">Thay đổi</a></li>
+      <li><a href="#vi-contact">Liên hệ và khiếu nại</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="vi-who">1. Chúng tôi là ai</h2>
+  <table>
+    <tr><th>Đơn vị vận hành</th><td>miao Yu, nhà phát triển cá nhân và bên bán LoanSnug</td></tr>
+    <tr><th>Ứng dụng</th><td>LoanSnug cho iPhone và iPad (mã Apple <code>com.yumiao.LoanSnug</code>)</td></tr>
+    <tr><th>Email</th><td><a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Địa chỉ này là một phần của chính sách. Hộp thư do Google cung cấp.</td></tr>
+    <tr><th>Địa chỉ bưu chính</th><td>Địa chỉ bưu chính ghi cho bên bán này trên trang Apple App Store, nếu trang đó có ghi. Địa chỉ đó, khi được ghi, là một phần của chính sách. Trang này không nêu một địa chỉ khác.</td></tr>
+    <tr><th>Điều khoản liên quan</th><td><a href="LoanSnug-Terms.html?lang=vi">Điều khoản sử dụng</a>. Cùng nội dung có trong ứng dụng tại Cài đặt → Quyền riêng tư và bảo mật → Điều khoản sử dụng.</td></tr>
+  </table>
+  <p>Với người ở EEA, Vương quốc Anh hoặc Thụy Sĩ, đơn vị vận hành là bên kiểm soát đối với dữ liệu cá nhân mà đơn vị đó thực sự nhận được, ví dụ email bạn gửi cho chúng tôi. Trang này không nêu tên đại diện tại EEA, Vương quốc Anh hoặc Thụy Sĩ, và không nêu tên cán bộ bảo vệ dữ liệu. Nếu luật yêu cầu một trong các việc chỉ định đó trước khi ứng dụng được cung cấp cho người ở đó, miao Yu sẽ thực hiện việc chỉ định hoặc ngừng cung cấp ứng dụng ở đó. Cho đến khi việc chỉ định được ghi ở mục 1, hãy gửi email tới <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Với dữ liệu quảng cáo, Google là bên kiểm soát độc lập. Với thanh toán và bản sao lưu thiết bị, Apple là bên kiểm soát độc lập. Những bên có thể nhận dữ liệu cá nhân là: Google, nhà cung cấp hộp thư hỗ trợ, nếu bạn viết tới <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>; Apple, đối với giao dịch mua, hệ điều hành, và bản sao lưu thiết bị mà bạn cho phép; và Google, đối với quảng cáo ở bản miễn phí. Người mà bạn xuất hoặc chia sẻ tệp sẽ nhận tệp từ bạn. Nội dung tài liệu nằm trên thiết bị do bạn giữ. Chúng tôi không truy cập được. Ở nơi luật vẫn coi nhà cung cấp ứng dụng trên thiết bị là bên chịu trách nhiệm về việc xử lý đó, mục đích duy nhất là tính năng bạn đã chọn, nơi lưu là thiết bị, và bạn dùng công cụ xóa, xuất và cài đặt trong ứng dụng để thực hiện quyền của mình.</p>
+
+  <h2 id="vi-scope">2. Chính sách này áp dụng cho những gì</h2>
+  <p>Chính sách áp dụng cho ứng dụng LoanSnug và cho trang chính sách quyền riêng tư này. Chính sách có hiệu lực ở mọi nơi ứng dụng có trên App Store, gồm Hoa Kỳ, Việt Nam, Indonesia, EEA, Vương quốc Anh, Thụy Sĩ và các cửa hàng khác.</p>
+  <p>Danh sách hồ sơ trong ứng dụng hiện được soạn cho Hoa Kỳ, Việt Nam và Indonesia. Bạn vẫn có thể cài ứng dụng ở quốc gia khác. Cách xử lý quyền riêng tư trên trang này là cách chúng tôi dùng ở mọi quốc gia có ứng dụng. Nếu luật địa phương chặt hơn, chúng tôi áp dụng quy tắc chặt hơn đó cho bạn.</p>
+  <p>Các giới hạn này giống nhau ở mọi quốc gia và vùng nơi ứng dụng được cung cấp. Chúng tôi không đưa tài liệu của bạn lên máy chủ của mình, không bán chúng, không dùng chúng để chọn quảng cáo, và không đưa ra quyết định cho vay. Bạn không phải đưa dữ liệu cá nhân cho chúng tôi để dùng các công cụ tài liệu, vì các công cụ đó chạy trên thiết bị của bạn. Chính sách này không miễn một yêu cầu địa phương về đại diện, hồ sơ đăng ký, hoặc sự đồng ý riêng trước khi dữ liệu quảng cáo rời quốc gia của bạn, và không tuyên bố rằng bước đó đã hoàn tất, trừ khi mục 1 ghi rõ. Bạn có thể từ chối theo dõi và sự đồng ý quảng cáo. LoanSnug Pro không yêu cầu quảng cáo.</p>
+
+  <h2 id="vi-app">3. Ứng dụng làm gì</h2>
+  <p>LoanSnug giúp bạn sắp xếp những giấy tờ bạn có thể cần cho một hồ sơ vay: giấy tờ tùy thân, công việc, thu nhập, tài sản, giấy tờ riêng của khoản vay và thuế. Ứng dụng có thể quét hoặc nhập tệp, đọc ngày tháng và chất lượng tệp cơ bản trên thiết bị của bạn, chỉ phần còn thiếu, rồi tạo một bộ hồ sơ để bạn tự xuất.</p>
+  <div class="callout"><p>LoanSnug không nộp hồ sơ, không kết nối với bên cho vay, không lấy báo cáo tín dụng, không chấm điểm tín dụng, không xác minh danh tính hoặc thu nhập, và không phát hiện giấy tờ giả. Kết quả mô tả cách tệp của bạn được sắp xếp và những gì bước kiểm tra trên thiết bị nhìn thấy. Đó không phải quyết định cho vay.</p></div>
+
+  <h2 id="vi-ondevice">4. Thông tin nằm trên thiết bị của bạn</h2>
+  <p>Những mục sau được lưu trong vùng lưu trữ riêng của ứng dụng trên iPhone hoặc iPad của bạn. Chúng tôi không nhận các mục đó.</p>
+  <h3>Tài liệu bạn thêm</h3>
+  <p>Bạn có thể quét bằng camera, chọn ảnh, hoặc nhập tệp. Ứng dụng lưu một bản sao. Những tệp này có thể chứa nội dung rất nhạy cảm, vì bạn là người chọn: giấy tờ tùy thân có ảnh, sao kê ngân hàng, giấy lương, giấy tờ thuế, hoặc giấy tờ tương tự. Tệp gốc nằm trên thiết bị cho đến khi bạn xóa.</p>
+  <h3>Thông tin bạn nhập</h3>
+  <p>Một hồ sơ chuẩn bị có thể gồm tên, quốc gia, loại khoản vay, mục đích, ngày dự kiến, nhóm nguồn thu nhập, tần suất trả lương, các mục đã chọn trong danh sách, tên mục bạn tự thêm, biệt danh tài khoản, tên ngân hàng không bắt buộc, và ghi chú. Ứng dụng hỏi biệt danh, không hỏi số tài khoản. Ghi chú là chữ tự do. Đừng ghi số giấy tờ hoặc số tài khoản vào ghi chú nếu bạn không muốn những số đó được lưu ngay cả trên thiết bị.</p>
+  <h3>Những gì bước kiểm tra trên thiết bị lưu lại</h3>
+  <p>Ứng dụng có thể lưu ngày đã đọc (gồm ngày hết hạn, tháng sao kê hoặc năm thuế), nhận xét về chất lượng tệp, số trang, dung lượng, giá trị băm của tệp, một dấu vân tay một chiều của chữ đã nhận dạng, và độ dài của chữ đó. Dấu vân tay giúp phát hiện tệp trùng hoặc tệp khó đọc. Bản thân phần chữ đã nhận dạng không được lưu. Ứng dụng cũng có thể lưu, chỉ trên thiết bị, một mô tả bằng số về diện mạo của trang đầu, để nhận ra trang tương tự. Mô tả đó không phải bản sao của trang, và không được gửi cho chúng tôi.</p>
+  <p>Nếu có mã vạch trên giấy phép lái xe hoặc vùng đọc máy của hộ chiếu, ứng dụng chỉ dùng để đọc ngày hết hạn. Các trường khác trong mã vạch hoặc vùng đó, gồm số giấy tờ, không được lưu. Mật khẩu PDF bạn nhập được dùng để tạo một bản đã mở khóa và không được giữ lại. Mật khẩu bạn đặt cho một lần xuất được dùng cho lần xuất đó và không được lưu.</p>
+  <h3>Cài đặt và bản ghi mua hàng trên máy</h3>
+  <p>Ứng dụng lưu tùy chọn trên thiết bị: giao diện, Khóa ứng dụng, thời điểm yêu cầu mở khóa, việc che nội dung trong trình chuyển ứng dụng, việc đưa tài liệu vào bản sao lưu thiết bị, công tắc nhắc nhở, giờ nhắc, số lần mở ứng dụng, và lần gần nhất ứng dụng cân nhắc hỏi đánh giá. Ứng dụng cũng chỉ lưu trên thiết bị việc LoanSnug Pro có đang hoạt động hay không, hồ sơ nào đã mở báo cáo chi tiết, số lượt xuất bộ hồ sơ chưa dùng, và mã giao dịch Apple cần để áp dụng một lần mua đúng một lần. Ứng dụng không lưu Apple ID hoặc số thẻ thanh toán của bạn.</p>
+
+  <h2 id="vi-leaves">5. Khi nào thông tin có thể rời thiết bị</h2>
+  <h3>Khi bạn xuất hoặc chia sẻ</h3>
+  <p>Tài liệu rời ứng dụng khi bạn xuất, in hoặc chia sẻ, ví dụ qua AirDrop, Mail, Files, hoặc ứng dụng khác do bạn chọn. Chúng tôi không thấy lần chuyển đó và không chọn người nhận. Nếu bạn đặt mật khẩu cho tệp xuất, mỗi PDF được mã hóa bằng mật khẩu đó. Tệp ZIP chứa nhiều tệp riêng không tự được mã hóa; hãy tự gửi mật khẩu cho người nhận.</p>
+  <h3>Bản sao lưu thiết bị</h3>
+  <p>Theo mặc định, tài liệu được đưa vào bản sao lưu của thiết bị. Nếu iCloud Backup hoặc bản sao lưu trên máy tính đang bật, Apple hoặc máy tính đó có thể lưu bản sao lưu. Những bản sao lưu này do Apple hoặc bạn quản lý, không phải LoanSnug. Bạn có thể tắt trong Khóa ứng dụng và bảo mật. Khi tắt, tài liệu không nằm trong bản sao lưu thiết bị và sẽ mất nếu thiết bị được thay mà không còn bản khác.</p>
+  <h3>Quảng cáo</h3>
+  <p>Ở bản miễn phí, Google có thể nhận dữ liệu quảng cáo mô tả ở mục 6. Dữ liệu đó không gồm tài liệu của bạn, cũng không gồm ngày tháng và nhận xét đọc được từ tài liệu.</p>
+  <h3>Mua hàng</h3>
+  <p>Khoản thanh toán được tính vào Apple ID của bạn và do Apple xử lý. Apple nhận thông tin thanh toán. Chúng tôi nhận, trên thiết bị, kết quả mua hàng qua StoreKit. Chúng tôi không nhận số thẻ của bạn.</p>
+  <h3>Tin nhắn bạn gửi cho chúng tôi</h3>
+  <p>Nếu bạn gửi email tới <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>, chúng tôi nhận những gì bạn ghi trong thư. Đừng gửi giấy tờ tùy thân, số tài khoản hoặc tệp nhạy cảm khác, trừ khi chúng tôi đã yêu cầu để giải quyết một việc cụ thể và bạn tự chọn gửi. Hộp thư do Google cung cấp. Chúng tôi xóa thư khỏi hộp thư đó, hoặc gỡ thông tin nhận dạng bạn, trong vòng 24 tháng sau khi yêu cầu được đóng, trừ khi một thời hạn dài hơn là cần để thực hiện nghĩa vụ pháp lý hoặc để giải quyết tranh chấp. Một bản sao có thể còn lại ở Google theo quy tắc của Google. Bạn có thể yêu cầu chúng tôi xóa thư hỗ trợ sớm hơn, và chúng tôi sẽ xóa thư khỏi hộp thư trừ khi luật buộc phải giữ. Nếu một sự cố đối với thư bạn đã gửi có khả năng gây hại nghiêm trọng và luật yêu cầu thông báo, chúng tôi thông báo cho bạn và cho cơ quan mà luật đó chỉ định.</p>
+
+  <h2 id="vi-ads">6. Quảng cáo, theo dõi và sự đồng ý</h2>
+  <p>Bản miễn phí hiển thị quảng cáo của Google AdMob: biểu ngữ, quảng cáo được ghi chữ “Ad” trong trang, quảng cáo toàn màn hình ở các điểm ngắt của quy trình, quảng cáo khi mở ứng dụng, và video có thưởng không bắt buộc. Video có thưởng do bạn bắt đầu. Xem video có thể mở một báo cáo chi tiết hoặc một lần xuất bộ hồ sơ thay cho việc mua. LoanSnug Pro bỏ quảng cáo. Người dùng Pro không thấy lời hỏi theo dõi hoặc mẫu đồng ý quảng cáo, vì ứng dụng không yêu cầu quảng cáo cho họ.</p>
+  <p>Để phân phối, bảo vệ, đo lường và, khi được phép, cá nhân hóa quảng cáo, Google có thể xử lý:</p>
+  <ul>
+    <li>địa chỉ IP, và vị trí tương đối suy ra từ địa chỉ đó;</li>
+    <li>mã định danh thiết bị và mã quảng cáo, gồm Mã định danh cho nhà quảng cáo chỉ khi bạn cho phép theo dõi;</li>
+    <li>tương tác với quảng cáo, dữ liệu chẩn đoán, và tín hiệu chống gian lận;</li>
+    <li>lựa chọn đồng ý quảng cáo của bạn.</li>
+  </ul>
+  <p>Ứng dụng hỏi Quyền minh bạch theo dõi của ứng dụng trước bước đồng ý quảng cáo khi Apple yêu cầu lời hỏi đó. Câu của hệ thống nói rằng mã định danh quảng cáo được dùng để hiển thị quảng cáo phù hợp hơn và đo hiệu quả. Nếu bạn cho phép theo dõi, Google có thể dùng mã đó cho các mục đích ấy. Nếu bạn không cho phép, ứng dụng không ủy quyền dùng mã định danh quảng cáo. Quảng cáo vẫn có thể xuất hiện bằng cách hạn chế hơn, gồm quảng cáo theo ngữ cảnh và SKAdNetwork của Apple, nếu công cụ đồng ý của Google cho phép yêu cầu quảng cáo. Ở nơi bắt buộc có mẫu quyền riêng tư, ứng dụng chỉ yêu cầu quảng cáo khi Nền tảng thông điệp người dùng của Google cho phép.</p>
+  <p>Bạn có thể đổi lựa chọn bất cứ lúc nào:</p>
+  <ul>
+    <li>Cài đặt iOS → Quyền riêng tư &amp; Bảo mật → Theo dõi, với LoanSnug;</li>
+    <li>trong ứng dụng, Cài đặt → Lựa chọn quyền riêng tư quảng cáo, khi dòng đó xuất hiện;</li>
+    <li><a href="https://myadcenter.google.com" rel="noopener noreferrer">Trung tâm quảng cáo của tôi</a> của Google;</li>
+    <li>hoặc mua LoanSnug Pro để bỏ quảng cáo.</li>
+  </ul>
+  <p>Chúng tôi không bán tài liệu của bạn hoặc thông tin trong tài liệu để lấy tiền. Chúng tôi không dùng nội dung tài liệu để chọn quảng cáo. Nếu bạn cho phép quảng cáo được cá nhân hóa, Google và đối tác quảng cáo có thể dùng mã định danh thiết bị và tương tác quảng cáo để hiển thị quảng cáo trên nhiều ứng dụng và trang web. Một số luật tiểu bang của Hoa Kỳ coi đó là “chia sẻ” cho quảng cáo hành vi xuyên bối cảnh, hoặc là “bán”, kể cả khi không có tiền đổi lấy dữ liệu. Từ chối theo dõi, dùng Lựa chọn quyền riêng tư quảng cáo, hoặc mua Pro là cách bạn từ chối việc dùng cho quảng cáo đó. Chúng tôi không trả thưởng tài chính để bạn cho phép theo dõi. Việc từ chối theo dõi, từ chối mẫu đồng ý quảng cáo, hoặc mua LoanSnug Pro là cách từ chối bán và từ chối chia sẻ cho quảng cáo hành vi xuyên bối cảnh, ở mọi nơi dùng các khái niệm đó. Bạn không cần tài khoản để từ chối.</p>
+  <p>Công bố của Google nằm trong <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Chính sách quyền riêng tư của Google</a>, <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer">Cách Google dùng thông tin từ trang hoặc ứng dụng dùng dịch vụ của Google</a>, và <a href="https://support.google.com/admob/answer/6128543" rel="noopener noreferrer">AdMob và quyền riêng tư của người dùng</a>.</p>
+
+  <h2 id="vi-permissions">7. Quyền của thiết bị</h2>
+  <table>
+    <tr><th>Quyền</th><th>Khi nào được dùng</th><th>Chúng tôi nhận gì</th></tr>
+    <tr><td>Camera</td><td>Chỉ khi bạn quét một tài liệu.</td><td>Không có gì rời thiết bị. Bản quét được lưu trong ứng dụng.</td></tr>
+    <tr><td>Ảnh</td><td>Bạn chọn ảnh trong bộ chọn của hệ thống. Ứng dụng không xin toàn bộ thư viện ảnh.</td><td>Chỉ những ảnh bạn chọn, được lưu trong ứng dụng.</td></tr>
+    <tr><td>Tệp</td><td>Bạn nhập một tệp do bạn chọn.</td><td>Tệp đó, được lưu trong ứng dụng.</td></tr>
+    <tr><td>Face ID, Touch ID hoặc mật mã</td><td>Chỉ khi bạn bật Khóa ứng dụng.</td><td>Thành công hoặc thất bại. Hình và mẫu sinh trắc ở lại trên thiết bị. Chúng tôi không bao giờ nhận chúng.</td></tr>
+    <tr><td>Thông báo</td><td>Nếu bạn cho phép lời nhắc.</td><td>Không có gì được gửi cho chúng tôi. Lời nhắc được đặt trên thiết bị. Nội dung không gồm tên của bạn, số tài khoản, hoặc số tiền. Lời nhắc hết hạn có thể nêu loại giấy tờ.</td></tr>
+    <tr><td>Theo dõi</td><td>Bản miễn phí, để quảng cáo có thể được đo và phù hợp hơn nếu bạn cho phép.</td><td>Chúng tôi không nhận mã định danh quảng cáo trên máy chủ của mình. Google có thể nhận mã đó nếu bạn cho phép theo dõi.</td></tr>
+    <tr><td>Mạng</td><td>Quảng cáo, App Store, và cách chia sẻ do bạn chọn nếu cách đó cần kết nối.</td><td>Được mô tả ở mục 5 và 6. Việc sắp xếp tài liệu không cần tài khoản.</td></tr>
+  </table>
+
+  <h2 id="vi-bases">8. Mục đích và cơ sở pháp lý</h2>
+  <p>Ở nơi GDPR, UK GDPR hoặc luật tương tự áp dụng, chúng tôi dựa trên các cơ sở sau đối với dữ liệu cá nhân mà chúng tôi thực sự xử lý. Tài liệu trên thiết bị mà chúng tôi không nhận được mô tả ở trên để bạn hiểu ứng dụng; chúng nằm trong quyền kiểm soát của bạn trên thiết bị.</p>
+  <table>
+    <tr><th>Mục đích</th><th>Cơ sở</th></tr>
+    <tr><td>Hiển thị ứng dụng, lưu công việc trên thiết bị, và cung cấp tính năng bạn yêu cầu</td><td>Hợp đồng, đối với dịch vụ bạn yêu cầu. Việc xử lý trên thiết bị ở lại trên thiết bị.</td></tr>
+    <tr><td>Quảng cáo được cá nhân hóa và việc dùng mã định danh quảng cáo</td><td>Sự đồng ý. Bạn có thể từ chối hoặc rút lại.</td></tr>
+    <tr><td>Phân phối quảng cáo ở mức hạn chế, bảo mật và chống gian lận khi không cần sự đồng ý</td><td>Lợi ích chính đáng trong việc vận hành bản miễn phí có quảng cáo một cách an toàn. Bạn có thể phản đối khi luật cho phép.</td></tr>
+    <tr><td>Lời nhắc không bắt buộc, việc đưa vào bản sao lưu thiết bị, Khóa ứng dụng</td><td>Sự đồng ý hoặc thao tác bạn thực hiện trên thiết bị. Bạn có thể tắt từng mục.</td></tr>
+    <tr><td>Đọc và trả lời email bạn gửi, và lưu thư khi luật yêu cầu</td><td>Hợp đồng, lợi ích chính đáng, hoặc nghĩa vụ pháp lý, tùy nội dung thư.</td></tr>
+    <tr><td>Mua hàng</td><td>Hợp đồng, do Apple thực hiện theo điều khoản của Apple.</td></tr>
+  </table>
+  <p>Chúng tôi không đưa ra quyết định tự động tạo hệ quả pháp lý hoặc hệ quả quan trọng tương đương về một khoản vay. Ứng dụng không quyết định bạn có đủ điều kiện tín dụng hay không.</p>
+
+  <h2 id="vi-sensitive">9. Thông tin nhạy cảm</h2>
+  <p>Tệp bạn nhập có thể chứa thông tin mà luật quyền riêng tư coi là nhạy cảm: số giấy tờ do nhà nước cấp, số tài khoản đầy đủ, chi tiết tài chính, chi tiết thuế, hoặc ảnh khuôn mặt trên giấy tờ tùy thân. Nội dung đó nằm trong tệp trên thiết bị của bạn. Chúng tôi không yêu cầu bạn nhập số An sinh xã hội hoặc số định danh quốc gia khác, số tài khoản ngân hàng, số tiền thu nhập, điểm tín dụng, hoặc lãi suất.</p>
+  <p>Chúng tôi không dùng những tệp đó để dựng hồ sơ, và không dùng chúng để huấn luyện mô hình. Face ID, khi bạn bật Khóa ứng dụng, do hệ điều hành xử lý.</p>
+  <p>Mã định danh quảng cáo và các mã dùng cho quảng cáo xuyên bối cảnh có thể là dữ liệu cá nhân “nhạy cảm” theo một số luật tiểu bang của Hoa Kỳ. Chúng tôi không dùng mã đó trừ khi bạn cho phép theo dõi. Bạn có thể từ chối.</p>
+
+  <h2 id="vi-retention">10. Lưu giữ bao lâu và cách xóa</h2>
+  <ul>
+    <li>Tài liệu, hồ sơ chuẩn bị, ghi chú, kết quả kiểm tra trên thiết bị và cài đặt nằm trên thiết bị cho đến khi bạn xóa, hoặc cho đến khi bạn xóa ứng dụng.</li>
+    <li>Trong ứng dụng, Bộ nhớ có thể xóa tài liệu. Xóa một hồ sơ chuẩn bị sẽ xóa hồ sơ đó. Xóa ứng dụng sẽ xóa dữ liệu của ứng dụng trên thiết bị đó.</li>
+    <li>Một bản sao có thể còn trong bản sao lưu iCloud hoặc máy tính được tạo khi “Đưa tài liệu vào bản sao lưu của thiết bị” đang bật. Hãy xóa bản sao lưu đó qua Apple hoặc máy tính của bạn nếu bạn muốn xóa hẳn. Chúng tôi không xóa được, vì chúng tôi không giữ bản đó.</li>
+    <li>LoanSnug Pro có thể được khôi phục từ Apple ID bằng Khôi phục giao dịch mua. Lượt mở báo cáo chi tiết đã trả phí và lượt xuất bộ hồ sơ đã trả phí được lưu cho thiết bị đó. Apple không khôi phục chúng sau khi bạn xóa ứng dụng, trừ khi một bản sao lưu thiết bị khôi phục dữ liệu của ứng dụng. Lượt mở khóa có được nhờ xem quảng cáo chỉ được lưu trên thiết bị và không phải giao dịch mua.</li>
+    <li>Google giữ dữ liệu quảng cáo theo quy tắc lưu giữ của Google. Apple giữ hồ sơ mua hàng theo quy tắc của Apple. Chúng tôi không thể xóa các bản đó thay họ. Hãy dùng liên kết Google và Apple trong chính sách này để gửi yêu cầu cho họ.</li>
+    <li>Email hỗ trợ được giữ trong thời gian mô tả ở mục 5.</li>
+  </ul>
+  <p>Không có tài khoản LoanSnug để xóa. Quy tắc xóa tài khoản áp dụng cho ứng dụng có tài khoản không tạo ra tài khoản ở đây.</p>
+
+  <h2 id="vi-security">11. Bảo mật</h2>
+  <p>Tệp tài liệu được lưu với chế độ bảo vệ tệp hoàn toàn, nên iOS mã hóa chúng và không cho dùng khi thiết bị đang khóa. Khóa ứng dụng là tùy chọn và dùng Face ID, Touch ID, hoặc mật mã thiết bị. Việc che nội dung ứng dụng trong trình chuyển ứng dụng được bật trừ khi bạn tắt. Mật khẩu bạn nhập cho PDF không được lưu.</p>
+  <p>Không có cách nào là hoàn hảo. Bạn chịu trách nhiệm về mật mã thiết bị, về người có thể mở khóa thiết bị, và về người bạn chia sẻ tệp. Chúng tôi không đặt lại được mật mã thiết bị đã quên, và không khôi phục được tệp sau khi tệp bị xóa, vì chúng tôi không giữ bản sao.</p>
+
+  <h2 id="vi-rights">12. Lựa chọn và quyền của bạn</h2>
+  <p>Tùy nơi bạn sống, bạn có thể có quyền được biết, truy cập, sửa, xóa, nhận một bản sao, hạn chế hoặc phản đối việc xử lý, rút lại sự đồng ý, từ chối bán hoặc chia sẻ cho quảng cáo nhắm mục tiêu, từ chối một số hình thức lập hồ sơ, và kháng cáo việc từ chối yêu cầu. Bạn không bị phân biệt đối xử vì đã dùng một quyền riêng tư. Các quyền này không tuyệt đối. Luật có thể giới hạn chúng.</p>
+  <p>Vì chúng tôi không nhận tài liệu của bạn, công cụ trực tiếp nằm trên thiết bị:</p>
+  <ul>
+    <li>xem và lấy một bản sao bằng cách mở hoặc xuất tệp;</li>
+    <li>sửa ngày, tên hoặc ghi chú trong ứng dụng;</li>
+    <li>xóa một tài liệu, một hồ sơ chuẩn bị, hoặc xóa ứng dụng;</li>
+    <li>rút lại sự đồng ý đối với theo dõi, quảng cáo, thông báo, việc đưa vào bản sao lưu, hoặc Khóa ứng dụng trong các mục cài đặt nêu trên.</li>
+  </ul>
+  <p>Với dữ liệu cá nhân bạn đã gửi cho chúng tôi, hãy gửi email tới <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Chúng tôi có thể cần đủ thông tin để tìm thư, và có thể từ chối yêu cầu mà luật không buộc chúng tôi thực hiện. Chúng tôi xác nhận một yêu cầu mà chúng tôi nhận diện được mà không chậm trễ quá mức. Ở nơi luật của bạn đặt thời hạn, gồm thời hạn 72 giờ đối với một yêu cầu hợp lệ theo quy tắc của Việt Nam, chúng tôi làm theo thời hạn đó. Ở nơi luật của bạn không đặt thời hạn ngắn hơn, chúng tôi hướng tới hoàn tất yêu cầu trong 30 ngày. Chúng tôi chỉ kéo dài thời gian khi luật cho phép, và sẽ báo cho bạn nếu làm vậy.</p>
+  <p>Bạn có thể dùng người được ủy quyền khi luật của bạn cho phép. Chúng tôi có thể yêu cầu người đó xuất trình ủy quyền, và có thể xác nhận lại yêu cầu với bạn.</p>
+
+  <h2 id="vi-us">13. Hoa Kỳ</h2>
+  <p>Mục này là thông báo cho cư dân của các tiểu bang có luật quyền riêng tư cho người tiêu dùng, gồm California, Colorado, Connecticut, Virginia, Utah, Texas, Oregon, Montana, và các tiểu bang khác ban hành quy tắc tương tự. Mục này bổ sung cho phần còn lại của chính sách.</p>
+  <table>
+    <tr><th>Nhóm</th><th>Điều gì xảy ra</th><th>Chúng tôi có bán hoặc chia sẻ?</th></tr>
+    <tr><td>Mã định danh, như địa chỉ IP hoặc mã định danh quảng cáo</td><td>Do Google xử lý khi bản miễn phí yêu cầu quảng cáo. Mã định danh quảng cáo chỉ được dùng nếu bạn cho phép theo dõi. Mã hồ sơ chuẩn bị cục bộ ở trên thiết bị.</td><td>Chúng tôi không bán để lấy tiền. Quảng cáo được cá nhân hóa của Google có thể là “chia sẻ” hoặc “bán” theo luật tiểu bang nếu bạn cho phép. Cách từ chối nằm ở mục 6.</td></tr>
+    <tr><td>Thông tin thương mại</td><td>Apple xử lý khoản thanh toán. Ứng dụng lưu trạng thái mở khóa trên thiết bị.</td><td>Không.</td></tr>
+    <tr><td>Hoạt động internet hoặc mạng</td><td>Tương tác quảng cáo và dữ liệu chẩn đoán có thể do Google xử lý.</td><td>Cùng cách từ chối như mã định danh.</td></tr>
+    <tr><td>Vị trí tương đối</td><td>Google có thể suy ra vị trí tương đối từ địa chỉ IP để phân phối và đo quảng cáo. Ứng dụng không dùng GPS cho việc này.</td><td>Cùng cách từ chối như mã định danh.</td></tr>
+    <tr><td>Nội dung bạn nhập, gồm tài liệu tài chính, giấy tờ tùy thân và giấy tờ việc làm; thông tin nghe nhìn hoặc tương tự trong một bản quét; thông tin nghề nghiệp trong thư bạn nhập</td><td>Được lưu trên thiết bị. Không được truyền cho chúng tôi.</td><td>Không.</td></tr>
+    <tr><td>Dữ liệu cá nhân nhạy cảm trong các tệp đó, và mã định danh quảng cáo nếu một tiểu bang coi đó là dữ liệu nhạy cảm</td><td>Nội dung tệp ở trên thiết bị. Mã định danh quảng cáo chỉ được dùng khi có quyền theo dõi.</td><td>Chúng tôi không bán nội dung tệp. Từ chối việc dùng mã định danh quảng cáo bằng cách không cho phép theo dõi.</td></tr>
+    <tr><td>Suy đoán</td><td>Chúng tôi không tạo hồ sơ về tín dụng, sức khỏe hoặc sở thích của bạn từ tài liệu.</td><td>Không.</td></tr>
+  </table>
+  <p>Chúng tôi không dùng hoặc tiết lộ dữ liệu cá nhân nhạy cảm cho các mục đích làm phát sinh quyền riêng của cư dân California về “hạn chế việc dùng dữ liệu cá nhân nhạy cảm”, ngoài cách từ chối quảng cáo ở trên. Chúng tôi không chia sẻ dữ liệu cá nhân cho bên thứ ba để họ tự tiếp thị trực tiếp theo cách kích hoạt nghĩa vụ công bố Shine the Light của California. Chúng tôi không cố ý bán hoặc chia sẻ dữ liệu cá nhân của người dưới 16 tuổi.</p>
+  <p>Cư dân California có thể yêu cầu truy cập hoặc xóa dữ liệu cá nhân chúng tôi đã thu thập, và có thể yêu cầu sửa dữ liệu không chính xác. Vì chúng tôi không thu thập nội dung tài liệu, các yêu cầu đó được xử lý như mục 12. Chính sách này là thông báo tại thời điểm thu thập.</p>
+
+  <h2 id="vi-eu">14. EEA, Vương quốc Anh và Thụy Sĩ</h2>
+  <p>Bạn có thể yêu cầu chúng tôi thực hiện các quyền ở mục 12, gồm quyền khiếu nại với cơ quan giám sát. Danh sách cơ quan ở EEA do <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" rel="noopener noreferrer">Ủy ban Bảo vệ Dữ liệu Châu Âu</a> công bố. Tại Vương quốc Anh, cơ quan đó là <a href="https://ico.org.uk" rel="noopener noreferrer">Văn phòng Ủy viên Thông tin</a>. Tại Thụy Sĩ, đó là Ủy viên Liên bang về Bảo vệ Dữ liệu và Thông tin.</p>
+  <p>Bạn có thể rút lại sự đồng ý bất cứ lúc nào. Việc rút lại không ảnh hưởng đến xử lý đã hợp pháp trước khi rút. Bạn có thể phản đối việc xử lý dựa trên lợi ích chính đáng. Khi chúng tôi dựa vào sự đồng ý cho quảng cáo được cá nhân hóa, việc từ chối không ngăn bạn dùng các công cụ tài liệu. Việc từ chối có thể thay đổi quảng cáo được cá nhân hóa, hoặc mọi quảng cáo, có được hiển thị hay không.</p>
+  <p>Nếu sau này chúng tôi chỉ định đại diện tại EU hoặc Vương quốc Anh, chúng tôi sẽ ghi tên và thông tin liên hệ của họ ở mục 1.</p>
+
+  <h2 id="vi-vn">15. Việt Nam</h2>
+  <p>Nếu pháp luật Việt Nam về dữ liệu cá nhân áp dụng cho việc xử lý do chúng tôi thực hiện, gồm Luật Bảo vệ dữ liệu cá nhân và các quy định hướng dẫn, mục này dành cho bạn. Đây cũng là lý do chính sách được đăng bằng tiếng Việt.</p>
+  <p>Tệp bạn giữ trong ứng dụng có thể là dữ liệu cá nhân nhạy cảm, như dữ liệu giấy tờ tùy thân và dữ liệu tài chính. Chúng được xử lý trên thiết bị của bạn để bạn sắp xếp chúng. Chúng tôi không thu thập các tệp đó, không chuyển chúng ra ngoài Việt Nam, và không chuyển chúng cho bên cho vay. Việc chuyển chỉ xảy ra khi chính bạn xuất hoặc chia sẻ tệp.</p>
+  <p>Dữ liệu quảng cáo mô tả ở mục 6 có thể được Google xử lý bên ngoài Việt Nam khi bản miễn phí hiển thị quảng cáo. Việc xử lý đó theo lựa chọn theo dõi và lựa chọn đồng ý quảng cáo của bạn. Bạn có thể từ chối. LoanSnug Pro không yêu cầu quảng cáo. Mục này không tuyên bố rằng một đánh giá hoặc hồ sơ chuyển dữ liệu ra nước ngoài đã được hoàn tất.</p>
+  <p>Bạn có thể yêu cầu được biết, đồng ý hoặc rút lại sự đồng ý, truy cập, sửa, xóa, hạn chế và phản đối, và bạn có thể khiếu nại với cơ quan phụ trách bảo vệ dữ liệu cá nhân tại Việt Nam. Hãy liên hệ chúng tôi trước qua <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Chúng tôi sẽ trả lời trong thời hạn luật Việt Nam yêu cầu đối với một yêu cầu hợp lệ, gồm trong 72 giờ khi thời hạn đó áp dụng.</p>
+
+  <h2 id="vi-indonesia">16. Indonesia</h2>
+  <p>Nếu pháp luật Indonesia về dữ liệu cá nhân áp dụng cho việc xử lý do chúng tôi thực hiện, gồm Luật số 27 năm 2022 về Bảo vệ dữ liệu cá nhân và các quy định hướng dẫn, mục này dành cho bạn. Đây cũng là lý do chính sách được đăng bằng tiếng Indonesia. Bản tiếng Indonesia là bản dịch để dễ đọc. Nếu bản đó khác với bản tiếng Anh này, bản tiếng Anh được áp dụng, trừ khi luật bắt buộc yêu cầu kết quả khác.</p>
+  <p>Tệp bạn giữ trong ứng dụng có thể là dữ liệu cá nhân đặc thù, như dữ liệu giấy tờ tùy thân và dữ liệu tài chính. Chúng được xử lý trên thiết bị của bạn để bạn sắp xếp chúng. Chúng tôi không thu thập các tệp đó, không chuyển chúng ra ngoài Indonesia, và không chuyển chúng cho bên cho vay. Việc chuyển một tệp chỉ xảy ra khi chính bạn xuất hoặc chia sẻ tệp.</p>
+  <p>Dữ liệu quảng cáo mô tả ở mục 6 có thể được Google xử lý bên ngoài Indonesia khi bản miễn phí yêu cầu quảng cáo. Việc xử lý đó theo lựa chọn theo dõi và lựa chọn đồng ý quảng cáo của bạn. Bạn có thể từ chối. LoanSnug Pro không yêu cầu quảng cáo. Mục này không tuyên bố rằng một đánh giá hoặc hồ sơ chuyển dữ liệu ra nước ngoài đã được hoàn tất.</p>
+  <p>Bạn có thể yêu cầu được thông báo, truy cập, sửa, xóa, rút lại sự đồng ý, phản đối, trì hoãn hoặc hạn chế việc xử lý, và nhận một bản sao khi luật cho quyền đó. Bạn cũng có thể khiếu nại với cơ quan phụ trách bảo vệ dữ liệu cá nhân tại Indonesia và tìm biện pháp mà luật cho phép. Hãy liên hệ chúng tôi trước qua <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Chúng tôi trả lời trong thời hạn luật Indonesia yêu cầu đối với một yêu cầu hợp lệ. Trang này không nêu tên cán bộ bảo vệ dữ liệu cho Indonesia.</p>
+
+  <h2 id="vi-other">17. Các khu vực khác</h2>
+  <p>Nếu bạn sống tại Canada (gồm luật liên bang hoặc luật quyền riêng tư của Quebec), Brazil, Mexico, Argentina, Chile, Úc, New Zealand, Nhật Bản, Hàn Quốc, Singapore, Thái Lan, Ấn Độ, Philippines, Malaysia, Israel, Thổ Nhĩ Kỳ, Các Tiểu vương quốc Ả Rập Thống nhất, Ả Rập Xê Út, Nam Phi, Nigeria, Kenya, hoặc nơi khác có luật quyền riêng tư, bạn có thể dùng các lựa chọn ở mục 12. Indonesia được mô tả ở mục 16. Mọi quyền địa phương mạnh hơn, thời hạn ngắn hơn, hoặc cơ quan địa phương vẫn được áp dụng. Một số trang cơ quan hữu ích: <a href="https://www.priv.gc.ca" rel="noopener noreferrer">Văn phòng Ủy viên Quyền riêng tư của Canada</a>, <a href="https://www.gov.br/anpd" rel="noopener noreferrer">ANPD</a> của Brazil, và <a href="https://www.oaic.gov.au" rel="noopener noreferrer">OAIC</a> của Úc.</p>
+  <p>Tại Trung Quốc đại lục, tài liệu vẫn nằm trên thiết bị và không được tải lên cho chúng tôi. Nếu luật Trung Quốc yêu cầu một sự đồng ý riêng hoặc một bước trong nước trước khi dữ liệu quảng cáo được xử lý bên ngoài Trung Quốc đại lục, chúng tôi sẽ làm theo yêu cầu đó; điều này có thể có nghĩa là ứng dụng không yêu cầu quảng cáo. Bạn cũng có thể từ chối theo dõi hoặc dùng LoanSnug Pro.</p>
+  <p>Chúng tôi chưa chỉ định đại diện địa phương, cán bộ bảo vệ dữ liệu, hoặc cán bộ thông tin, và chưa ghi số đăng ký, trừ khi mục 1 nói vậy. Chính sách này không tuyên bố rằng một thủ tục nộp hồ sơ mà một quốc gia cụ thể yêu cầu đã được hoàn tất. Nếu luật yêu cầu bước đó trước khi ứng dụng được cung cấp tại đó, bên bán sẽ hoàn tất bước đó, hoặc ngừng cung cấp ứng dụng tại đó, trước khi dựa vào chính sách này tại nơi đó.</p>
+
+  <h2 id="vi-children">18. Trẻ em</h2>
+  <p>LoanSnug là công cụ chuẩn bị hồ sơ vay. Ứng dụng dành cho người trưởng thành. Ứng dụng không hướng tới trẻ em dưới 13 tuổi, hoặc dưới 16 tuổi ở nơi độ tuổi đó là độ tuổi liên quan, và chúng tôi không cố ý thu thập dữ liệu cá nhân từ các em. Công cụ quảng cáo được cấu hình trên cơ sở người dùng không phải trẻ em.</p>
+  <p>Nếu bạn dưới 18 tuổi, hoặc dưới tuổi thành niên nơi bạn sống, hãy không dùng ứng dụng. Nếu bạn cho rằng một trẻ em đã gửi dữ liệu cá nhân cho chúng tôi, hãy gửi email tới <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a> và chúng tôi sẽ xóa dữ liệu đó.</p>
+
+  <h2 id="vi-transfers">19. Chuyển dữ liệu ra nước ngoài</h2>
+  <p>Chúng tôi không vận hành máy chủ để nhận tài liệu của bạn, nên chúng tôi không chuyển các tài liệu đó qua biên giới.</p>
+  <p>Google và Apple có thể xử lý dữ liệu quảng cáo, dữ liệu mua hàng và bản sao lưu thiết bị tại Hoa Kỳ và các quốc gia khác. Biện pháp bảo vệ của họ có thể gồm quyết định tương thích, điều khoản hợp đồng tiêu chuẩn, Phụ lục chuyển dữ liệu quốc tế của Vương quốc Anh, và công cụ tương tự mà họ cung cấp. Chính sách quyền riêng tư của họ, được liên kết ở trên và tại <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Chính sách quyền riêng tư của Apple</a>, mô tả các việc chuyển đó. Thư gửi tới <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a> do Google xử lý, vì Google cung cấp hộp thư đó, và có thể được lưu bên ngoài quốc gia của bạn. Chính sách này không tuyên bố rằng một đánh giá hoặc hồ sơ chuyển dữ liệu đã được hoàn tất cho mọi quốc gia nơi ứng dụng có thể được cài. Ở nơi luật của bạn yêu cầu sự đồng ý riêng trước khi dữ liệu quảng cáo rời quốc gia của bạn, hãy từ chối theo dõi và sự đồng ý quảng cáo. LoanSnug Pro không yêu cầu quảng cáo, nên không bắt đầu việc chuyển đó.</p>
+
+  <h2 id="vi-page">20. Trang web này</h2>
+  <p>Trang này không hiển thị quảng cáo và không dùng công cụ phân tích. Trang không đặt cookie theo dõi. Nếu bạn đổi ngôn ngữ, trang lưu <code>en</code>, <code>vi</code> hoặc <code>id</code> trong bộ nhớ cục bộ của thiết bị để lần sau mở đúng ngôn ngữ. Giá trị đó chỉ ghi lựa chọn ngôn ngữ. Đó là thứ duy nhất trang này lưu. Chặn bộ nhớ cục bộ không chặn trang; mỗi ngôn ngữ vẫn dùng được, chỉ là không nhớ lựa chọn.</p>
+
+  <h2 id="vi-changes">21. Thay đổi</h2>
+  <p>Nếu chúng tôi đổi chính sách này, chúng tôi sẽ cập nhật ngày ở đầu trang và đăng bản mới tại địa chỉ này. Vì không có tài khoản, chúng tôi không thể email cho mọi người dùng. Màn hình Quyền riêng tư của ứng dụng liên kết tới trang này khi liên kết đã được cấu hình. Ở nơi một việc dùng mới cần sự đồng ý, chúng tôi sẽ hỏi trước khi dùng. Ở nơi luật yêu cầu thông báo trước khi thay đổi có hiệu lực, ngày mới sẽ là thông báo đó.</p>
+
+  <h2 id="vi-contact">22. Liên hệ và khiếu nại</h2>
+  <p>Hãy gửi email tới <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Hãy nêu quyền bạn muốn dùng và quốc gia nơi bạn sống. Địa chỉ bưu chính, nếu trang App Store có ghi cho bên bán này, cũng có thể được dùng. Bạn cũng có thể khiếu nại với cơ quan được nêu cho khu vực của bạn trong chính sách này, và có thể khởi kiện khi luật cho phép, gồm tòa án nơi bạn cư trú khi luật người tiêu dùng cho bạn quyền đó.</p>
+  <p><a href="LoanSnug-Terms.html?lang=vi">Điều khoản sử dụng</a> giải thích giấy phép, giao dịch mua, và giới hạn về việc ứng dụng là gì. Điều khoản không làm giảm các quyền mà chính sách này dành cho bạn theo luật quyền riêng tư bắt buộc.</p>
+</div>
+
+<div data-lang="id">
+  <p class="meta">Berlaku 15 November 2026 · Terakhir diperbarui 15 November 2026</p>
+  <h1>Kebijakan Privasi</h1>
+  <div class="callout"><p><strong>Terjemahan.</strong> Versi Bahasa Indonesia ini disediakan agar kebijakan ini lebih mudah dipahami. Jika ada perbedaan penafsiran dengan versi bahasa Inggris, versi bahasa Inggris yang berlaku. Jika hukum yang wajib di tempat Anda tinggal mengharuskan hasil yang berbeda, hukum itu tetap berlaku bagi Anda.</p></div>
+  <p>Kebijakan ini menjelaskan cara aplikasi LoanSnug di iPhone dan iPad menangani informasi. Kebijakan ini ditulis untuk orang di mana pun aplikasi ditawarkan. Jika hukum di tempat Anda tinggal memberi perlindungan yang lebih kuat, perlindungan yang lebih kuat itu berlaku bagi Anda.</p>
+  <p>“LoanSnug”, “kami”, dan “milik kami” berarti miao Yu, pengembang perorangan yang menawarkan LoanSnug. “Anda” berarti orang yang memakai aplikasi. Teks bahasa Inggris adalah versi yang menentukan dari kebijakan ini. Bahasa lain adalah terjemahan agar kebijakan lebih mudah dibaca. Jika terjemahan berbeda dari teks bahasa Inggris, teks bahasa Inggris yang berlaku. Jika hukum yang wajib di tempat Anda tinggal mengharuskan hasil yang berbeda, hukum itu tetap berlaku bagi Anda.</p>
+
+  <div class="summary">
+    <article><h3>Dokumen Anda tetap di perangkat.</h3><p>LoanSnug tidak memiliki akun pengguna dan tidak memiliki server sendiri. Kami tidak mengunggah dokumen Anda, dan kami tidak menerima berkas atau isinya.</p></article>
+    <article><h3>Pemeriksaan dilakukan di perangkat.</h3><p>Pengenalan teks, pembacaan tanggal, dan pemeriksaan mutu berkas dilakukan di iPhone atau iPad Anda. Teks yang dikenali itu sendiri tidak disimpan.</p></article>
+    <article><h3>Iklan terpisah dari dokumen Anda.</h3><p>Versi gratis menampilkan iklan dari Google AdMob. Kami tidak memberikan dokumen Anda, atau rincian yang dibaca dari dokumen itu, kepada Google. LoanSnug Pro menghapus iklan.</p></article>
+    <article><h3>Anda dapat menghapusnya.</h3><p>Hapus satu dokumen, atau semuanya, di Penyimpanan. Menghapus aplikasi menghapus datanya dari perangkat itu.</p></article>
+  </div>
+
+  <nav class="toc card" aria-label="Daftar isi">
+    <strong>Daftar isi</strong>
+    <ol>
+      <li><a href="#id-who">Siapa kami</a></li>
+      <li><a href="#id-scope">Cakupan kebijakan ini</a></li>
+      <li><a href="#id-app">Apa yang dilakukan aplikasi</a></li>
+      <li><a href="#id-ondevice">Informasi yang tetap di perangkat Anda</a></li>
+      <li><a href="#id-leaves">Kapan informasi dapat keluar dari perangkat</a></li>
+      <li><a href="#id-ads">Iklan, pelacakan, dan persetujuan</a></li>
+      <li><a href="#id-permissions">Izin perangkat</a></li>
+      <li><a href="#id-bases">Tujuan dan dasar hukum</a></li>
+      <li><a href="#id-sensitive">Informasi sensitif</a></li>
+      <li><a href="#id-retention">Berapa lama disimpan, dan cara menghapusnya</a></li>
+      <li><a href="#id-security">Keamanan</a></li>
+      <li><a href="#id-rights">Pilihan dan hak Anda</a></li>
+      <li><a href="#id-us">Amerika Serikat</a></li>
+      <li><a href="#id-eu">EEA, Britania Raya, dan Swiss</a></li>
+      <li><a href="#id-vn">Vietnam</a></li>
+      <li><a href="#id-indonesia">Indonesia</a></li>
+      <li><a href="#id-other">Wilayah lain</a></li>
+      <li><a href="#id-children">Anak</a></li>
+      <li><a href="#id-transfers">Transfer internasional</a></li>
+      <li><a href="#id-page">Halaman web ini</a></li>
+      <li><a href="#id-changes">Perubahan</a></li>
+      <li><a href="#id-contact">Kontak dan pengaduan</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="id-who">1. Siapa kami</h2>
+  <table>
+    <tr><th>Penyelenggara</th><td>miao Yu, pengembang perorangan, dan penjual LoanSnug</td></tr>
+    <tr><th>Aplikasi</th><td>LoanSnug untuk iPhone dan iPad (ID bundel Apple <code>com.yumiao.LoanSnug</code>)</td></tr>
+    <tr><th>Email</th><td><a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Alamat ini merupakan bagian dari kebijakan ini. Kotak surat disediakan oleh Google.</td></tr>
+    <tr><th>Alamat pos</th><td>Alamat pos yang ditampilkan untuk penjual ini pada halaman Apple App Store, jika halaman itu menampilkannya. Alamat itu, jika ditampilkan, merupakan bagian dari kebijakan ini. Halaman ini tidak menyatakan alamat yang berbeda.</td></tr>
+    <tr><th>Ketentuan terkait</th><td><a href="LoanSnug-Terms.html?lang=id">Ketentuan Penggunaan</a>. Teks yang sama ada di aplikasi pada Pengaturan → Privasi &amp; Keamanan → Ketentuan Penggunaan.</td></tr>
+  </table>
+  <p>Bagi orang di EEA, Britania Raya, atau Swiss, penyelenggara adalah pengendali atas data pribadi yang benar-benar diterimanya, misalnya email yang Anda kirim kepada kami. Untuk data iklan, Google adalah pengendali yang berdiri sendiri. Untuk pembayaran dan cadangan perangkat, Apple adalah pengendali yang berdiri sendiri. Pihak yang dapat menerima data pribadi adalah: Google, yang menyediakan kotak surat dukungan, jika Anda menulis ke <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>; Apple, untuk pembelian, sistem operasi, dan cadangan perangkat yang Anda izinkan; serta Google, untuk iklan pada versi gratis. Orang yang menerima berkas yang Anda ekspor atau bagikan menerimanya dari Anda. Isi dokumen yang tetap di perangkat dipegang oleh Anda. Kami tidak dapat mengaksesnya. Di tempat hukum tetap menganggap penyedia aplikasi di perangkat bertanggung jawab atas pemrosesan itu, satu-satunya tujuan adalah fitur yang Anda pilih, tempat penyimpanannya adalah perangkat, dan Anda memakai alat hapus, ekspor, serta pengaturan di dalam aplikasi untuk menggunakan hak Anda. Halaman ini tidak menyebutkan perwakilan di EEA, Britania Raya, atau Swiss, dan tidak menyebutkan pejabat pelindungan data. Jika hukum mewajibkan salah satu penunjukan itu sebelum aplikasi ditawarkan kepada orang di sana, miao Yu akan melakukan penunjukan itu atau berhenti menawarkan aplikasi di sana. Sampai penunjukan tercantum di bagian 1, kirim email ke <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>.</p>
+
+  <h2 id="id-scope">2. Cakupan kebijakan ini</h2>
+  <p>Kebijakan ini mencakup aplikasi LoanSnug dan halaman kebijakan privasi ini. Kebijakan ini berlaku di mana pun aplikasi tersedia di App Store, termasuk Amerika Serikat, Vietnam, Indonesia, EEA, Britania Raya, Swiss, dan etalase lain.</p>
+  <p>Daftar periksa dokumen di dalam aplikasi saat ini disiapkan untuk Amerika Serikat, Vietnam, dan Indonesia. Anda tetap dapat memasang aplikasi di negara lain. Praktik privasi pada halaman ini adalah praktik yang kami pakai di setiap negara tempat aplikasi ditawarkan. Jika hukum setempat lebih ketat, kami mengikuti aturan yang lebih ketat itu bagi Anda.</p>
+  <p>Batasan yang sama berlaku di setiap negara dan wilayah tempat aplikasi ditawarkan. Kami tidak membawa dokumen Anda ke server kami, tidak menjualnya, tidak memakainya untuk memilih iklan, dan tidak membuat keputusan pemberian pinjaman. Anda tidak harus memberikan data pribadi kepada kami untuk memakai alat dokumen, karena alat itu berjalan di perangkat Anda. Kebijakan ini tidak meniadakan persyaratan setempat tentang perwakilan, pendaftaran, atau persetujuan terpisah sebelum data iklan meninggalkan negara Anda, dan tidak menyatakan bahwa langkah itu sudah selesai kecuali bagian 1 mencantumkannya. Anda dapat menolak pelacakan dan persetujuan iklan. LoanSnug Pro tidak meminta iklan.</p>
+
+  <h2 id="id-app">3. Apa yang dilakukan aplikasi</h2>
+  <p>LoanSnug membantu Anda menata dokumen yang mungkin Anda perlukan untuk pengajuan pinjaman: identitas, pekerjaan, penghasilan, aset, dokumen khusus pinjaman, dan pajak. Aplikasi dapat memindai atau mengimpor berkas, membaca tanggal dan mutu berkas dasar di perangkat Anda, menunjukkan bagian yang kurang, lalu menyusun paket dokumen agar Anda mengekspornya sendiri.</p>
+  <div class="callout"><p>LoanSnug tidak mengajukan permohonan, tidak terhubung ke pemberi pinjaman, tidak mengambil laporan kredit, tidak menilai kredit, tidak memverifikasi identitas atau penghasilan, dan tidak mendeteksi dokumen palsu. Hasilnya menggambarkan cara berkas Anda ditata dan apa yang dilihat pemeriksaan di perangkat. Hasil itu bukan keputusan pemberian pinjaman.</p></div>
+
+  <h2 id="id-ondevice">4. Informasi yang tetap di perangkat Anda</h2>
+  <p>Hal berikut disimpan di penyimpanan pribadi aplikasi pada iPhone atau iPad Anda. Kami tidak menerimanya.</p>
+  <h3>Dokumen yang Anda tambahkan</h3>
+  <p>Anda dapat memindai dengan kamera, memilih foto, atau mengimpor berkas. Aplikasi menyimpan satu salinan. Berkas itu dapat berisi hal yang sangat sensitif, karena Andalah yang memilihnya: dokumen identitas berfoto, rekening koran, slip gaji, dokumen pajak, atau kertas yang serupa. Berkas asli tetap di perangkat sampai Anda menghapusnya.</p>
+  <h3>Rincian yang Anda ketik</h3>
+  <p>Satu persiapan dapat memuat nama, negara, jenis pinjaman, tujuan, tanggal rencana, kelompok sumber penghasilan, frekuensi gaji, pilihan daftar periksa, nama item daftar periksa yang Anda tambahkan, nama panggilan rekening, nama bank yang tidak wajib, dan catatan. Aplikasi meminta nama panggilan, bukan nomor rekening. Catatan adalah teks bebas. Jangan menuliskan nomor identitas atau nomor rekening di catatan jika Anda tidak ingin angka itu tersimpan bahkan di perangkat.</p>
+  <h3>Apa yang disimpan pemeriksaan di perangkat</h3>
+  <p>Aplikasi dapat menyimpan tanggal yang dibacanya (termasuk tanggal kedaluwarsa, bulan rekening koran, atau tahun pajak), temuan mutu berkas, jumlah halaman, ukuran berkas, hash berkas, sidik satu arah dari teks yang dikenali, dan panjang teks itu. Sidik itu membantu mengenali berkas ganda atau berkas yang sulit dibaca. Teks yang dikenali itu sendiri tidak disimpan. Aplikasi juga dapat menyimpan, hanya di perangkat, uraian angka tentang tampilan halaman pertama, agar halaman yang mirip dapat dikenali. Uraian itu bukan salinan halaman, dan tidak dikirim kepada kami.</p>
+  <p>Jika ada kode batang pada surat izin mengemudi atau zona yang dapat dibaca mesin pada paspor, aplikasi hanya memakainya untuk membaca tanggal kedaluwarsa. Ruas lain pada kode batang atau zona itu, termasuk nomor dokumen, tidak disimpan. Kata sandi PDF yang Anda masukkan dipakai untuk membuat salinan yang sudah terbuka, dan tidak disimpan. Kata sandi yang Anda buat untuk satu ekspor dipakai untuk ekspor itu, dan tidak disimpan.</p>
+  <h3>Pengaturan dan catatan pembelian di perangkat</h3>
+  <p>Aplikasi menyimpan preferensi di perangkat: tampilan, Kunci Aplikasi, kapan kunci diminta, apakah isi aplikasi disembunyikan di pengalih aplikasi, apakah dokumen dimasukkan ke cadangan perangkat, pengaturan pengingat, waktu pengingat, berapa kali aplikasi dibuka, dan kapan permintaan penilaian terakhir dipertimbangkan. Aplikasi juga menyimpan, hanya di perangkat, apakah LoanSnug Pro aktif, persiapan mana yang laporan terperincinya sudah dibuka kuncinya, kredit ekspor paket yang belum terpakai, dan pengenal transaksi Apple yang diperlukan agar satu pembelian diterapkan satu kali. Aplikasi tidak menyimpan Apple ID atau nomor kartu pembayaran Anda.</p>
+
+  <h2 id="id-leaves">5. Kapan informasi dapat keluar dari perangkat</h2>
+  <h3>Saat Anda mengekspor atau membagikan</h3>
+  <p>Dokumen keluar dari aplikasi saat Anda mengekspor, mencetak, atau membagikannya, misalnya lewat AirDrop, Mail, File, atau aplikasi lain yang Anda pilih. Kami tidak melihat transfer itu dan tidak memilih penerimanya. Jika Anda melindungi ekspor dengan kata sandi, setiap PDF dienkripsi dengan kata sandi itu. ZIP yang berisi berkas terpisah tidak dengan sendirinya terenkripsi; sampaikan kata sandinya sendiri kepada penerima.</p>
+  <h3>Cadangan perangkat</h3>
+  <p>Secara bawaan, dokumen termasuk dalam cadangan perangkat. Jika iCloud Backup atau cadangan komputer aktif, Apple atau komputer itu dapat menyimpan cadangan. Cadangan itu dikelola oleh Apple atau oleh Anda, bukan oleh LoanSnug. Anda dapat mematikannya di Kunci Aplikasi &amp; Keamanan. Saat dimatikan, dokumen tidak ikut dalam cadangan perangkat dan hilang jika perangkat diganti tanpa salinan lain.</p>
+  <h3>Iklan</h3>
+  <p>Pada versi gratis, Google dapat menerima data iklan yang dijelaskan di bagian 6. Data itu tidak mencakup dokumen Anda, atau tanggal dan temuan yang dibaca dari dokumen itu.</p>
+  <h3>Pembelian</h3>
+  <p>Pembayaran dibebankan ke Apple ID Anda dan diproses oleh Apple. Apple menerima rincian pembayaran. Kami menerima, di perangkat, hasil pembelian melalui StoreKit. Kami tidak menerima nomor kartu Anda.</p>
+  <h3>Pesan yang Anda kirim kepada kami</h3>
+  <p>Jika Anda mengirim email ke <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>, kami menerima apa pun yang Anda tulis di pesan itu. Jangan mengirim dokumen identitas, nomor rekening, atau berkas sensitif lain, kecuali kami telah memintanya untuk menyelesaikan satu masalah tertentu dan Anda memilih untuk mengirimnya. Kotak surat disediakan oleh Google. Kami menghapus pesan dari kotak surat itu, atau menghapus informasi yang mengidentifikasi Anda, dalam 24 bulan setelah permintaan ditutup, kecuali jangka waktu yang lebih lama diperlukan untuk memenuhi kewajiban hukum atau untuk menangani sengketa. Satu salinan dapat tetap ada pada Google menurut aturan Google. Anda dapat meminta kami menghapus pesan dukungan lebih cepat, dan kami akan menghapusnya dari kotak surat kecuali hukum mewajibkan kami menyimpannya. Jika pelanggaran terhadap pesan yang Anda kirim kemungkinan menimbulkan kerugian serius dan hukum mewajibkan pemberitahuan, kami memberi tahu Anda dan otoritas yang disebut hukum itu.</p>
+
+  <h2 id="id-ads">6. Iklan, pelacakan, dan persetujuan</h2>
+  <p>Versi gratis menampilkan iklan dari Google AdMob: spanduk, iklan bertanda “Ad” di dalam halaman, iklan layar penuh pada jeda alur, iklan saat aplikasi dibuka, dan video berhadiah yang tidak wajib. Video berhadiah dimulai oleh Anda. Menontonnya dapat membuka kunci laporan terperinci atau satu ekspor paket, sebagai pengganti pembelian. LoanSnug Pro menghapus iklan. Pengguna Pro tidak melihat permintaan pelacakan atau formulir persetujuan iklan, karena aplikasi tidak meminta iklan untuk mereka.</p>
+  <p>Untuk menayangkan, mengamankan, mengukur, dan, jika diizinkan, mempersonalisasi iklan, Google dapat memproses:</p>
+  <ul>
+    <li>alamat IP, dan lokasi kasar yang diturunkan dari alamat itu;</li>
+    <li>pengenal perangkat dan pengenal iklan, termasuk Identifier for Advertisers hanya jika Anda mengizinkan pelacakan;</li>
+    <li>interaksi iklan, diagnostik, dan sinyal pencegahan penipuan;</li>
+    <li>pilihan persetujuan iklan Anda.</li>
+  </ul>
+  <p>Aplikasi meminta App Tracking Transparency sebelum persetujuan iklan jika Apple mewajibkan permintaan itu. Kalimat sistem menyatakan bahwa pengenal iklan dipakai untuk menampilkan iklan yang lebih relevan dan mengukur efektivitasnya. Jika Anda mengizinkan pelacakan, Google dapat memakai pengenal itu untuk tujuan tersebut. Jika Anda tidak mengizinkan pelacakan, aplikasi tidak memberi kuasa pemakaian pengenal iklan. Iklan tetap dapat muncul dengan cara yang lebih terbatas, termasuk iklan kontekstual dan SKAdNetwork dari Apple, jika alat persetujuan Google menyatakan iklan boleh diminta. Di tempat formulir privasi diwajibkan, aplikasi meminta iklan hanya jika User Messaging Platform dari Google mengizinkannya.</p>
+  <p>Anda dapat mengubah pilihan ini kapan saja:</p>
+  <ul>
+    <li>Pengaturan iOS → Privasi &amp; Keamanan → Pelacakan, untuk LoanSnug;</li>
+    <li>di aplikasi, Pengaturan → Pilihan privasi iklan, jika baris itu ditampilkan;</li>
+    <li><a href="https://myadcenter.google.com" rel="noopener noreferrer">Pusat Iklan Saya</a> dari Google;</li>
+    <li>atau dengan membeli LoanSnug Pro, yang menghapus iklan.</li>
+  </ul>
+  <p>Kami tidak menjual dokumen Anda atau informasi di dalamnya untuk mendapatkan uang. Kami tidak memakai isi dokumen untuk memilih iklan. Jika Anda mengizinkan iklan yang dipersonalisasi, Google dan mitra iklannya dapat memakai pengenal perangkat serta interaksi iklan untuk menampilkan iklan di berbagai aplikasi dan situs. Beberapa hukum negara bagian Amerika Serikat menganggap hal itu sebagai “pembagian” untuk iklan perilaku lintas konteks, atau sebagai “penjualan”, meskipun tidak ada uang yang dibayarkan untuk data itu. Menolak pelacakan, memakai Pilihan privasi iklan, atau membeli Pro adalah cara Anda menolak pemakaian untuk iklan itu. Kami tidak menawarkan imbalan uang agar Anda mengizinkan pelacakan. Menolak pelacakan, menolak formulir persetujuan iklan, atau membeli LoanSnug Pro adalah cara menolak penjualan dan menolak pembagian untuk iklan perilaku lintas konteks, di setiap tempat yang memakai konsep itu. Anda tidak memerlukan akun untuk menolak.</p>
+  <p>Pengungkapan Google ada di <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Kebijakan Privasi Google</a>, <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer">Cara Google memakai informasi dari situs atau aplikasi yang memakai layanannya</a>, dan <a href="https://support.google.com/admob/answer/6128543" rel="noopener noreferrer">AdMob dan privasi pengguna</a>.</p>
+
+  <h2 id="id-permissions">7. Izin perangkat</h2>
+  <table>
+    <tr><th>Izin</th><th>Kapan dipakai</th><th>Apa yang kami terima</th></tr>
+    <tr><td>Kamera</td><td>Hanya saat Anda memindai dokumen.</td><td>Tidak ada yang keluar dari perangkat. Hasil pindai disimpan di aplikasi.</td></tr>
+    <tr><td>Foto</td><td>Anda memilih foto di pemilih sistem. Aplikasi tidak meminta seluruh pustaka foto.</td><td>Hanya foto yang Anda pilih, disimpan di aplikasi.</td></tr>
+    <tr><td>Berkas</td><td>Anda mengimpor berkas yang Anda pilih.</td><td>Berkas itu, disimpan di aplikasi.</td></tr>
+    <tr><td>Face ID, Touch ID, atau kode sandi</td><td>Hanya jika Anda menyalakan Kunci Aplikasi.</td><td>Berhasil atau gagal. Gambar dan templat biometrik tetap di perangkat. Kami tidak pernah menerimanya.</td></tr>
+    <tr><td>Notifikasi</td><td>Jika Anda mengizinkan pengingat.</td><td>Tidak ada yang dikirim kepada kami. Pengingat dijadwalkan di perangkat. Teksnya tidak memuat nama Anda, nomor rekening, atau jumlah uang. Pengingat kedaluwarsa dapat menyebut jenis dokumen.</td></tr>
+    <tr><td>Pelacakan</td><td>Versi gratis, agar iklan dapat diukur dan dibuat lebih relevan jika Anda mengizinkan.</td><td>Kami tidak menerima pengenal iklan di server kami. Google dapat menerimanya jika Anda mengizinkan pelacakan.</td></tr>
+    <tr><td>Jaringan</td><td>Iklan, App Store, dan cara berbagi yang Anda pilih jika cara itu memerlukan koneksi.</td><td>Dijelaskan di bagian 5 dan 6. Menata dokumen tidak memerlukan akun.</td></tr>
+  </table>
+
+  <h2 id="id-bases">8. Tujuan dan dasar hukum</h2>
+  <p>Di tempat GDPR, UK GDPR, atau hukum yang serupa berlaku, kami bersandar pada dasar berikut untuk data pribadi yang benar-benar kami proses. Dokumen di perangkat yang tidak pernah kami terima dijelaskan di atas agar Anda memahami aplikasi; dokumen itu berada di bawah kendali Anda di perangkat.</p>
+  <table>
+    <tr><th>Tujuan</th><th>Dasar</th></tr>
+    <tr><td>Menampilkan aplikasi, menyimpan pekerjaan di perangkat, dan menyediakan fitur yang Anda minta</td><td>Kontrak, untuk layanan yang Anda minta. Pemrosesan di perangkat tetap di perangkat.</td></tr>
+    <tr><td>Iklan yang dipersonalisasi dan pemakaian pengenal iklan</td><td>Persetujuan. Anda dapat menolak atau menariknya.</td></tr>
+    <tr><td>Penayangan iklan yang terbatas, keamanan, dan pencegahan penipuan jika persetujuan tidak diwajibkan</td><td>Kepentingan yang sah untuk menjalankan versi gratis beriklan secara aman. Anda dapat keberatan jika hukum mengizinkan.</td></tr>
+    <tr><td>Pengingat yang tidak wajib, pemasukan ke cadangan perangkat, Kunci Aplikasi</td><td>Persetujuan atau langkah yang Anda lakukan di perangkat. Anda dapat mematikan masing-masing.</td></tr>
+    <tr><td>Membaca dan membalas email yang Anda kirim, serta menyimpannya jika hukum mewajibkan</td><td>Kontrak, kepentingan yang sah, atau kewajiban hukum, tergantung isi pesan.</td></tr>
+    <tr><td>Pembelian</td><td>Kontrak, dilaksanakan oleh Apple menurut ketentuan Apple.</td></tr>
+  </table>
+  <p>Kami tidak membuat keputusan otomatis yang menimbulkan akibat hukum, atau akibat penting yang setara, tentang suatu pinjaman. Aplikasi tidak memutuskan apakah Anda memenuhi syarat untuk kredit.</p>
+
+  <h2 id="id-sensitive">9. Informasi sensitif</h2>
+  <p>Berkas yang Anda impor dapat memuat informasi yang oleh hukum privasi diperlakukan sebagai sensitif: pengenal yang diterbitkan pemerintah, nomor rekening lengkap, rincian keuangan, rincian pajak, atau foto wajah pada dokumen identitas. Isi itu berada di berkas pada perangkat Anda. Kami tidak meminta Anda mengetik nomor Jaminan Sosial atau nomor identitas nasional lain, nomor rekening bank, jumlah penghasilan, skor kredit, atau suku bunga.</p>
+  <p>Kami tidak memakai berkas itu untuk menyusun profil, dan tidak melatih model dengan berkas itu. Face ID, saat Anda menyalakan Kunci Aplikasi, ditangani oleh sistem operasi.</p>
+  <p>Pengenal iklan dan pengenal yang dipakai untuk iklan lintas konteks dapat menjadi informasi pribadi yang “sensitif” menurut beberapa hukum negara bagian Amerika Serikat. Kami tidak memakai pengenal itu kecuali Anda mengizinkan pelacakan. Anda dapat menolak.</p>
+
+  <h2 id="id-retention">10. Berapa lama disimpan, dan cara menghapusnya</h2>
+  <ul>
+    <li>Dokumen, persiapan, catatan, temuan di perangkat, dan pengaturan tetap di perangkat sampai Anda menghapusnya, atau sampai Anda menghapus aplikasi.</li>
+    <li>Di aplikasi, Penyimpanan dapat menghapus dokumen. Menghapus satu persiapan menghapus persiapan itu. Menghapus aplikasi menghapus data aplikasi dari perangkat itu.</li>
+    <li>Satu salinan dapat tetap ada di cadangan iCloud atau komputer yang dibuat saat “Sertakan Dokumen dalam Cadangan Perangkat” aktif. Hapus cadangan itu melalui Apple atau komputer Anda jika Anda ingin cadangan itu hilang. Kami tidak dapat menghapusnya, karena kami tidak memegangnya.</li>
+    <li>LoanSnug Pro dapat dipulihkan dari Apple ID dengan Pulihkan Pembelian. Buka kunci laporan terperinci yang berbayar dan kredit ekspor paket yang berbayar disimpan untuk perangkat itu. Apple tidak memulihkannya setelah Anda menghapus aplikasi, kecuali cadangan perangkat memulihkan data aplikasi. Buka kunci yang diperoleh dengan menonton iklan hanya disimpan di perangkat dan bukan pembelian.</li>
+    <li>Google menyimpan data iklan menurut aturan penyimpanan Google. Apple menyimpan catatan pembelian menurut aturan Apple. Kami tidak dapat menghapus salinan itu untuk mereka. Gunakan tautan Google dan Apple dalam kebijakan ini untuk mengajukan permintaan kepada mereka.</li>
+    <li>Email dukungan disimpan hanya selama waktu yang dijelaskan di bagian 5.</li>
+  </ul>
+  <p>Tidak ada akun LoanSnug untuk dihapus. Aturan penghapusan akun yang berlaku bagi aplikasi berakun tidak menciptakan akun di sini.</p>
+
+  <h2 id="id-security">11. Keamanan</h2>
+  <p>Berkas dokumen disimpan dengan pelindungan berkas penuh, sehingga iOS mengenkripsinya dan membuatnya tidak tersedia saat perangkat terkunci. Kunci Aplikasi bersifat pilihan dan memakai Face ID, Touch ID, atau kode sandi perangkat. Menyembunyikan isi aplikasi di pengalih aplikasi aktif, kecuali Anda mematikannya. Kata sandi yang Anda ketik untuk PDF tidak disimpan.</p>
+  <p>Tidak ada cara yang sempurna. Anda bertanggung jawab atas kode sandi perangkat, atas siapa yang dapat membuka kunci perangkat, dan atas orang yang menerima berkas yang Anda bagikan. Kami tidak dapat mengatur ulang kode sandi perangkat yang terlupa, dan tidak dapat memulihkan berkas setelah dihapus, karena kami tidak menyimpan salinan.</p>
+
+  <h2 id="id-rights">12. Pilihan dan hak Anda</h2>
+  <p>Tergantung tempat Anda tinggal, Anda dapat memiliki hak untuk mengetahui, mengakses, memperbaiki, menghapus, menerima salinan, membatasi atau menolak pemrosesan, menarik persetujuan, menolak penjualan atau pembagian untuk iklan tertarget, menolak pemrofilan tertentu, dan mengajukan banding atas penolakan. Anda tidak akan didiskriminasi karena memakai hak privasi. Hak ini tidak mutlak. Hukum dapat membatasinya.</p>
+  <p>Karena kami tidak menerima dokumen Anda, alat langsungnya ada di perangkat:</p>
+  <ul>
+    <li>mengakses dan mengambil salinan dengan membuka atau mengekspor berkas;</li>
+    <li>memperbaiki tanggal, nama, atau catatan di aplikasi;</li>
+    <li>menghapus dokumen, persiapan, atau aplikasi;</li>
+    <li>menarik persetujuan untuk pelacakan, iklan, notifikasi, pemasukan ke cadangan, atau Kunci Aplikasi di pengaturan yang dijelaskan di atas.</li>
+  </ul>
+  <p>Untuk data pribadi yang telah Anda kirim kepada kami, kirim email ke <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Kami mungkin memerlukan informasi yang cukup untuk menemukan pesan, dan kami dapat menolak permintaan yang tidak diwajibkan hukum untuk kami penuhi. Kami mengakui permintaan yang dapat kami kenali tanpa penundaan yang tidak semestinya. Jika hukum Anda menetapkan tenggat, termasuk tenggat 72 jam untuk permintaan yang sah menurut aturan Vietnam, kami mengikuti tenggat itu. Jika hukum Anda tidak menetapkan tenggat yang lebih pendek, kami mengupayakan penyelesaian permintaan dalam 30 hari. Kami memperpanjang waktu itu hanya jika hukum mengizinkan, dan kami memberi tahu Anda jika kami melakukannya.</p>
+  <p>Anda dapat menunjuk penerima kuasa jika hukum Anda mengizinkan. Kami dapat meminta bukti kepada penerima kuasa itu, dan kami dapat mengonfirmasi permintaan itu kepada Anda.</p>
+
+  <h2 id="id-us">13. Amerika Serikat</h2>
+  <p>Bagian ini adalah pemberitahuan bagi penduduk negara bagian yang memiliki hukum privasi konsumen, termasuk California, Colorado, Connecticut, Virginia, Utah, Texas, Oregon, Montana, dan negara bagian lain yang mengadopsi aturan serupa. Bagian ini melengkapi bagian lain kebijakan ini.</p>
+  <table>
+    <tr><th>Kategori</th><th>Apa yang terjadi</th><th>Dijual atau dibagikan oleh kami?</th></tr>
+    <tr><td>Pengenal, seperti alamat IP atau pengenal iklan</td><td>Diproses oleh Google saat versi gratis meminta iklan. Pengenal iklan dipakai hanya jika Anda mengizinkan pelacakan. Kode persiapan lokal tetap di perangkat.</td><td>Kami tidak menjualnya untuk mendapatkan uang. Iklan yang dipersonalisasi oleh Google dapat merupakan “pembagian” atau “penjualan” menurut hukum negara bagian jika Anda mengizinkannya. Cara menolak dijelaskan di bagian 6.</td></tr>
+    <tr><td>Informasi komersial</td><td>Apple memproses pembayaran. Aplikasi menyimpan status buka kunci di perangkat.</td><td>Tidak.</td></tr>
+    <tr><td>Aktivitas internet atau jaringan</td><td>Interaksi iklan dan diagnostik dapat diproses oleh Google.</td><td>Cara menolak yang sama dengan pengenal.</td></tr>
+    <tr><td>Geolokasi perkiraan</td><td>Google dapat menurunkan lokasi kasar dari alamat IP untuk menayangkan dan mengukur iklan. Aplikasi tidak memakai GPS untuk ini.</td><td>Cara menolak yang sama dengan pengenal.</td></tr>
+    <tr><td>Konten yang Anda impor, termasuk dokumen keuangan, identitas, dan pekerjaan; informasi audio, visual, atau yang serupa pada hasil pindai; informasi profesi pada surat yang Anda impor</td><td>Disimpan di perangkat. Tidak dikirim kepada kami.</td><td>Tidak.</td></tr>
+    <tr><td>Informasi pribadi sensitif di berkas itu, dan pengenal iklan jika suatu negara bagian menganggapnya sensitif</td><td>Isi berkas tetap di perangkat. Pengenal iklan dipakai hanya dengan izin pelacakan.</td><td>Kami tidak menjual isi berkas. Tolak pemakaian pengenal iklan dengan menolak pelacakan.</td></tr>
+    <tr><td>Inferensi</td><td>Kami tidak membuat profil tentang kredit, kesehatan, atau preferensi Anda dari dokumen Anda.</td><td>Tidak.</td></tr>
+  </table>
+  <p>Kami tidak memakai atau mengungkapkan informasi pribadi sensitif untuk tujuan yang memberi penduduk California hak terpisah untuk “membatasi pemakaian informasi pribadi sensitif” di luar penolakan iklan di atas. Kami tidak membagikan informasi pribadi kepada pihak ketiga untuk pemasaran langsung mereka sendiri dengan cara yang memicu kewajiban pengungkapan Shine the Light di California. Kami tidak dengan sengaja menjual atau membagikan informasi pribadi siapa pun yang berusia di bawah 16 tahun.</p>
+  <p>Penduduk California dapat meminta akses ke, atau penghapusan, informasi pribadi yang kami kumpulkan, dan dapat memperbaiki informasi pribadi yang tidak akurat. Karena kami tidak mengumpulkan isi dokumen, permintaan itu ditangani sebagaimana dijelaskan di bagian 12. Kebijakan ini adalah pemberitahuan pada saat pengumpulan.</p>
+
+  <h2 id="id-eu">14. EEA, Britania Raya, dan Swiss</h2>
+  <p>Anda dapat meminta kami melaksanakan hak di bagian 12, termasuk hak mengajukan pengaduan kepada otoritas pengawas. Daftar otoritas EEA diterbitkan oleh <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" rel="noopener noreferrer">European Data Protection Board</a>. Di Britania Raya, otoritasnya adalah <a href="https://ico.org.uk" rel="noopener noreferrer">Information Commissioner’s Office</a>. Di Swiss, otoritasnya adalah Federal Data Protection and Information Commissioner.</p>
+  <p>Anda dapat menarik persetujuan kapan saja. Penarikan tidak memengaruhi pemrosesan yang sudah sah sebelum penarikan. Anda dapat keberatan terhadap pemrosesan yang didasarkan pada kepentingan yang sah. Jika kami bersandar pada persetujuan untuk iklan yang dipersonalisasi, menolak persetujuan tidak menghentikan Anda memakai alat dokumen. Penolakan itu dapat mengubah apakah iklan yang dipersonalisasi, atau iklan apa pun, ditampilkan.</p>
+  <p>Jika kelak kami menunjuk perwakilan UE atau Britania Raya, kami akan mencantumkan nama dan detail kontak mereka di bagian 1.</p>
+
+  <h2 id="id-vn">15. Vietnam</h2>
+  <p>Jika hukum data pribadi Vietnam berlaku bagi pemrosesan yang kami lakukan, termasuk Undang-Undang Pelindungan Data Pribadi dan aturan pelaksanaannya, bagian ini untuk Anda. Ini juga alasan kebijakan ini diterbitkan dalam bahasa Vietnam.</p>
+  <p>Berkas yang Anda simpan di aplikasi dapat berupa data pribadi sensitif, seperti data dokumen identitas dan data keuangan. Berkas itu diproses di perangkat Anda agar Anda dapat menatanya. Kami tidak mengumpulkan berkas itu, tidak mentransfernya ke luar Vietnam, dan tidak mentransfernya kepada pemberi pinjaman. Transfer terjadi hanya jika Anda sendiri mengekspor atau membagikan berkas.</p>
+  <p>Data iklan yang dijelaskan di bagian 6 dapat diproses oleh Google di luar Vietnam saat versi gratis menampilkan iklan. Pemrosesan itu mengikuti pilihan pelacakan dan pilihan persetujuan iklan Anda. Anda dapat menolak. LoanSnug Pro tidak meminta iklan. Bagian ini tidak menyatakan bahwa penilaian atau pendaftaran transfer lintas batas telah selesai.</p>
+  <p>Anda dapat meminta untuk mengetahui, menyetujui atau menarik persetujuan, mengakses, memperbaiki, menghapus, membatasi, dan keberatan, serta dapat mengadu kepada otoritas yang bertanggung jawab atas pelindungan data pribadi di Vietnam. Hubungi kami lebih dahulu di <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Kami akan menjawab dalam jangka waktu yang diwajibkan hukum Vietnam untuk permintaan yang sah, termasuk dalam 72 jam jika tenggat itu berlaku.</p>
+
+  <h2 id="id-indonesia">16. Indonesia</h2>
+  <p>Jika hukum data pribadi Indonesia berlaku bagi pemrosesan yang kami lakukan, termasuk Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi dan aturan pelaksanaannya, bagian ini untuk Anda. Ini juga alasan kebijakan ini diterbitkan dalam Bahasa Indonesia. Teks Bahasa Indonesia adalah terjemahan agar mudah dibaca. Jika berbeda dari teks bahasa Inggris ini, teks bahasa Inggris yang berlaku, kecuali hukum yang wajib mengharuskan hasil yang berbeda.</p>
+  <p>Berkas yang Anda simpan di aplikasi dapat berupa data pribadi yang bersifat spesifik, seperti data dokumen identitas dan data keuangan. Berkas itu diproses di perangkat Anda agar Anda dapat menatanya. Kami tidak mengumpulkan berkas itu, tidak mentransfernya ke luar Indonesia, dan tidak mentransfernya kepada pemberi pinjaman. Transfer suatu berkas terjadi hanya jika Anda sendiri mengekspor atau membagikannya.</p>
+  <p>Data iklan yang dijelaskan di bagian 6 dapat diproses oleh Google di luar Indonesia saat versi gratis meminta iklan. Pemrosesan itu mengikuti pilihan pelacakan dan pilihan persetujuan iklan Anda. Anda dapat menolak. LoanSnug Pro tidak meminta iklan. Bagian ini tidak menyatakan bahwa penilaian atau pendaftaran transfer lintas batas telah selesai.</p>
+  <p>Anda dapat meminta untuk diberi tahu, mengakses, memperbaiki, menghapus, menarik persetujuan, keberatan, menunda atau membatasi pemrosesan, dan memperoleh salinan jika hukum memberikan hak itu. Anda juga dapat mengadu kepada otoritas yang bertanggung jawab atas pelindungan data pribadi di Indonesia dan menempuh upaya yang diizinkan hukum. Hubungi kami lebih dahulu di <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Kami menjawab dalam jangka waktu yang diwajibkan hukum Indonesia untuk permintaan yang sah. Halaman ini tidak menyebutkan pejabat pelindungan data untuk Indonesia.</p>
+
+  <h2 id="id-other">17. Wilayah lain</h2>
+  <p>Jika Anda tinggal di Kanada (termasuk menurut hukum federal atau hukum privasi Quebec), Brasil, Meksiko, Argentina, Cile, Australia, Selandia Baru, Jepang, Korea Selatan, Singapura, Thailand, India, Filipina, Malaysia, Israel, Turki, Uni Emirat Arab, Arab Saudi, Afrika Selatan, Nigeria, Kenya, atau tempat lain yang memiliki hukum privasi, Anda dapat memakai pilihan di bagian 12. Indonesia dijelaskan di bagian 16. Hak setempat yang lebih kuat, tenggat yang lebih pendek, atau otoritas setempat tetap berlaku. Halaman otoritas yang berguna antara lain <a href="https://www.priv.gc.ca" rel="noopener noreferrer">Office of the Privacy Commissioner of Canada</a>, <a href="https://www.gov.br/anpd" rel="noopener noreferrer">ANPD</a> Brasil, dan <a href="https://www.oaic.gov.au" rel="noopener noreferrer">OAIC</a> Australia.</p>
+  <p>Di Tiongkok daratan, dokumen tetap di perangkat dan tidak diunggah kepada kami. Jika hukum Tiongkok mewajibkan persetujuan terpisah atau langkah di dalam negeri sebelum data iklan diproses di luar Tiongkok daratan, kami akan mengikuti persyaratan itu, yang dapat berarti aplikasi tidak meminta iklan. Anda juga dapat menolak pelacakan atau memakai LoanSnug Pro.</p>
+  <p>Kami belum menunjuk perwakilan setempat, pejabat pelindungan data, atau pejabat informasi, dan belum mencantumkan nomor pendaftaran, kecuali bagian 1 menyatakannya. Kebijakan ini tidak menyatakan bahwa suatu pendaftaran yang diwajibkan negara tertentu sudah selesai. Jika hukum mewajibkan langkah itu sebelum aplikasi ditawarkan di sana, penjual akan menyelesaikan langkah itu, atau berhenti menawarkan aplikasi di sana, sebelum mengandalkan kebijakan ini di tempat itu.</p>
+
+  <h2 id="id-children">18. Anak</h2>
+  <p>LoanSnug adalah alat untuk menyiapkan dokumen pinjaman. Aplikasi ini ditujukan bagi orang dewasa. Aplikasi ini tidak ditujukan kepada anak di bawah 13 tahun, atau di bawah 16 tahun di tempat usia itu yang relevan, dan kami tidak dengan sengaja mengumpulkan informasi pribadi dari mereka. Alat iklan dikonfigurasi dengan dasar bahwa pengguna bukan anak.</p>
+  <p>Jika Anda berusia di bawah 18 tahun, atau di bawah usia dewasa di tempat Anda tinggal, jangan memakai aplikasi. Jika Anda percaya seorang anak telah mengirim informasi pribadi kepada kami, kirim email ke <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a> dan kami akan menghapusnya.</p>
+
+  <h2 id="id-transfers">19. Transfer internasional</h2>
+  <p>Kami tidak mengoperasikan server yang menerima dokumen Anda, jadi kami tidak mentransfer dokumen itu melintasi batas negara.</p>
+  <p>Google dan Apple dapat memproses data iklan, data pembelian, dan cadangan perangkat di Amerika Serikat dan negara lain. Perlindungan mereka dapat mencakup keputusan kecukupan, klausul kontrak standar, UK International Data Transfer Addendum, dan alat serupa yang mereka tawarkan. Kebijakan privasi mereka, yang ditautkan di atas dan di <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Kebijakan Privasi Apple</a>, menjelaskan transfer itu. Pesan yang dikirim ke <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a> ditangani oleh Google, yang menyediakan kotak surat itu, dan dapat disimpan di luar negara Anda. Kebijakan ini tidak menyatakan bahwa penilaian atau pendaftaran transfer telah selesai untuk setiap negara tempat aplikasi dapat dipasang. Jika hukum Anda mewajibkan persetujuan terpisah sebelum data iklan meninggalkan negara Anda, tolak pelacakan dan persetujuan iklan. LoanSnug Pro tidak meminta iklan, jadi tidak memulai transfer itu.</p>
+
+  <h2 id="id-page">20. Halaman web ini</h2>
+  <p>Halaman ini tidak menampilkan iklan dan tidak memakai alat analitik. Halaman ini tidak memasang cookie pelacakan. Jika Anda mengganti bahasa, halaman menyimpan <code>en</code>, <code>vi</code>, atau <code>id</code> di penyimpanan lokal perangkat agar lain kali terbuka dalam bahasa itu. Nilai itu hanya mencatat pilihan bahasa. Itu satu-satunya hal yang disimpan halaman ini. Memblokir penyimpanan lokal tidak memblokir halaman; setiap bahasa tetap tersedia, hanya tanpa pilihan yang tersimpan.</p>
+
+  <h2 id="id-changes">21. Perubahan</h2>
+  <p>Jika kami mengubah kebijakan ini, kami akan memperbarui tanggal di bagian atas dan menayangkan versi baru di alamat ini. Karena tidak ada akun, kami tidak dapat mengirim email kepada setiap pengguna. Layar Privasi di aplikasi menaut ke halaman ini jika tautan sudah diatur. Jika pemakaian baru memerlukan persetujuan, kami akan meminta persetujuan sebelum pemakaian itu. Jika hukum mewajibkan pemberitahuan sebelum perubahan berlaku, tanggal yang baru menjadi pemberitahuan itu.</p>
+
+  <h2 id="id-contact">22. Kontak dan pengaduan</h2>
+  <p>Kirim email ke <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Jelaskan hak yang ingin Anda pakai dan negara tempat Anda tinggal. Alamat pos, jika halaman App Store menampilkannya untuk penjual ini, juga dapat dipakai. Anda juga dapat mengadu kepada otoritas yang disebutkan untuk wilayah Anda dalam kebijakan ini, dan dapat mengajukan tuntutan jika hukum mengizinkan, termasuk pengadilan di tempat tinggal Anda jika hukum konsumen memberi hak itu.</p>
+  <p><a href="LoanSnug-Terms.html?lang=id">Ketentuan Penggunaan</a> menjelaskan lisensi, pembelian, dan batas tentang apa yang merupakan aplikasi ini. Ketentuan itu tidak mengurangi hak yang diberikan kebijakan ini kepada Anda berdasarkan hukum privasi yang wajib.</p>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span data-lang="en">LoanSnug Privacy Policy · 15 November 2026</span>
+    <span data-lang="vi">Chính sách quyền riêng tư LoanSnug · 15 tháng 11 năm 2026</span>
+    <span data-lang="id">Kebijakan Privasi LoanSnug · 15 November 2026</span>
+  </div>
+</footer>
+<script>
+(function () {
+  var KEY = "loansnug-legal-lang";
+  document.querySelectorAll("table").forEach(function (table) {
+    if (table.parentElement && table.parentElement.classList.contains("table-scroll")) return;
+    var wrap = document.createElement("div");
+    wrap.className = "table-scroll";
+    wrap.setAttribute("tabindex", "0");
+    table.parentNode.insertBefore(wrap, table);
+    wrap.appendChild(table);
+  });
+  function apply(lang) {
+    document.documentElement.setAttribute("data-current", lang);
+    var titles = {
+      en: "Privacy Policy · LoanSnug",
+      vi: "Chính sách quyền riêng tư · LoanSnug",
+      id: "Kebijakan Privasi · LoanSnug"
+    };
+    document.documentElement.lang = lang;
+    document.title = titles[lang] || titles.en;
+    document.querySelectorAll("[data-set-lang]").forEach(function (btn) {
+      btn.setAttribute("aria-pressed", btn.getAttribute("data-set-lang") === lang ? "true" : "false");
+    });
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+  }
+  document.addEventListener("click", function (event) {
+    var btn = event.target.closest("[data-set-lang]");
+    if (!btn) return;
+    apply(btn.getAttribute("data-set-lang"));
+  });
+  apply(document.documentElement.getAttribute("data-current") || "en");
+})();
+</script>
+</body>
+</html>
