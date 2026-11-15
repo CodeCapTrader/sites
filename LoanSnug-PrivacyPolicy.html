@@ -36,108 +36,148 @@
 </script>
 <style>
   :root {
-    --bg: #f4f1ea;
-    --ink: #1c1917;
-    --muted: #57534e;
-    --line: #e4dfd4;
-    --accent: #0f5c56;
-    --accent-soft: #e5f4f1;
-    --card: #fffcf7;
-    --warn-bg: #fff6e8;
-    --warn-ink: #7c4a03;
-    --warn-line: #f0d7a8;
-    --chip: #efeae1;
-    --shadow: 0 1px 0 rgba(28, 25, 23, 0.04);
-    --serif: "Iowan Old Style", Palatino, "Palatino Linotype", "Times New Roman", serif;
-    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+    --bg: #f2f2f7;
+    --ink: #000;
+    --muted: rgba(60, 60, 67, 0.6);
+    --separator: rgba(60, 60, 67, 0.29);
+    --accent: #007aff;
+    --accent-soft: rgba(0, 122, 255, 0.12);
+    --card: #fff;
+    --chip: rgba(118, 118, 128, 0.12);
+    --chip-on: #fff;
+    --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #141210;
-      --ink: #f5f5f4;
-      --muted: #a8a29e;
-      --line: #3a342c;
-      --accent: #7dcec4;
-      --accent-soft: #1a2c29;
-      --card: #1e1b18;
-      --warn-bg: #2a2116;
-      --warn-ink: #f6d48a;
-      --warn-line: #5c4520;
-      --chip: #2a2622;
-      --shadow: none;
+      --bg: #000;
+      --ink: #fff;
+      --muted: rgba(235, 235, 245, 0.6);
+      --separator: rgba(84, 84, 88, 0.65);
+      --accent: #0a84ff;
+      --accent-soft: rgba(10, 132, 255, 0.18);
+      --card: #1c1c1e;
+      --chip: rgba(118, 118, 128, 0.24);
+      --chip-on: #636366;
     }
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
   body {
     margin: 0;
     background: var(--bg);
     color: var(--ink);
     font-family: var(--sans);
     font-size: 17px;
-    line-height: 1.6;
+    line-height: 1.47;
+    letter-spacing: -0.022em;
     overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--accent); }
-  a:hover { text-decoration-thickness: 2px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
   html[data-current="en"] [data-lang="vi"],
   html[data-current="en"] [data-lang="id"],
   html[data-current="vi"] [data-lang="en"],
   html[data-current="vi"] [data-lang="id"],
   html[data-current="id"] [data-lang="en"],
   html[data-current="id"] [data-lang="vi"] { display: none; }
-  .wrap { width: min(760px, calc(100% - 32px)); margin: 0 auto; }
+  .wrap { width: min(680px, calc(100% - 32px)); margin: 0 auto; }
   header.top {
     position: sticky;
     top: 0;
     z-index: 2;
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line);
+    padding-top: env(safe-area-inset-top);
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 0.5px solid var(--separator);
   }
-  .top-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px 16px; padding: 12px 0; flex-wrap: wrap; }
-  .brand { display: flex; flex-direction: column; gap: 1px; text-decoration: none; color: inherit; }
-  .brand strong { font-family: var(--serif); font-size: 18px; letter-spacing: -0.02em; }
-  .brand span { color: var(--muted); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
-  .langs { display: flex; padding: 3px; background: var(--chip); border-radius: 999px; }
+  .top-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; flex-wrap: wrap; }
+  .brand { display: flex; flex-direction: column; gap: 1px; text-decoration: none; color: inherit; min-width: 0; }
+  .brand strong { font-size: 17px; font-weight: 600; letter-spacing: -0.03em; }
+  .brand span { color: var(--muted); font-size: 13px; font-weight: 400; letter-spacing: -0.01em; white-space: nowrap; }
+  .langs { display: flex; padding: 2px; background: var(--chip); border-radius: 9px; }
   .langs button {
-    border: 0; background: transparent; color: var(--muted);
-    font: 600 14px/1 var(--sans); padding: 8px 12px; border-radius: 999px; cursor: pointer;
+    border: 0; background: transparent; color: var(--ink);
+    font: 500 13px/1.1 var(--sans); letter-spacing: -0.01em;
+    padding: 7px 10px; border-radius: 7px; cursor: pointer;
   }
-  .langs button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
-  main { padding: 28px 0 72px; }
-  h1 { font-family: var(--serif); font-size: clamp(34px, 6vw, 48px); line-height: 1.08; letter-spacing: -0.03em; margin: 8px 0 12px; font-weight: 600; }
-  h2 { font-family: var(--serif); font-size: 28px; line-height: 1.2; letter-spacing: -0.02em; margin: 40px 0 10px; font-weight: 600; }
-  h3 { font-size: 18px; margin: 22px 0 6px; }
-  p, li { color: var(--ink); }
-  .meta { color: var(--muted); margin: 0 0 18px; }
-  .todo {
-    background: var(--warn-bg); color: var(--warn-ink); border: 1px solid var(--warn-line);
-    border-radius: 14px; padding: 14px 16px; margin: 0 0 22px;
+  .langs button[aria-pressed="true"] {
+    background: var(--chip-on);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.04);
   }
-  .todo strong { display: block; margin-bottom: 4px; }
-  .summary { display: grid; gap: 10px; margin: 18px 0 8px; }
-  .summary article, .card, .callout {
-    background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; box-shadow: var(--shadow);
+  .langs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  main { padding: 18px 0 calc(40px + env(safe-area-inset-bottom)); }
+  div[data-lang] { display: flex; flex-direction: column; }
+  div[data-lang] > * { order: 3; min-width: 0; }
+  div[data-lang] > h1 { order: 1; }
+  div[data-lang] > .meta { order: 2; }
+  h1 { font-size: 34px; line-height: 1.15; letter-spacing: 0.01em; margin: 6px 0 4px; font-weight: 700; }
+  h2 { font-size: 22px; line-height: 1.25; letter-spacing: -0.02em; margin: 28px 0 8px; font-weight: 700; }
+  h3 { font-size: 17px; line-height: 1.3; letter-spacing: -0.02em; margin: 18px 0 4px; font-weight: 600; }
+  p { margin: 0 0 12px; }
+  .meta { color: var(--muted); font-size: 13px; letter-spacing: -0.006em; margin: 0 0 18px; }
+  .summary {
+    display: flex; flex-direction: column; margin: 4px 0 8px;
+    background: var(--card); border-radius: 12px; overflow: hidden;
   }
-  .summary h3 { margin: 0 0 4px; font-size: 16px; }
-  .summary p, .card p { margin: 0; color: var(--muted); }
-  .callout { background: var(--accent-soft); border-color: transparent; }
-  .callout p { color: var(--ink); margin: 0; }
-  nav.toc ol { margin: 8px 0 0; padding-left: 20px; }
-  nav.toc a { text-decoration: none; }
-  nav.toc a:hover { text-decoration: underline; }
-  table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 12px 0 4px; }
-  th, td { text-align: left; vertical-align: top; border-top: 1px solid var(--line); padding: 10px 8px 10px 0; }
-  th { color: var(--muted); font-size: 13px; font-weight: 600; }
-  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; }
-  footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding: 22px 0 40px; }
-  .table-scroll { overflow-x: auto; margin: 12px 0 4px; -webkit-overflow-scrolling: touch; }
-  .table-scroll table { margin: 0; min-width: 520px; }
+  .summary article { background: transparent; padding: 14px 16px; border-bottom: 0.5px solid var(--separator); }
+  .summary article:last-child { border-bottom: 0; }
+  .summary h3 { margin: 0 0 2px; font-size: 17px; }
+  .summary p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.35; }
+  .card, .callout { background: var(--card); border-radius: 12px; padding: 4px 16px 8px; }
+  .callout { background: var(--accent-soft); padding: 14px 16px; margin: 4px 0 12px; }
+  .callout p { margin: 0; }
+  nav.toc > strong {
+    display: block; margin: 10px 0 2px; color: var(--muted);
+    font-size: 13px; font-weight: 600; letter-spacing: -0.01em;
+  }
+  nav.toc ol { margin: 0; padding: 0; list-style: none; }
+  nav.toc li { border-top: 0.5px solid var(--separator); }
+  nav.toc li:first-child { border-top: 0; }
+  nav.toc a {
+    display: block; padding: 11px 0; color: var(--accent);
+    font-size: 17px; letter-spacing: -0.02em;
+  }
+  ul, ol { margin: 4px 0 14px; padding-left: 1.2em; }
+  li { margin: 6px 0; }
+  nav.toc li { margin: 0; }
+  li::marker { color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 0; }
+  th, td { text-align: left; vertical-align: top; border-top: 0.5px solid var(--separator); padding: 12px 16px; }
+  tr:first-child th, tr:first-child td { border-top: 0; }
+  th { color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: -0.006em; }
+  th:first-child { width: 8.75em; }
+  code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.86em; background: var(--chip); padding: 0.08em 0.35em; border-radius: 5px; overflow-wrap: anywhere; }
+  .table-scroll { overflow-x: auto; margin: 4px 0 14px; background: var(--card); border-radius: 12px; -webkit-overflow-scrolling: touch; }
+  @media (max-width: 640px) {
+    html { scroll-padding-top: 132px; }
+    .top-inner { align-items: stretch; }
+    .langs { width: 100%; }
+    .langs button { flex: 1; padding: 8px 4px; font-size: 12px; }
+    .table-scroll { overflow: visible; }
+    table, tbody, tr, th, td { display: block; width: auto; }
+    th:first-child { width: auto; }
+    th, td { border-top: 0; padding: 2px 16px; }
+    tr { border-top: 0.5px solid var(--separator); padding: 10px 0; }
+    tr:first-child { border-top: 0; padding-top: 12px; }
+    tr:last-child { padding-bottom: 12px; }
+    td:first-child { font-weight: 600; }
+    td + td { margin-top: 6px; }
+    tr:first-child:has(th + th) {
+      display: flex; flex-wrap: wrap; align-items: baseline;
+      padding: 12px 16px 8px;
+    }
+    tr:first-child:has(th + th) th { display: inline; width: auto; padding: 0; }
+    tr:first-child:has(th + th) th:not(:last-child)::after { content: " · "; }
+  }
+  @media (prefers-color-scheme: dark) {
+    .langs button[aria-pressed="true"] { box-shadow: none; }
+  }
   @media print {
-    header.top { position: static; }
-    .langs, .todo { display: none !important; }
-    body { background: white; }
+    header.top { position: static; background: white; }
+    .langs { display: none !important; }
+    body { background: white; color: black; }
   }
 </style>
 </head>
@@ -207,7 +247,7 @@
     <tr><th>App</th><td>LoanSnug for iPhone and iPad (Apple bundle ID <code>com.yumiao.LoanSnug</code>)</td></tr>
     <tr><th>Email</th><td><a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. This address is part of this policy. The mailbox is provided by Google.</td></tr>
     <tr><th>Postal address</th><td>The postal address shown for this seller on the Apple App Store listing, if that listing shows one. That address, when shown, is part of this policy. This page does not state a different address.</td></tr>
-    <tr><th>Related terms</th><td><a href="LoanSnug-Terms.html">Terms of Use</a>. The same text is in the app under Settings → Privacy &amp; Security → Terms of Use.</td></tr>
+    <tr><th>Related terms</th><td>Terms of Use. The same text is in the app under Settings → Privacy &amp; Security → Terms of Use.</td></tr>
   </table>
   <p>For people in the EEA, the United Kingdom or Switzerland, the operator is the controller of any personal data it actually receives, such as an email you send us. This page does not name a representative in the EEA, the United Kingdom or Switzerland, and it does not name a data-protection officer. If the law requires one of those appointments before the app is offered to people there, miao Yu will make the appointment or stop offering the app there. Until an appointment is listed in section 1, email <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. For advertising data, Google is an independent controller. For payments and device backups, Apple is an independent controller. The people who may receive personal data are: Google, which provides the support mailbox, if you write to <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>; Apple, for a purchase, the operating system, and a device backup you allow; and Google, for ads in the free version. A person you export or share a file with receives it from you. Document contents that stay on your device are kept by you. We cannot access them. Where a law still treats the provider of an on-device app as responsible for that processing, the only purpose is the feature you chose, the storage is the device, and you use the in-app delete, export, and settings tools to exercise your rights.</p>
 
@@ -374,7 +414,7 @@
 
   <h2 id="en-contact">22. Contact and complaints</h2>
   <p>Email <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Please describe the right you want to use and the country where you live. A postal address, if the App Store listing shows one for this seller, can also be used. You may also complain to the authority named for your region in this policy, and you may bring a claim where the law allows, including the courts of your residence when a consumer law gives you that right.</p>
-  <p>The <a href="LoanSnug-Terms.html">Terms of Use</a> explain the licence, purchases, and the limits of what the app is. They do not reduce the rights this policy gives you under a mandatory privacy law.</p>
+  <p>The Terms of Use explain the licence, purchases, and the limits of what the app is. They do not reduce the rights this policy gives you under a mandatory privacy law.</p>
 </div>
 
 <div data-lang="vi">
@@ -425,7 +465,7 @@
     <tr><th>Ứng dụng</th><td>LoanSnug cho iPhone và iPad (mã Apple <code>com.yumiao.LoanSnug</code>)</td></tr>
     <tr><th>Email</th><td><a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Địa chỉ này là một phần của chính sách. Hộp thư do Google cung cấp.</td></tr>
     <tr><th>Địa chỉ bưu chính</th><td>Địa chỉ bưu chính ghi cho bên bán này trên trang Apple App Store, nếu trang đó có ghi. Địa chỉ đó, khi được ghi, là một phần của chính sách. Trang này không nêu một địa chỉ khác.</td></tr>
-    <tr><th>Điều khoản liên quan</th><td><a href="LoanSnug-Terms.html?lang=vi">Điều khoản sử dụng</a>. Cùng nội dung có trong ứng dụng tại Cài đặt → Quyền riêng tư và bảo mật → Điều khoản sử dụng.</td></tr>
+    <tr><th>Điều khoản liên quan</th><td>Điều khoản sử dụng. Cùng nội dung có trong ứng dụng tại Cài đặt → Quyền riêng tư và bảo mật → Điều khoản sử dụng.</td></tr>
   </table>
   <p>Với người ở EEA, Vương quốc Anh hoặc Thụy Sĩ, đơn vị vận hành là bên kiểm soát đối với dữ liệu cá nhân mà đơn vị đó thực sự nhận được, ví dụ email bạn gửi cho chúng tôi. Trang này không nêu tên đại diện tại EEA, Vương quốc Anh hoặc Thụy Sĩ, và không nêu tên cán bộ bảo vệ dữ liệu. Nếu luật yêu cầu một trong các việc chỉ định đó trước khi ứng dụng được cung cấp cho người ở đó, miao Yu sẽ thực hiện việc chỉ định hoặc ngừng cung cấp ứng dụng ở đó. Cho đến khi việc chỉ định được ghi ở mục 1, hãy gửi email tới <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Với dữ liệu quảng cáo, Google là bên kiểm soát độc lập. Với thanh toán và bản sao lưu thiết bị, Apple là bên kiểm soát độc lập. Những bên có thể nhận dữ liệu cá nhân là: Google, nhà cung cấp hộp thư hỗ trợ, nếu bạn viết tới <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>; Apple, đối với giao dịch mua, hệ điều hành, và bản sao lưu thiết bị mà bạn cho phép; và Google, đối với quảng cáo ở bản miễn phí. Người mà bạn xuất hoặc chia sẻ tệp sẽ nhận tệp từ bạn. Nội dung tài liệu nằm trên thiết bị do bạn giữ. Chúng tôi không truy cập được. Ở nơi luật vẫn coi nhà cung cấp ứng dụng trên thiết bị là bên chịu trách nhiệm về việc xử lý đó, mục đích duy nhất là tính năng bạn đã chọn, nơi lưu là thiết bị, và bạn dùng công cụ xóa, xuất và cài đặt trong ứng dụng để thực hiện quyền của mình.</p>
 
@@ -592,7 +632,7 @@
 
   <h2 id="vi-contact">22. Liên hệ và khiếu nại</h2>
   <p>Hãy gửi email tới <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Hãy nêu quyền bạn muốn dùng và quốc gia nơi bạn sống. Địa chỉ bưu chính, nếu trang App Store có ghi cho bên bán này, cũng có thể được dùng. Bạn cũng có thể khiếu nại với cơ quan được nêu cho khu vực của bạn trong chính sách này, và có thể khởi kiện khi luật cho phép, gồm tòa án nơi bạn cư trú khi luật người tiêu dùng cho bạn quyền đó.</p>
-  <p><a href="LoanSnug-Terms.html?lang=vi">Điều khoản sử dụng</a> giải thích giấy phép, giao dịch mua, và giới hạn về việc ứng dụng là gì. Điều khoản không làm giảm các quyền mà chính sách này dành cho bạn theo luật quyền riêng tư bắt buộc.</p>
+  <p>Điều khoản sử dụng giải thích giấy phép, giao dịch mua, và giới hạn về việc ứng dụng là gì. Điều khoản không làm giảm các quyền mà chính sách này dành cho bạn theo luật quyền riêng tư bắt buộc.</p>
 </div>
 
 <div data-lang="id">
@@ -643,7 +683,7 @@
     <tr><th>Aplikasi</th><td>LoanSnug untuk iPhone dan iPad (ID bundel Apple <code>com.yumiao.LoanSnug</code>)</td></tr>
     <tr><th>Email</th><td><a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Alamat ini merupakan bagian dari kebijakan ini. Kotak surat disediakan oleh Google.</td></tr>
     <tr><th>Alamat pos</th><td>Alamat pos yang ditampilkan untuk penjual ini pada halaman Apple App Store, jika halaman itu menampilkannya. Alamat itu, jika ditampilkan, merupakan bagian dari kebijakan ini. Halaman ini tidak menyatakan alamat yang berbeda.</td></tr>
-    <tr><th>Ketentuan terkait</th><td><a href="LoanSnug-Terms.html?lang=id">Ketentuan Penggunaan</a>. Teks yang sama ada di aplikasi pada Pengaturan → Privasi &amp; Keamanan → Ketentuan Penggunaan.</td></tr>
+    <tr><th>Ketentuan terkait</th><td>Ketentuan Penggunaan. Teks yang sama ada di aplikasi pada Pengaturan → Privasi &amp; Keamanan → Ketentuan Penggunaan.</td></tr>
   </table>
   <p>Bagi orang di EEA, Britania Raya, atau Swiss, penyelenggara adalah pengendali atas data pribadi yang benar-benar diterimanya, misalnya email yang Anda kirim kepada kami. Untuk data iklan, Google adalah pengendali yang berdiri sendiri. Untuk pembayaran dan cadangan perangkat, Apple adalah pengendali yang berdiri sendiri. Pihak yang dapat menerima data pribadi adalah: Google, yang menyediakan kotak surat dukungan, jika Anda menulis ke <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>; Apple, untuk pembelian, sistem operasi, dan cadangan perangkat yang Anda izinkan; serta Google, untuk iklan pada versi gratis. Orang yang menerima berkas yang Anda ekspor atau bagikan menerimanya dari Anda. Isi dokumen yang tetap di perangkat dipegang oleh Anda. Kami tidak dapat mengaksesnya. Di tempat hukum tetap menganggap penyedia aplikasi di perangkat bertanggung jawab atas pemrosesan itu, satu-satunya tujuan adalah fitur yang Anda pilih, tempat penyimpanannya adalah perangkat, dan Anda memakai alat hapus, ekspor, serta pengaturan di dalam aplikasi untuk menggunakan hak Anda. Halaman ini tidak menyebutkan perwakilan di EEA, Britania Raya, atau Swiss, dan tidak menyebutkan pejabat pelindungan data. Jika hukum mewajibkan salah satu penunjukan itu sebelum aplikasi ditawarkan kepada orang di sana, miao Yu akan melakukan penunjukan itu atau berhenti menawarkan aplikasi di sana. Sampai penunjukan tercantum di bagian 1, kirim email ke <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>.</p>
 
@@ -810,17 +850,10 @@
 
   <h2 id="id-contact">22. Kontak dan pengaduan</h2>
   <p>Kirim email ke <a href="mailto:yumiao.dev@gmail.com">yumiao.dev@gmail.com</a>. Jelaskan hak yang ingin Anda pakai dan negara tempat Anda tinggal. Alamat pos, jika halaman App Store menampilkannya untuk penjual ini, juga dapat dipakai. Anda juga dapat mengadu kepada otoritas yang disebutkan untuk wilayah Anda dalam kebijakan ini, dan dapat mengajukan tuntutan jika hukum mengizinkan, termasuk pengadilan di tempat tinggal Anda jika hukum konsumen memberi hak itu.</p>
-  <p><a href="LoanSnug-Terms.html?lang=id">Ketentuan Penggunaan</a> menjelaskan lisensi, pembelian, dan batas tentang apa yang merupakan aplikasi ini. Ketentuan itu tidak mengurangi hak yang diberikan kebijakan ini kepada Anda berdasarkan hukum privasi yang wajib.</p>
+  <p>Ketentuan Penggunaan menjelaskan lisensi, pembelian, dan batas tentang apa yang merupakan aplikasi ini. Ketentuan itu tidak mengurangi hak yang diberikan kebijakan ini kepada Anda berdasarkan hukum privasi yang wajib.</p>
 </div>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span data-lang="en">LoanSnug Privacy Policy · 15 November 2026</span>
-    <span data-lang="vi">Chính sách quyền riêng tư LoanSnug · 15 tháng 11 năm 2026</span>
-    <span data-lang="id">Kebijakan Privasi LoanSnug · 15 November 2026</span>
-  </div>
-</footer>
 <script>
 (function () {
   var KEY = "loansnug-legal-lang";
