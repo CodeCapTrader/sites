@@ -261,6 +261,21 @@
             letter-spacing: 1px;
         }
 
+        /* LoanSnug */
+        .loansnug-icon { background: #1A5FD0; }
+        .loansnug-icon img {
+            width: 100%; height: 100%;
+            display: block; object-fit: cover;
+        }
+        .loansnug-icon[data-fallback]::after {
+            content: "LS";
+            color: #EAF2FF;
+            font-weight: 800;
+            font-size: 38px;
+            line-height: 1;
+            letter-spacing: 1px;
+        }
+
         /* LoanGauge */
         .loangauge-icon { background: #D97706; }
         .loangauge-icon img {
@@ -783,6 +798,36 @@
                     <a href="https://apps.apple.com/us/app/loanprep-eligibility-check/id6755533050" class="download-btn" target="_blank" rel="noopener">Download on App Store</a>
                 </div>
 
+                <!-- LoanSnug Card -->
+                <div class="app-card loansnug-card">
+                    <div class="app-icon loansnug-icon">
+                        <img src="loansnug-logo.png" alt="LoanSnug logo" loading="lazy" decoding="async"
+                             onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
+                    </div>
+                    <h3>LoanSnug – Loan Document Preparation Tool</h3>
+                    <p class="app-tagline">Organize Your Loan Documents</p>
+
+                    <p class="app-description">
+                        Gather papers a lender may ask for. LoanSnug suggests a checklist for the loan type, lets you add your files, and notes basic file issues and items that are still missing.
+                    </p>
+
+                    <ul class="features-list">
+                        <li>Suggested checklists for identity, employment, income, assets, loan-specific documents, and tax papers</li>
+                        <li>Checklist content is available for the United States, Vietnam, and Indonesia, and follows your device region when that region is supported</li>
+                        <li>Add files by scanning, choosing a photo, or importing a document</li>
+                        <li>Notes common file issues such as blank, blurry, or low-resolution pages, password protection, and dates that do not match</li>
+                        <li>Shows which suggested items are still missing</li>
+                        <li>Preview a document pack, then save or share it yourself</li>
+                        <li>Interface in English, Vietnamese, and Indonesian, with an optional app lock</li>
+                    </ul>
+
+                    <div class="card-divider"></div>
+
+                    <p class="app-description" style="margin-bottom:0; font-size:13.5px; color:#6b7280;">
+                        LoanSnug is not a lender and is not connected to any lender. It does not submit applications, assess eligibility, predict approval, or recommend loans. It does not verify identity or income, and it does not detect forged or altered documents. Checklists are suggestions; each lender sets its own requirements.
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>
@@ -855,6 +900,15 @@
                     </div>
                     <div>
                         <div class="app-option-title">LoanPrep</div>
+                        <div class="app-option-desc">View privacy policy in a new tab</div>
+                    </div>
+                </a>
+                <a class="app-option" href="https://bytedancedev.xyz/LoanSnug-PrivacyPolicy.html" target="_blank" rel="noopener" id="privacy-loansnug">
+                    <div class="app-option-icon loansnug-icon">
+                        <img src="loansnug-logo.png" alt="" onerror="this.style.display='none'; this.parentElement.setAttribute('data-fallback','');">
+                    </div>
+                    <div>
+                        <div class="app-option-title">LoanSnug</div>
                         <div class="app-option-desc">View privacy policy in a new tab</div>
                     </div>
                 </a>
